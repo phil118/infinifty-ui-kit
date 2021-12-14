@@ -8,8 +8,15 @@ $white:      #fff !default;
  
 $grey-50:    #F6F6F6 !default;
 $grey-100:   #EEEEEE !default;
+$grey-200:   #E2E2E2 !default;
+$grey-300:   #CBCBCB !default;
 $grey-400:   #AFAFAF !default;
+$grey-500:   #757575 !default;
 $grey-600:   #545454 !default;
+$grey-700:   #333333 !default;
+$grey-800:   #1F1F1F !default;
+$grey-900:   #141414 !default;
+
 
 $purple-400: #9664FF !default;
 $cobalt-400: #0032FF !default;
@@ -50,8 +57,9 @@ $era-ten:   $purple-400;
 
 $positive: $green-500;
 $warning:  $yellow-300;
-$action:   $era-one;
 $error:    $red-500;
+
+$action:   $era-one; // this will update every era?
 
 
 // get rid of these
