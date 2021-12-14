@@ -1,13 +1,6 @@
 // Variables
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// Breakpoints
-$bp-larger-than-mobile    : "min-width: 400px" !default;
-$bp-larger-than-phablet   : "min-width: 550px" !default;
-$bp-larger-than-tablet    : "min-width: 750px" !default;
-$bp-larger-than-desktop   : "min-width: 1000px" !default;
-$bp-larger-than-desktophd : "min-width: 1200px" !default;
-
 // Colors
 $light-grey: #e1e1e1 !default;
 $dark-grey: #333 !default;
@@ -18,15 +11,59 @@ $link-color: #1eaedb !default;
 $font-color: #222 !default;
 
 // Typography
-$font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family: 'Inter', sans-serif;
 
-//Grid Variables
-$container-width: 960px !default;
-$container-width-larger-than-mobile: 85% !default;
-$container-width-larger-than-phablet: 80% !default;
-$total-columns: 12 !default;
-$column-width: 100 / $total-columns !default; // calculates individual column width based off of # of columns
-$column-margin: 4% !default; // space between columns
+$heading-size-xxl: 4rem;
+$heading-size-xl: 3.6rem;
+$heading-size-lg: 3.2rem;
+$heading-size-md: 2.8rem;
+$heading-size-sm: 2.4rem;
+$heading-size-xs: 2rem;
+
+$text-size-lg: 1.8rem;
+$text-size-md: 1.6rem;
+$text-size-sm: 1.4rem;
+$text-size-xs: 1.2rem;
+
+// Grid Variables
+$container-width: 116.4rem !default;
+
+$grid-columns: 12 !default; // Set number of columns in the grid
+
+$grid-gutter: .8rem !default; // Set gutter size
+
+$content-well-max-width: $container-width !default; // Set the max-width of the content well
+
+$xs-max: 600px !default; // Set xs breakpoint's max width
+$sm-max: 768px !default; // Set sm breakpoint's max width
+$md-max: 1024px !default; // Set md breakpoint's max width
+$lg-max: 1920px !default; // Set lg breakpoint's max width
+
+$sm-start: ($xs-max + 1); // Generate sm breakpoint's min width
+$md-start: ($sm-max + 1); // Generate md breakpoint's min width
+$lg-start: ($md-max + 1); // Generate lg breakpoint's min width
+$xl-start: ($lg-max + 1); // Generate xl breakpoint's min width
+
+// Breakpoints
+$breakpoint-xs-only: "only screen and (max-width: #{$xs-max})"; // 0 -> xs-max range
+
+$breakpoint-sm-up: "only screen and (min-width: #{$sm-start})"; // sm-start -> up range
+$breakpoint-sm-down: "only screen and (max-width: #{$sm-max})"; // 0 -> sm-max range
+$breakpoint-sm-only: "only screen and (min-width: #{$sm-start}) and (max-width: #{$sm-max})"; // sm-start -> sm-max range
+
+$breakpoint-md-up: "only screen and (min-width: #{$md-start})"; // md-start -> up range
+$breakpoint-md-down: "only screen and (max-width: #{$md-max})"; // 0 -> sm-max range
+$breakpoint-md-only: "only screen and (min-width: #{$md-start}) and (max-width: #{$md-max})"; // md-start -> md-max range
+
+$breakpoint-lg-up: "only screen and (min-width: #{$lg-start})"; // lg-start -> up range
+$breakpoint-lg-down: "only screen and (max-width: #{$lg-max})"; // 0 -> lg-max range
+$breakpoint-lg-only: "only screen and (min-width: #{$lg-start}) and (max-width: #{$lg-max})"; // lg-start -> lg-max range
+
+$breakpoint-xl-up: "only screen and (min-width: #{$xl-start})"; // xl-start -> up range
+
+$breakpoint-all-prefixes: ("xs", "xs-only", "sm", "sm-only", "md", "md-only", "lg", "lg-only", "xl");
+$breakpoint-up-prefixes: ("xs", "sm", "md", "lg", "xl");
+
 
 // Misc
-$global-radius: 4px !default;
+

@@ -1,12 +1,15 @@
+const sass = require('node-sass');
+
 module.exports = function(grunt) {
     grunt.initConfig({
         sass: {
             dist: {
                 options: {
-                    style: 'expanded'
+                    style: 'compressed',
+                    implementation: sass //and this part
                 },
                 files: {
-                    "css/skeleton.css": "scss/skeleton.scss"
+                    "css/infinifty.css": "scss/infinifty.scss"
                 }
             }
         },
@@ -29,4 +32,4 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sass');
     grunt.registerTask('default', ['sass', 'watch']);
-};
+}

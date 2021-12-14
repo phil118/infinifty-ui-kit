@@ -3,27 +3,216 @@
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: 2rem;
-  font-weight: 300;
-}
-
-h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem;  }
-h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem;  }
-h3 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem;  }
-h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
-h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
-h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0;       }
-
-// Larger than phablet
-@media (#{$bp-larger-than-phablet}) {
-  h1 { font-size: 5.0rem; }
-  h2 { font-size: 4.2rem; }
-  h3 { font-size: 3.6rem; }
-  h4 { font-size: 3.0rem; }
-  h5 { font-size: 2.4rem; }
-  h6 { font-size: 1.5rem; }
 }
 
 p {
   margin-top: 0;
+}
+
+
+// Headings
+h1,
+.heading-xxl {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 600;
+  font-size: $heading-size-xxl; //40px
+  line-height: 1.3; 
+  letter-spacing: -0.0375em; //-1.5px
+  margin-bottom: .6em; //24px
+} // --> heading-lg
+
+h2,
+.heading-xl {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 600;
+  font-size: $heading-size-xl; //36px
+  line-height: 1.2222222222;
+  letter-spacing: -.02777777778em; //-1px
+  margin-bottom: .6666666667em; //24px
+} 
+
+h3,
+.heading-lg {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 600;
+  font-size: $heading-size-lg; //32px
+  line-height: 1.25;
+  letter-spacing: -.0234375em; //-.75px
+  margin-bottom: .625em; //20px
+} 
+
+h4,
+.heading-md {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 500;
+  font-size: $heading-size-md; //28px
+  line-height: 1.2857142857;
+  letter-spacing: 0;
+  margin-bottom: 0.5714285714em; //16px
+} // --> heading-sm 
+
+h5,
+.heading-sm {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 500;
+  font-size: $heading-size-sm; //24px
+  line-height: 1.333333333333;
+  letter-spacing: 0;
+  margin-bottom: .5em; //12px
+} 
+
+h6,
+.heading-xs {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 500;
+  font-size: $heading-size-xs; //20px
+  line-height: 1.4;
+  letter-spacing: 0;
+  margin-bottom: .6em; //12px
+} 
+
+
+// Paragraphs
+.text-lg {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $text-size-lg; //18px
+  line-height: 1.555555555555;
+  letter-spacing: 0;
+  margin-bottom: 1.555555555555em; 
+} // --> text-sm
+
+p,
+.text-sm {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $text-size-sm; //14px
+  line-height: 1.4285714286;
+  letter-spacing: 0;
+  margin-bottom: 1.4285714286em; 
+}
+
+
+// Labels
+label,
+.label-sm {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 300;
+  font-size: $text-size-sm; //14px
+  line-height: 1.1428571429; 
+  letter-spacing: 0;
+  margin-bottom: 0.5714285714em; //8px
+}
+
+
+// Weights
+.font-thin	{ 
+  font-weight: 100; 
+}
+
+.font-extralight {	
+  font-weight: 200; 
+}
+
+.font-light	{ 
+  font-weight: 300; 
+}
+
+.font-normal { 
+  font-weight: 400; 
+}
+
+.font-medium { 
+  font-weight: 500; 
+}
+
+.font-semibold { 
+  font-weight: 600; 
+}
+
+.font-bold { 
+  font-weight: 700; 
+}
+
+.font-extrabold { 
+  font-weight: 800; 
+}
+
+.font-black	{ 
+  font-weight: 900; 
+}
+
+// modifiers
+.underline {
+  text-decoration: underline;
+}
+
+.center {
+  text-align: center;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+span.heading-xxl,
+span.heading-xl,
+span.heading-lg,
+span.heading-md,
+span.heading-sm,
+span.heading-xs,
+span.text-lg,
+span.text-sm,
+span.label-sm {
+  display: block;
+} 
+
+
+
+// Breakpoints
+@media #{$breakpoint-md-down} {
+  h1,
+  .heading-xxl {
+    font-size: $heading-size-xl; //36px
+    line-height: 1.2222222222;
+    letter-spacing: -.02777777778em; //-1px
+    margin-bottom: .6666666667em; //24px
+  }
+
+}
+
+@media #{$breakpoint-sm-down} {
+
+  h1,
+  .heading-xxl {
+    font-size: $heading-size-lg; //32px
+    line-height: 1.25;
+    letter-spacing: -.0234375em; //-.75px
+    margin-bottom: .625em; //20px
+  }
+
+  h2,
+  .heading-xl {
+    font-size: $heading-size-lg; //32px
+    line-height: 1.25;
+    letter-spacing: -.0234375em; //-.75px
+    margin-bottom: .625em; //20px
+  }
+
+  h4,
+  .heading-md {
+    font-size: $heading-size-sm; //24px
+    line-height: 1.333333333333;
+    margin-bottom: .5em; //12px
+  }
+
 }
