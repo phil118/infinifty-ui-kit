@@ -11,12 +11,6 @@ InfiniftyUiKit is the base components for building out the frontend applications
   * [bower](http://bower.io): `[sudo] npm install bower -g`
   * [grunt.js](http://gruntjs.com): `[sudo] npm install -g grunt-cli`
 
-### Install Local Dependencies
-  * [Download zip](https://github.com/whatsnewsaes/Skeleton-Sass/archive/master.zip), [clone the repo](github-mac://openRepo/https://github.com/whatsnewsaes/Skeleton-Sass) or `bower install skeleton-scss` from your terminal
-  * cd to project folder
-  * run `[sudo] npm install` (first time users)
-  * run `grunt` (to watch and compile sass files)
-
 ### What's in the download?
 
 The download includes Infinifty's CSS, ~~Normalize CSS as a reset, ~~ a sample favicon, and an index.html as a starting point.
