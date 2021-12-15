@@ -19,7 +19,9 @@ $grey-900:   #141414 !default;
 
 
 $purple-400: #9664FF !default;
+
 $cobalt-400: #0032FF !default;
+
 $blue-400:   #00C8FF !default;
 
 $turquoise-400: #00FFC8 !default;
@@ -27,7 +29,7 @@ $turquoise-400: #00FFC8 !default;
 $green-400:  #00FF00 !default;
 $green-500:  #00BF00 !default;
 
-$lime-400:  #96FF00 !default;
+$lime-400:   #96FF00 !default;
  
 $yellow-300: #FFD640 !default;
 $yellow-400: #FFC800 !default;
@@ -63,15 +65,10 @@ $action:   $era-one; // this will update every era?
 
 
 // get rid of these
-$light-grey: #e1e1e1 !default;
 $dark-grey: #333 !default;
 $primary-color: #33c3f0 !default;
 $secondary-color: lighten($dark-grey, 13.5%) !default;
 $border-color: #bbb !default;
-$link-color: #1eaedb !default;
-$font-color: #222 !default;
-
-
 
 
 // Typography
@@ -127,6 +124,8 @@ $breakpoint-xl-up: "only screen and (min-width: #{$xl-start})"; // xl-start -> u
 
 $breakpoint-all-prefixes: ("xs", "xs-only", "sm", "sm-only", "md", "md-only", "lg", "lg-only", "xl");
 $breakpoint-up-prefixes: ("xs", "sm", "md", "lg", "xl");
+
+$hover-media-query: "only screen and (hover: hover)"; // if hover is available
 
 
 // Misc

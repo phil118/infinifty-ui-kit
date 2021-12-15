@@ -102,7 +102,7 @@ p,
 
 
 // Labels
-label,
+
 .label-sm {
   font-family: $font-family;
   font-style: normal;
@@ -111,6 +111,19 @@ label,
   line-height: 1.1428571429; 
   letter-spacing: 0;
   margin-bottom: 0.5714285714em; //8px
+  display: block;
+}
+
+label,
+.label-md {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 500;
+  font-size: $text-size-sm; //14px
+  line-height: 1.1428571429; 
+  letter-spacing: 0;
+  margin-bottom: 0.5714285714em; //8px
+  display: block;
 }
 
 

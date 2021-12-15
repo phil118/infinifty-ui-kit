@@ -8,5 +8,30 @@
   text-transform: uppercase;
   color: $grey-400;
   background: $grey-50;
+  display: inline-block;
+  margin: 00;
+  padding: 0 .4rem;
+  border-radius: .4rem;
+  vertical-align: top;
 } 
+
+.badge + .badge {
+  margin-left: .4rem;
+}
+
+// modifiers
+
+.badge-black {
+  background: $black;
+  color: $white;
+}
+
+.badge-dark {
+  background: $grey-700;
+}
+
+.badge-action {
+  background-color: $action;
+  color: $white;
+}
 

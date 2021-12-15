@@ -9,20 +9,23 @@ html {
 }
 
 body {
-  font-size: 1.4em; // currently ems cause chrome bug misinterpreting rems on body element
-  line-height: 1.6;
-  font-weight: 400;
   font-family: $font-family;
-  color: $font-color;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.4em; // currently ems cause chrome bug misinterpreting rems on body element
+  line-height: 1.4285714286;
+  letter-spacing: 0;
+  color: $black;
 }
 
 // Links
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 a {
-  color: $link-color;
+  color: inherit;
+
   &:hover {
-    color: darken($link-color, 5%);
+    color: $action;
   }
 }
 
@@ -30,8 +33,7 @@ a {
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 hr {
-  margin-top: 3rem;
-  margin-bottom: 3.5rem;
+  margin: 4.5rem auto;
   border-width: 0;
-  border-top: 1px solid $light-grey;
+  border-top: 1px solid $grey-200;
 }

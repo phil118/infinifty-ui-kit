@@ -1,146 +1,151 @@
 // Buttons
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.button,
-button {
-  display: inline-block;
-  height: 38px;
-  padding: 0 30px;
-  color: $secondary-color;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 38px;
-  letter-spacing: .1rem;
-  text-transform: uppercase;
+button,
+.btn {
+  border: 1px solid $black;
+  box-sizing: border-box;
+  border-radius: 99em;
+  height: 4.8rem;
+  font-family: $font-family;
+  padding: 0;
+  margin: .8rem 0;
+  color: $black;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 3.4285714286;
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
-
-  border: 1px solid $border-color;
   cursor: pointer;
-  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  transition: background 0.3s ease, color .3s ease;
+
+  .circle {
+    display: block;
+    width: 3.6rem;
+    height: 3.6rem;
+    background: $black;
+    border-radius: 100%;
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+
+    .icon {
+      fill: $white;
+    }
+  }
+
+  input {
+    &[type="submit"],
+    &[type="reset"],
+    &[type="button"] {
+      background: transparent;
+      color: inherit;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
 }
 
-input {
-  &[type="submit"],
-  &[type="reset"],
-  &[type="button"] {
-    display: inline-block;
-    height: 38px;
-    padding: 0 30px;
-    color: $secondary-color;
-    text-align: center;
-    font-size: 11px;
-    font-weight: 600;
-    line-height: 38px;
-    letter-spacing: .1rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    white-space: nowrap;
+
+
+
+// modifiers 
+
+.btn-action {
+  border-color: $action;
+  color: $action;
+
+  .circle {
+    background: $action;
+  }
+}
+
+.btn-solid {
+  background-color: $black;
+  color: $white;
+}
+
+.btn-solid-action {
+  background-color: $action;
+  color: $white;
+  border-color: $action;
+
+  .circle {
+    background: $action;
+  }
+}
+
+
+@media #{$hover-media-query} {
+  button:hover,
+  .btn:hover {
+    color: $white;
+    background-color: $black;
+  }
+
+  .btn-action:hover{
+    background-color: $action;
+    color: $white;
+  }
+
+  .btn-solid:hover{
     background-color: transparent;
-    border: 1px solid $border-color;
-    cursor: pointer;
-    box-sizing: border-box;
+    color: $black;
   }
-}
 
-.button:hover,
-button:hover {
-  color: $dark-grey;
-  border-color: lighten($dark-grey, 33.3%);
-  outline: 0;
-}
-
-input {
-  &[type="submit"]:hover,
-  &[type="reset"]:hover,
-  &[type="button"]:hover {
-    color: $dark-grey;
-    border-color: lighten($dark-grey, 33.3%);
-    outline: 0;
+  .btn-solid-action:hover{
+    background-color: transparent;
+    color: $action;
   }
+
 }
 
-.button:focus,
-button:focus {
-  color: $dark-grey;
-  border-color: lighten($dark-grey, 33.3%);
-  outline: 0;
-}
 
-input {
-  &[type="submit"]:focus,
-  &[type="reset"]:focus,
-  &[type="button"]:focus {
-    color: $dark-grey;
-    border-color: lighten($dark-grey, 33.3%);
-    outline: 0;
+// input {
+//   &[type="submit"].btn-primary:focus,
+//   &[type="reset"].btn-primary:focus,
+//   &[type="button"].btn-primary:focus {
+//     color: #fff;
+//     background-color: $link-color;
+//     border-color: $link-color;
+//   }
+
+//   &[type="email"],
+//   &[type="number"],
+//   &[type="search"],
+//   &[type="text"],
+//   &[type="tel"],
+//   &[type="url"],
+//   &[type="password"] {
+//     height: 38px;
+//     padding: 6px 10px; // The 6px vertically centers text on FF, ignored by Webkit
+//     background-color: #fff;
+//     border: 1px solid lighten($black, 8.8%);
+
+//     box-shadow: none;
+//     box-sizing: border-box;
+//   }
+// }
+
+@media #{$breakpoint-sm-up} {
+
+  .btn,
+  button {
+    max-width: 25.6rem;
   }
-}
 
-.button.button-primary,
-button.button-primary {
-  color: #fff;
-  background-color: $primary-color;
-  border-color: $primary-color;
-}
-
-input {
-  &[type="submit"].button-primary,
-  &[type="reset"].button-primary,
-  &[type="button"].button-primary {
-    color: #fff;
-    background-color: $primary-color;
-    border-color: $primary-color;
-  }
-}
-
-.button.button-primary:hover,
-button.button-primary:hover {
-  color: #fff;
-  background-color: $link-color;
-  border-color: $link-color;
-}
-
-input {
-  &[type="submit"].button-primary:hover,
-  &[type="reset"].button-primary:hover,
-  &[type="button"].button-primary:hover {
-    color: #fff;
-    background-color: $link-color;
-    border-color: $link-color;
-  }
-}
-
-.button.button-primary:focus,
-button.button-primary:focus {
-  color: #fff;
-  background-color: $link-color;
-  border-color: $link-color;
-}
-
-input {
-  &[type="submit"].button-primary:focus,
-  &[type="reset"].button-primary:focus,
-  &[type="button"].button-primary:focus {
-    color: #fff;
-    background-color: $link-color;
-    border-color: $link-color;
-  }
-  &[type="email"],
-  &[type="number"],
-  &[type="search"],
-  &[type="text"],
-  &[type="tel"],
-  &[type="url"],
-  &[type="password"] {
-    height: 38px;
-    padding: 6px 10px; // The 6px vertically centers text on FF, ignored by Webkit
-    background-color: #fff;
-    border: 1px solid lighten($border-color, 8.8%);
-
-    box-shadow: none;
-    box-sizing: border-box;
-  }
 }

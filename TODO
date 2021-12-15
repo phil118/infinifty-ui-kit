@@ -1,11 +1,11 @@
 [x] - Grid
-[] - Colours
+[x] - Colours
 [x] - Typography
 [] - Icons
-[] - Buttons
-[] - Badges
+[] - Buttons / inline / single icon button
+[x] - Badges
 [] - Inputs
-[] - Cards
+[] - Cards small and image based
 [] - Wallets
 [] - Sliders
 [] - Colour selector 
@@ -17,3 +17,13 @@
 [] - Selectable list items
 [] - Radio buttons
 [] - Toggle switches
+[] - Create collection Card
+[] - Tabs
+[] - table
+[] - menu li (footer)
+[] - header
+[] - footer
+[] - dark mode
+[] - down button
+[] - profile image
+[] - social icons 

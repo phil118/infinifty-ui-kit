@@ -7,7 +7,7 @@
     "url": "https://github.com/phil118/InfiniftyUiKit"
   },
   "homepage": "https://github.com/phil118/InfiniftyUiKit",
-  "author": "Phil Jenkins <phil@fabrik.io>  (https://fabrik.io/)",
+  "author": "Phil Jenkins <phil@fabrik.io> (https://fabrik.io/)",
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
@@ -15,6 +15,7 @@
     "grunt-contrib-sass": "^2.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-sass": "^3.1.0",
+    "grunt-svg-sprite": "^1.5.0",
     "node-sass": "^7.0.0"
   }
 }
