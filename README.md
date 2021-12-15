@@ -14,6 +14,7 @@ InfiniftyUiKit is the base components for building out the frontend applications
 ### Install Local Dependencies
   * cd to project folder
   * run `[sudo] npm install` (first time users)
+  * run `grunt sprites` (to build svg sprite files)
   * run `grunt` (to watch and compile sass files)
 
 ### What's in the download?
