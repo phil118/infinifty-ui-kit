@@ -12,10 +12,13 @@
   "license": "MIT",
   "devDependencies": {
     "grunt": "^1.4.1",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-sass": "^2.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-sass": "^3.1.0",
     "grunt-svg-sprite": "^1.5.0",
+    "grunt-w3c-css-validation": "^0.1.0",
     "node-sass": "^7.0.0"
   }
 }

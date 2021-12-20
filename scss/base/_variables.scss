@@ -17,7 +17,6 @@ $grey-700:   #333333 !default;
 $grey-800:   #1F1F1F !default;
 $grey-900:   #141414 !default;
 
-
 $purple-400: #9664FF !default;
 
 $cobalt-400: #0032FF !default;
@@ -34,42 +33,33 @@ $lime-400:   #96FF00 !default;
 $yellow-300: #FFD640 !default;
 $yellow-400: #FFC800 !default;
  
-$orange-400 :#FF6400 !default;
+$orange-400: #FF6400 !default;
 
-$red-400 :   #FF0032 !default;
+$red-50 :    #FFF2F5 !default;
+$red-200:    #FF7F98 !default;
+$red-400:    #FF0032 !default;
 $red-500:    #BF0025 !default;
 
 $pink-400:   #FF0096 !default;
 
 // Eras
-
-$era-one:   $pink-400;
-$era-two:   $red-400;
-$era-three: $orange-400;
-$era-four:  $yellow-400;
-$era-five:  $lime-400;
-$era-six:   $green-400;
-$era-seven: $turquoise-400;
-$era-eight: $blue-400;
-$era-nine:  $cobalt-400;
-$era-ten:   $purple-400;
-
+$era-one:    $pink-400;
+$era-two:    $red-400;
+$era-three:  $orange-400;
+$era-four:   $yellow-400;
+$era-five:   $lime-400;
+$era-six:    $green-400;
+$era-seven:  $turquoise-400;
+$era-eight:  $blue-400;
+$era-nine:   $cobalt-400;
+$era-ten:    $purple-400;
 
 // Helper names
-
-$positive: $green-500;
-$warning:  $yellow-300;
-$error:    $red-500;
-
-$action:   $era-one; // this will update every era?
-
-
-// get rid of these
-$dark-grey: #333 !default;
-$primary-color: #33c3f0 !default;
-$secondary-color: lighten($dark-grey, 13.5%) !default;
-$border-color: #bbb !default;
-
+$positive:   $green-500;
+$warning:    $yellow-300;
+$error:      $red-500;
+  
+$action:     $era-one; // this will update every era?
 
 // Typography
 $font-family: 'Inter', sans-serif;

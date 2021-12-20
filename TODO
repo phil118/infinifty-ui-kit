@@ -1,22 +1,23 @@
 [x] - Grid
 [x] - Colours
 [x] - Typography
-[] - Icons
-[] - Buttons / inline / single icon button
+[x] - Icons
+[x] - Buttons / inline / single icon button
 [x] - Badges
-[] - Inputs
-[] - Cards small and image based
-[] - Wallets
-[] - Sliders
-[] - Colour selector 
-[] - Sidebar
-[] - Accordian
-[] - Dropdown
+[x] - Inputs
+[x] - Image upload
 [] - Noticebar
-[] - Selectable images
-[] - Selectable list items
 [] - Radio buttons
 [] - Toggle switches
+[] - Sliders
+[] - Colour selector 
+[] - Dropdown
+[] - Selectable images
+[] - Selectable list items
+[] - Cards small and image based
+[] - Wallets
+[] - Sidebar
+[] - Accordian
 [] - Create collection Card
 [] - Tabs
 [] - table

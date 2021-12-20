@@ -14,7 +14,7 @@ button,
   font-style: normal;
   font-weight: 500;
   font-size: 1.4rem;
-  line-height: 3.4285714286;
+  line-height: 4.6rem;
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
@@ -23,7 +23,7 @@ button,
   width: 100%;
   text-align: center;
   position: relative;
-  transition: background 0.3s ease, color .3s ease;
+  transition: background 0.3s ease, color .3s ease, border-color .3s ease;
 
   .circle {
     display: block;
@@ -34,10 +34,16 @@ button,
     position: absolute;
     top: .5rem;
     left: .5rem;
+    transition: background 0.3s ease, color .3s ease;
+  }
 
-    .icon {
-      fill: $white;
-    }
+  [class^="icon"] {
+    fill: $white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: color .3s ease;
   }
 
   input {
@@ -60,10 +66,16 @@ button,
   }
 }
 
+// modifiers
 
-
-
-// modifiers 
+.btn-inline {
+  display: inline-block;
+  width: auto;
+  max-width: none;
+  padding: 0 1.2rem;
+  height: 4.4rem;
+  line-height: 4.2rem;
+}
 
 .btn-action {
   border-color: $action;
@@ -89,6 +101,23 @@ button,
   }
 }
 
+.btn-circle {
+  width: 4.8rem;
+
+  [class^="icon"] {
+    fill: $black;
+  }
+}
+
+.btn-circle-solid {
+  width: 4.8rem;
+  background: $black;
+
+  [class^="icon"] {
+    fill: $white;
+  }
+}
+
 
 @media #{$hover-media-query} {
   button:hover,
@@ -97,49 +126,51 @@ button,
     background-color: $black;
   }
 
-  .btn-action:hover{
+  .btn-action:hover {
     background-color: $action;
     color: $white;
   }
 
-  .btn-solid:hover{
+  .btn-solid:hover {
     background-color: transparent;
     color: $black;
   }
 
-  .btn-solid-action:hover{
+  .btn-solid-action:hover {
     background-color: transparent;
     color: $action;
   }
 
+  .btn-hover-white:hover {
+    background-color: $white;
+    color: $black;
+    border-color: $white;
+
+    .circle {
+      background: $white;
+    }
+
+    [class^="icon"] {
+      fill: $black;
+    }
+  }
+
+  .btn-circle:hover {
+    [class^="icon"] {
+      fill: $white;
+    }
+  }
+
+  .btn-circle-solid:hover {
+    background: transparent;
+
+    [class^="icon"] {
+      fill: $black;
+    }
+  }
+
 }
 
-
-// input {
-//   &[type="submit"].btn-primary:focus,
-//   &[type="reset"].btn-primary:focus,
-//   &[type="button"].btn-primary:focus {
-//     color: #fff;
-//     background-color: $link-color;
-//     border-color: $link-color;
-//   }
-
-//   &[type="email"],
-//   &[type="number"],
-//   &[type="search"],
-//   &[type="text"],
-//   &[type="tel"],
-//   &[type="url"],
-//   &[type="password"] {
-//     height: 38px;
-//     padding: 6px 10px; // The 6px vertically centers text on FF, ignored by Webkit
-//     background-color: #fff;
-//     border: 1px solid lighten($black, 8.8%);
-
-//     box-shadow: none;
-//     box-sizing: border-box;
-//   }
-// }
 
 @media #{$breakpoint-sm-up} {
 

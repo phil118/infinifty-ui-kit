@@ -1182,6 +1182,24 @@ span.label-sm {
   background-color: #FF0096;
   color: #fff; }
 
+[class^="icon"] {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: block;
+  fill: #000; }
+
+.icon48 {
+  width: 4.8rem;
+  height: 4.8rem; }
+
+.icon24 {
+  width: 2.4rem;
+  height: 2.4rem; }
+
+.icon16 {
+  width: 1.6rem;
+  height: 1.6rem; }
+
 button,
 .btn {
   border: 1px solid #000;
@@ -1195,7 +1213,7 @@ button,
   font-style: normal;
   font-weight: 500;
   font-size: 1.4rem;
-  line-height: 3.4285714286;
+  line-height: 4.6rem;
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
@@ -1204,7 +1222,7 @@ button,
   width: 100%;
   text-align: center;
   position: relative;
-  transition: background 0.3s ease, color .3s ease; }
+  transition: background 0.3s ease, color .3s ease, border-color .3s ease; }
   button .circle,
   .btn .circle {
     display: block;
@@ -1214,10 +1232,16 @@ button,
     border-radius: 100%;
     position: absolute;
     top: .5rem;
-    left: .5rem; }
-    button .circle .icon,
-    .btn .circle .icon {
-      fill: #fff; }
+    left: .5rem;
+    transition: background 0.3s ease, color .3s ease; }
+  button [class^="icon"],
+  .btn [class^="icon"] {
+    fill: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: color .3s ease; }
   button input[type="submit"], button input[type="reset"], button input[type="button"],
   .btn input[type="submit"],
   .btn input[type="reset"],
@@ -1234,6 +1258,14 @@ button,
     width: 100%;
     height: 100%;
     border: 0; }
+
+.btn-inline {
+  display: inline-block;
+  width: auto;
+  max-width: none;
+  padding: 0 1.2rem;
+  height: 4.4rem;
+  line-height: 4.2rem; }
 
 .btn-action {
   border-color: #FF0096;
@@ -1252,6 +1284,17 @@ button,
   .btn-solid-action .circle {
     background: #FF0096; }
 
+.btn-circle {
+  width: 4.8rem; }
+  .btn-circle [class^="icon"] {
+    fill: #000; }
+
+.btn-circle-solid {
+  width: 4.8rem;
+  background: #000; }
+  .btn-circle-solid [class^="icon"] {
+    fill: #fff; }
+
 @media only screen and (hover: hover) {
   button:hover,
   .btn:hover {
@@ -1265,7 +1308,21 @@ button,
     color: #000; }
   .btn-solid-action:hover {
     background-color: transparent;
-    color: #FF0096; } }
+    color: #FF0096; }
+  .btn-hover-white:hover {
+    background-color: #fff;
+    color: #000;
+    border-color: #fff; }
+    .btn-hover-white:hover .circle {
+      background: #fff; }
+    .btn-hover-white:hover [class^="icon"] {
+      fill: #000; }
+  .btn-circle:hover [class^="icon"] {
+    fill: #fff; }
+  .btn-circle-solid:hover {
+    background: transparent; }
+    .btn-circle-solid:hover [class^="icon"] {
+      fill: #000; } }
 
 @media only screen and (min-width: 601px) {
   .btn,
@@ -1281,12 +1338,24 @@ input[type='url'],
 input[type='password'],
 textarea,
 select {
-  height: 38px;
-  padding: 6px 10px;
-  background-color: #fff;
-  border: 1px solid #d1d1d1;
+  height: 3.6rem;
+  padding: 0 1.6rem;
+  background-color: #EEEEEE;
+  border: 1px solid #EEEEEE;
+  width: 100%;
+  line-height: 3.6rem;
   box-shadow: none;
   box-sizing: border-box; }
+  input[type='email'] + span,
+  input[type='number'] + span,
+  input[type='search'] + span,
+  input[type='text'] + span,
+  input[type='tel'] + span,
+  input[type='url'] + span,
+  input[type='password'] + span,
+  textarea + span,
+  select + span {
+    display: block; }
 
 input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"] {
   -webkit-appearance: none;
@@ -1297,17 +1366,19 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  min-height: 65px;
-  padding-top: 6px;
-  padding-bottom: 6px; }
+  min-height: 13.2rem;
+  padding: .8rem 1.6rem;
+  resize: vertical;
+  vertical-align: bottom;
+  line-height: 1.4285714286; }
 
 input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="text"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus {
-  border: 1px solid #33c3f0;
+  border: 1px solid #000;
   outline: 0; }
 
 textarea:focus,
 select:focus {
-  border: 1px solid #33c3f0;
+  border: 1px solid #000;
   outline: 0; }
 
 fieldset {
@@ -1317,10 +1388,128 @@ fieldset {
 input[type="checkbox"], input[type="radio"] {
   display: inline; }
 
-label > .label-body {
+.form-group {
+  padding-right: 3.2rem;
+  margin-bottom: 3.2rem;
+  max-width: 40rem; }
+
+.hint {
+  display: block;
+  color: #545454;
+  font-weight: 300;
+  margin-top: .8rem; }
+
+.count {
+  float: right;
+  color: #545454;
+  font-weight: 300; }
+
+select::-ms-expand {
+  display: none; }
+
+.select {
+  position: relative;
+  background-color: #EEEEEE; }
+  .select select {
+    appearance: none;
+    background: transparent;
+    position: relative;
+    line-height: 2.8rem; }
+  .select .icon {
+    position: absolute;
+    top: .2rem;
+    right: .8rem; }
+
+.upload-area {
+  background-color: #EEEEEE;
+  border: 1px solid #EEEEEE;
+  padding: 4.8rem;
+  text-align: center;
+  min-height: 31.3rem;
+  box-sizing: border-box; }
+  .upload-area .upload-label {
+    display: block;
+    margin: 0 0 3.2rem; }
+  .upload-area .btn-inline {
+    margin: 0; }
+  .upload-area .upload-status,
+  .upload-area .upload-progress {
+    display: none; }
+  .upload-area.uploading .upload-status,
+  .upload-area.uploading .upload-progress {
+    display: block; }
+  .upload-area.uploading .upload-label {
+    display: none; }
+  .upload-area.uploading .uploaded-image,
+  .upload-area.uploading .uploaded-logo {
+    opacity: .5;
+    filter: saturate(0.4); }
+  .upload-area.over {
+    border-color: #000;
+    background: #E2E2E2; }
+    .upload-area.over .btn-inline {
+      display: none; }
+    .upload-area.over .upload-icon {
+      border-color: #000;
+      background: transparent; }
+
+.upload-status {
+  margin-bottom: 1.4rem; }
+
+.upload-progress {
+  margin: 0 0 1.6rem 0; }
+
+.upload-progress-bar {
+  height: 2px;
+  background: #000;
+  display: block; }
+
+.uploaded-logo,
+.upload-icon {
+  width: 9.6rem;
+  height: 9.6rem;
+  background: #F6F6F6;
+  border-radius: 100%;
+  margin: 0 auto 1.6rem;
   display: inline-block;
-  margin-left: .5rem;
-  font-weight: normal; }
+  position: relative;
+  border: 1px solid #F6F6F6;
+  vertical-align: bottom; }
+  .uploaded-logo .icon,
+  .upload-icon .icon {
+    position: absolute;
+    left: 3.2rem;
+    top: 3.2rem; }
+
+.uploaded-image {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 1.6rem;
+  vertical-align: bottom; }
+
+.error input[type='email'],
+.error input[type='number'],
+.error input[type='search'],
+.error input[type='text'],
+.error input[type='tel'],
+.error input[type='url'],
+.error input[type='password'],
+.error textarea,
+.error .upload-area {
+  border-color: #FF7F98;
+  background: #FFF2F5; }
+
+.error .upload-icon {
+  background: transparent; }
+
+.error select {
+  border-color: #FF7F98; }
+
+.error .select {
+  background: #FFF2F5; }
+
+.error .hint {
+  color: #BF0025; }
 
 ul {
   list-style: circle inside; }

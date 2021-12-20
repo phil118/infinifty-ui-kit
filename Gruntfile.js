@@ -25,35 +25,61 @@ module.exports = function(grunt) {
                     }                         
                 },
                 mode: {
-                    symbol: true,
-                    view: {           // Activate the «view» mode
-                        bust: false,
-                        render: {
-                          scss: true    // Activate Sass output (with default options)
-                        }
-                    },
-                    css: {        // Activate the «css» mode
-                        render: {
-                          css: true // Activate CSS output (with default options)
-                        }
-                    }
+                    symbol: true
                 }  
             },
-            default: {
+            icons32: {
                 expand: true,
                 cwd: 'images/icons/32px',
                 src: ['**/*.svg'],
-                dest: 'dist/icons'
+                dest: 'images/sprites/32'
+            },
+            icons24: {
+                expand: true,
+                cwd: 'images/icons/24px',
+                src: ['**/*.svg'],
+                dest: 'images/sprites/24'
+            },
+            icons16: {
+                expand: true,
+                cwd: 'images/icons/16px',
+                src: ['**/*.svg'],
+                dest: 'images/sprites/16'
             }
         },
-
+        copy: {
+            main: {
+              files: [
+                {
+                  expand: true, 
+                  cwd: 'images/sprites', 
+                  src: ['**/*.svg'], 
+                  dest: 'dist/icons',
+                  rename: function(dest, src) {
+                    return dest + '/' + src.substring(0, src.indexOf('/')) + '.sprite.svg';
+                  }
+                }
+              ]
+            }
+        },
+        clean: [ 'dist', 'images/sprites'],
+        w3c_css_validation: {
+            target: {
+                options: {
+                    logfile: 'logs/w3c_css_validation.json',
+                    profile: 'css3svg',
+                    warning: 'no'
+                },
+                src: ['dist/css/*.css'],
+            }
+        },
         watch: {
             options: {
                 livereload: false,
             },
             styles: {
                 files: ['scss/**/*.scss'], // which files to watch
-                tasks: ['sass'],
+                tasks: ['sass', 'w3c_css_validation' ],
                 options: {
                     nospawn: true
                 }
@@ -65,6 +91,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-svg-sprite');
-    grunt.registerTask('sprites', ['svg_sprite']);
-    grunt.registerTask('default', ['sass', 'watch']);
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-w3c-css-validation');
+    grunt.registerTask('sprites', ['svg_sprite', 'copy' ]);
+    grunt.registerTask('default', ['clean', 'sprites', 'sass', 'w3c_css_validation', 'watch']);
 }
