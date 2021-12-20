@@ -17,6 +17,9 @@ InfiniftyUiKit is the base components for building out the frontend applications
   * run `grunt sprites` (to build svg sprite files)
   * run `grunt` (to watch and compile sass files)
 
+### Run examples
+To see examples male sure running on server for icons to work correctly `python -m SimpleHTTPServer`
+
 ### What's in the download?
 
 The download includes Infinifty's CSS, ~~Normalize CSS as a reset, ~~ a sample favicon, and an index.html as a starting point.
