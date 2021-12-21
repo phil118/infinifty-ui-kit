@@ -85,6 +85,10 @@ input {
   padding-right: 3.2rem;
   margin-bottom: 3.2rem;
   max-width: 40rem;
+
+  hr {
+    margin: 2rem 0 .8rem;
+  }
 }
 
 .hint {
@@ -215,6 +219,57 @@ select::-ms-expand {
   max-width: 100%;
   margin: 0 auto 1.6rem;
   vertical-align: bottom;
+}
+
+.toogle-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0;
+
+  > span:first-child {
+    flex: auto;
+  }
+
+  input {
+    display: none;
+  }  
+}
+
+.toggle {
+  background: $grey-100;
+  box-sizing: border-box;
+  position: relative;
+  width: 5.2rem;
+  height: 2.8rem;
+  display: inline-block;
+  border-radius: 1.4rem;
+  overflow: hidden;
+  transition: all .3s ease;
+
+  &:before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 2.4rem;
+    height: 2.4rem;
+    top: 0.2rem;
+    left: 0.2rem;
+    background: $white;
+    box-shadow: 0rem .3rem .8rem rgba($black, 0.15), 0rem .1rem .1rem rgba($black, 0.16);
+    border-radius: 100%;
+    transition: all .3s ease;
+  }
+}
+
+input:checked + .toggle {
+  background: $black;
+
+  &:before {
+    -webkit-transform: translateX(2.4rem);
+    -ms-transform: translateX(2.4rem);
+    transform: translateX(2.4rem);
+  }
+
 }
 
 .error {
