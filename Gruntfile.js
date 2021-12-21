@@ -18,7 +18,7 @@ module.exports = function(grunt) {
                 shape: {
                     id: { 
                         generator: function(name) {  
-                            var n = name.toLowerCase().replace(/ /g,"-").replace("_","-").replace(".svg", "").replace(/-v1$/g, "");
+                            var n = name.toLowerCase().replace(/ /g,"-").replace("_","-").replace(".svg", "").replace(/-v1$/g, "").replace(/-01$/g, "");
                             console.log(n);
                             return n;
                         }

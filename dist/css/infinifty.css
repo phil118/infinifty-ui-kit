@@ -1051,6 +1051,9 @@ span.label-sm {
 .col-no-gutter {
   padding: 0; }
 
+.row .row {
+  margin: -0.8rem; }
+
 .show {
   display: block !important; }
 
@@ -1363,6 +1366,9 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
   -moz-appearance: none;
   appearance: none; }
 
+.prefill {
+  color: #545454; }
+
 textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1376,6 +1382,36 @@ textarea {
 input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="text"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus {
   border: 1px solid #000;
   outline: 0; }
+
+.input-wrap {
+  background-color: #EEEEEE;
+  border: 1px solid #EEEEEE;
+  height: 4.8rem;
+  display: flex;
+  align-items: center; }
+  .input-wrap:focus-within {
+    border-color: #000; }
+  .input-wrap .icon-wrap {
+    padding: 1.2rem;
+    flex: 0 0 2.4rem;
+    height: 2.4rem; }
+    .input-wrap .icon-wrap button {
+      height: 100%;
+      margin: 0; }
+      .input-wrap .icon-wrap button [class^="icon"] {
+        fill: #EEEEEE; }
+  .input-wrap .clear {
+    display: none; }
+  .input-wrap input {
+    border: none;
+    height: 3.4rem;
+    flex: auto;
+    padding: 0; }
+    .input-wrap input:not(:placeholder-shown) + .clear {
+      display: block; }
+
+.input-wrap input:focus {
+  border: 0; }
 
 textarea:focus,
 select:focus {
@@ -1400,7 +1436,8 @@ input[type="checkbox"], input[type="radio"] {
   display: block;
   color: #545454;
   font-weight: 300;
-  margin-top: .8rem; }
+  margin-top: .8rem;
+  max-width: 40rem; }
 
 .count {
   float: right;
@@ -1414,14 +1451,37 @@ select::-ms-expand {
   position: relative;
   background-color: #EEEEEE; }
   .select select {
+    -webkit-appearance: none;
     appearance: none;
     background: transparent;
     position: relative;
     line-height: 2.8rem; }
   .select .icon {
     position: absolute;
-    top: .2rem;
-    right: .8rem; }
+    top: 50%;
+    right: 0.8rem;
+    transform: translateY(-50%); }
+
+.custom-select {
+  position: relative; }
+  .custom-select input,
+  .custom-select .input-wrap {
+    cursor: pointer; }
+
+.custom-select-options {
+  background: #fff;
+  box-shadow: 0rem 0.4rem 1.6rem rgba(0, 0, 0, 0.12);
+  position: absolute;
+  width: 100%; }
+
+.custom-select-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer; }
+  .custom-select-option .icon-wrap {
+    padding: 1.2rem;
+    flex: 0 0 2.4rem;
+    height: 2.4rem; }
 
 .upload-area {
   background-color: #EEEEEE;
@@ -1537,7 +1597,8 @@ input:checked + .toggle {
 .error input[type='url'],
 .error input[type='password'],
 .error textarea,
-.error .upload-area {
+.error .upload-area,
+.error .input-wrap {
   border-color: #FF7F98;
   background: #FFF2F5; }
 
@@ -1552,6 +1613,16 @@ input:checked + .toggle {
 
 .error .hint {
   color: #BF0025; }
+
+.error .select .icon,
+.error .input-wrap [class^="icon"] {
+  fill: #BF0025; }
+
+@media only screen and (hover: hover) {
+  .input-wrap .icon-wrap button:hover [class^="icon"] {
+    fill: #000; }
+  .custom-select-option:hover {
+    background: #F6F6F6; } }
 
 ul {
   list-style: circle inside; }

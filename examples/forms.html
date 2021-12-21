@@ -22,6 +22,59 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="../images/favicons/favicon-32x32.png" />
 
+  <script>
+
+    var getClosest = function (elem, selector) {
+
+      // Element.matches() polyfill
+      if (!Element.prototype.matches) {
+          Element.prototype.matches =
+              Element.prototype.matchesSelector ||
+              Element.prototype.mozMatchesSelector ||
+              Element.prototype.msMatchesSelector ||
+              Element.prototype.oMatchesSelector ||
+              Element.prototype.webkitMatchesSelector ||
+              function(s) {
+                  var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+                      i = matches.length;
+                  while (--i >= 0 && matches.item(i) !== this) {}
+                  return i > -1;
+              };
+      }
+
+      // Get the closest matching element
+      for ( ; elem && elem !== document; elem = elem.parentNode ) {
+        if ( elem.matches( selector ) ) return elem;
+      }
+      return null;
+
+    };
+
+    function toggle() {
+      var x = document.getElementById("cs-options");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+
+    function clearInput(event) {
+      var parent = getClosest(event.target, '.input-wrap');
+      var input = parent.getElementsByTagName('input')[0];
+      input.value = "";
+    }
+
+    function addErrors() {
+      var inputs = document.getElementsByClassName('form-group');
+      for(var i = 0; i < inputs.length; i++) {
+        inputs[i].classList.add("error");
+
+      }
+
+    }
+  </script>
+
 
 </head>
 
@@ -34,6 +87,9 @@
     <div class="col-xs-12 col-md-10 col-no-gutter">
 
       <h2 class="underline">Form Elements</h2>
+      <button class="btn-inline" onclick="addErrors();">Add Errors</button>
+      <p>Note: for validation states add class 'error' to the 'form-group' element</p>
+      
 
       <div class="row" style="margin-bottom: 0;">
 
@@ -46,12 +102,76 @@
           </div>
 
           <div class="form-group">
-            <label>NFT Base Web Address</label>
-            <svg class="icon">
-              <use xlink:href="../dist/icons/32.sprite.svg#start"></use>
-            </svg>
-            <input type="text" placeholder="Enter here..." >
+            <label>Icon input</label>
+            <div class="input-wrap">
+              <div class="icon-wrap">
+                <svg class="icon24">
+                  <use xlink:href="../dist/icons/32.sprite.svg#star"></use>
+                </svg>
+              </div>
+              <input type="text" placeholder="Enter here..." >
+            </div>
+
             <span class="hint">Enter your name. Special characters are allowed</span>
+          </div>
+
+          <div class="form-group">
+            <label>Icon input with remove</label>
+            <div class="input-wrap">
+              <div class="icon-wrap">
+                <svg class="icon24">
+                  <use xlink:href="../dist/icons/24.sprite.svg#instagram"></use>
+                </svg>
+              </div>
+              <input type="text" placeholder="https://instagram.com/insta1323" >
+              <div class="icon-wrap clear">
+                <button class="btn-solid" onclick="clearInput(event);">
+                  <svg class="icon24">
+                    <use xlink:href="../dist/icons/32.sprite.svg#minus"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <span class="hint">Enter your facebook profile</span>
+          </div>
+
+          <div class="form-group">
+            <label>Icon input with remove</label>
+            <div class="input-wrap">
+              <div class="icon-wrap">
+                <svg class="icon24">
+                  <use xlink:href="../dist/icons/24.sprite.svg#facebook"></use>
+                </svg>
+              </div>
+              <input type="text" placeholder="https://facebook.com/facebookname" value="https://facebook.com/123">
+              <div class="icon-wrap clear">
+                <button class="btn-solid" onclick="clearInput(event);">
+                  <svg class="icon24">
+                    <use xlink:href="../dist/icons/32.sprite.svg#minus"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <span class="hint">Enter your facebook profile</span>
+          </div>
+
+          <div class="form-group">
+            <label>Icon input with prefilled info</label>
+            <div class="input-wrap">
+              <div class="icon-wrap">
+                <svg class="icon24">
+                  <use xlink:href="../dist/icons/24.sprite.svg#website"></use>
+                </svg>
+              </div>
+              <span class="prefill">
+                https://infinifty.me/
+              </span>
+              <input type="text" placeholder="placeholder" value="123" >
+            </div>
+
+            <span class="hint">Edit the URL of your NFT Base website</span>
           </div>
 
         </div>
@@ -103,6 +223,68 @@
               </select>
             </div>
             <span class="hint">Choose a category to help define this NFT collection</span>
+          </div>
+
+          <div class="form-group">
+            <label>Blockchain - custom select closed</label>
+            
+            <div class="custom-select">
+              <div class="input-wrap select">
+                <div class="icon-wrap">
+                  <svg class="icon24">
+                    <use xlink:href="../dist/icons/32.sprite.svg#ethereum"></use>
+                  </svg>
+                </div>
+                <input readonly type="text" value="Ethereum" >
+                <div class="icon-wrap">
+                  <svg class="icon">
+                    <use xlink:href="../dist/icons/32.sprite.svg#chevron-down"></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <span class="hint">Your NFTs will be added to this blockchain by default. This cannot be changed later.</span>
+          </div>
+
+          <div class="form-group">
+            <label>Blockchain - custom select open</label>
+            
+            <div class="custom-select">
+              <div class="input-wrap select" onclick="toggle()">
+                <div class="icon-wrap">
+                  <svg class="icon24">
+                    <use xlink:href="../dist/icons/32.sprite.svg#ethereum"></use>
+                  </svg>
+                </div>
+                <input readonly type="text" value="Ethereum" >
+                <div class="icon-wrap">
+                  <svg class="icon">
+                    <use xlink:href="../dist/icons/32.sprite.svg#chevron-down"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="custom-select-options" id="cs-options">
+                <div class="custom-select-option">
+                  <div class="icon-wrap">
+                    <svg class="icon24">
+                      <use xlink:href="../dist/icons/32.sprite.svg#ethereum"></use>
+                    </svg>
+                  </div>
+                  <span>Ethereum</span>
+                </div>
+                <div class="custom-select-option">
+                  <div class="icon-wrap">
+                    <svg class="icon24">
+                      <use xlink:href="../dist/icons/32.sprite.svg#polygon"></use>
+                    </svg>
+                  </div>
+                  <span>Polygon</span>
+                </div>
+              </div>
+            </div>
+
+            <span class="hint">Your NFTs will be added to this blockchain by default. This cannot be changed later.</span>
           </div>
 
         </div>
