@@ -1051,9 +1051,6 @@ span.label-sm {
 .col-no-gutter {
   padding: 0; }
 
-.row .row {
-  margin: -0.8rem; }
-
 .show {
   display: block !important; }
 
@@ -1299,6 +1296,15 @@ button,
   .btn-circle-solid [class^="icon"] {
     fill: #fff; }
 
+.btn-input {
+  border-radius: 0;
+  border: 0;
+  width: 3.6rem;
+  height: 3.6rem; }
+
+.btn-wrap .btn-input {
+  margin: -.1rem; }
+
 @media only screen and (hover: hover) {
   button:hover,
   .btn:hover {
@@ -1323,8 +1329,10 @@ button,
       fill: #000; }
   .btn-circle:hover [class^="icon"] {
     fill: #fff; }
+  .btn-input:hover,
   .btn-circle-solid:hover {
     background: transparent; }
+    .btn-input:hover [class^="icon"],
     .btn-circle-solid:hover [class^="icon"] {
       fill: #000; } }
 
@@ -1386,29 +1394,33 @@ input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focu
 .input-wrap {
   background-color: #EEEEEE;
   border: 1px solid #EEEEEE;
-  height: 4.8rem;
   display: flex;
   align-items: center; }
   .input-wrap:focus-within {
     border-color: #000; }
+  .input-wrap button {
+    margin: 0; }
   .input-wrap .icon-wrap {
-    padding: 1.2rem;
+    padding: 1.1rem;
     flex: 0 0 2.4rem;
     height: 2.4rem; }
+    .input-wrap .icon-wrap .icon32 {
+      margin-top: -.4rem; }
     .input-wrap .icon-wrap button {
-      height: 100%;
-      margin: 0; }
-      .input-wrap .icon-wrap button [class^="icon"] {
-        fill: #EEEEEE; }
-  .input-wrap .clear {
+      height: 100%; }
+    .input-wrap .icon-wrap + input + .btn-wrap {
+      padding-right: .5rem; }
+  .input-wrap .remove {
     display: none; }
   .input-wrap input {
     border: none;
-    height: 3.4rem;
     flex: auto;
-    padding: 0; }
-    .input-wrap input:not(:placeholder-shown) + .clear {
+    padding: 0;
+    height: 3.4rem; }
+    .input-wrap input:not(:placeholder-shown) + .remove {
       display: block; }
+  .input-wrap input:first-child {
+    padding: 0 1.6rem; }
 
 .input-wrap input:focus {
   border: 0; }
@@ -1431,6 +1443,10 @@ input[type="checkbox"], input[type="radio"] {
   max-width: 40rem; }
   .form-group hr {
     margin: 2rem 0 .8rem; }
+
+.form-inline-group {
+  display: flex;
+  gap: .3rem; }
 
 .hint {
   display: block;
@@ -1456,7 +1472,7 @@ select::-ms-expand {
     background: transparent;
     position: relative;
     line-height: 2.8rem; }
-  .select .icon {
+  .select .dropdown {
     position: absolute;
     top: 50%;
     right: 0.8rem;
@@ -1479,9 +1495,11 @@ select::-ms-expand {
   align-items: center;
   cursor: pointer; }
   .custom-select-option .icon-wrap {
-    padding: 1.2rem;
+    padding: 1.1rem;
     flex: 0 0 2.4rem;
     height: 2.4rem; }
+    .custom-select-option .icon-wrap .icon32 {
+      margin-top: -.4rem; }
 
 .upload-area {
   background-color: #EEEEEE;
@@ -1523,7 +1541,7 @@ select::-ms-expand {
   margin: 0 0 1.6rem 0; }
 
 .upload-progress-bar {
-  height: 2px;
+  height: .2rem;
   background: #000;
   display: block; }
 
@@ -1624,6 +1642,29 @@ input:checked + .toggle {
   .custom-select-option:hover {
     background: #F6F6F6; } }
 
+.card {
+  display: block; }
+
+.card-mini-wrap {
+  display: flex;
+  gap: 1.4rem;
+  align-items: stretch;
+  flex-wrap: wrap; }
+  .card-mini-wrap .card-mini {
+    flex: auto; }
+
+.card-mini {
+  display: block;
+  border: 0.1rem solid #000;
+  box-sizing: border-box;
+  padding: 1.6rem;
+  max-width: 23rem;
+  min-width: 19rem; }
+  .card-mini .text-sm {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+
 ul {
   list-style: circle inside; }
 
@@ -1636,21 +1677,19 @@ ul {
   padding-left: 0;
   margin-top: 0; }
   ul ul, ul ol {
-    margin: 1.5rem 0 1.5rem 3rem;
-    font-size: 90%; }
+    margin: 1.5rem 0 1.5rem 3rem; }
 
 ol ol, ol ul {
-  margin: 1.5rem 0 1.5rem 3rem;
-  font-size: 90%; }
+  margin: 1.5rem 0 1.5rem 3rem; }
 
 li {
   margin-bottom: 1rem; }
 
 th,
 td {
-  padding: 12px 15px;
+  padding: 1.2rem 1.6rem;
   text-align: left;
-  border-bottom: 1px solid #E2E2E2; }
+  border-bottom: 0.1rem solid #E2E2E2; }
 
 th:first-child,
 td:first-child {

@@ -118,6 +118,19 @@ button,
   }
 }
 
+.btn-input {
+  border-radius: 0;
+  border: 0;
+  width: 3.6rem;
+  height: 3.6rem;
+}
+
+.btn-wrap {
+  .btn-input {
+    margin: -.1rem;
+  }
+}
+
 
 @media #{$hover-media-query} {
   button:hover,
@@ -160,7 +173,8 @@ button,
       fill: $white;
     }
   }
-
+  
+  .btn-input:hover,
   .btn-circle-solid:hover {
     background: transparent;
 

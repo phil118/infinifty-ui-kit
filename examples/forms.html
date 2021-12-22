@@ -22,6 +22,12 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="../images/favicons/favicon-32x32.png" />
 
+  <style>
+    .row {
+      margin-bottom: 64px!important;
+    }
+  </style>
+
   <script>
 
     var getClosest = function (elem, selector) {
@@ -83,15 +89,22 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-  <div class="row center-xs">
+  <div class="row center-xs" style="margin-top: 80px">
     <div class="col-xs-12 col-md-10 col-no-gutter">
 
-      <h2 class="underline">Form Elements</h2>
-      <button class="btn-inline" onclick="addErrors();">Add Errors</button>
-      <p>Note: for validation states add class 'error' to the 'form-group' element</p>
+      <div class="row">
+        <div class="col-xs-12">
+          <h4 class="underline">Form Elements</h4>
+          <p>Note: for validation states add class 'error' to the 'form-group' element</p>
+        </div>
+      </div>
       
 
-      <div class="row" style="margin-bottom: 0;">
+      <div class="row">
+
+        <div class="col-xs-12">
+          <h4>Text Inputs</h4>
+        </div>
 
         <div class="col-xs-12 col-sm-6">
 
@@ -100,6 +113,9 @@
             <input type="text" placeholder="Enter here..." >
             <span class="hint">Enter your name. Special characters are allowed</span>
           </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-6">
 
           <div class="form-group">
             <label>Icon input</label>
@@ -115,6 +131,9 @@
             <span class="hint">Enter your name. Special characters are allowed</span>
           </div>
 
+        </div>
+        <div class="col-xs-12 col-sm-6">
+
           <div class="form-group">
             <label>Icon input with remove</label>
             <div class="input-wrap">
@@ -124,7 +143,7 @@
                 </svg>
               </div>
               <input type="text" placeholder="https://instagram.com/insta1323" >
-              <div class="icon-wrap clear">
+              <div class="icon-wrap remove">
                 <button class="btn-solid" onclick="clearInput(event);">
                   <svg class="icon24">
                     <use xlink:href="../dist/icons/32.sprite.svg#minus"></use>
@@ -135,6 +154,9 @@
 
             <span class="hint">Enter your facebook profile</span>
           </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-6">
 
           <div class="form-group">
             <label>Icon input with remove</label>
@@ -145,7 +167,7 @@
                 </svg>
               </div>
               <input type="text" placeholder="https://facebook.com/facebookname" value="https://facebook.com/123">
-              <div class="icon-wrap clear">
+              <div class="icon-wrap remove">
                 <button class="btn-solid" onclick="clearInput(event);">
                   <svg class="icon24">
                     <use xlink:href="../dist/icons/32.sprite.svg#minus"></use>
@@ -156,6 +178,9 @@
 
             <span class="hint">Enter your facebook profile</span>
           </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-6">
 
           <div class="form-group">
             <label>Icon input with prefilled info</label>
@@ -176,6 +201,130 @@
 
         </div>
 
+        <div class="col-xs-12 col-sm-6">
+
+          <div class="form-group">
+            <label>Confirm Deletion</label>
+            <div class="input-wrap">
+              <input type="text" placeholder="Enter here..." >
+              <div class="btn-wrap">
+                <button class="btn-solid btn-input">
+                  <svg class="icon16">
+                    <use xlink:href="../dist/icons/16.sprite.svg#trash"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <span class="hint">Type <strong>Monoliths</strong> in the above field and tap the trash button</span>
+          </div>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+
+
+          <div class="form-group">
+            <label>Add a Folder</label>
+            <div class="input-wrap">
+              <div class="icon-wrap">
+                <svg class="icon24">
+                  <use xlink:href="../dist/icons/32.sprite.svg#folder"></use>
+                </svg>
+              </div>
+              <input type="text" placeholder="Folder name..." >
+              <div class="btn-wrap">
+                <button class="btn-solid btn-input">
+                  <svg class="icon">
+                    <use xlink:href="../dist/icons/32.sprite.svg#plus"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <span class="hint">Add a new folder to your storage account.</span>
+          </div>
+
+
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+
+          <div class="form-group">
+            <div class="form-inline-group">
+              <div class="form-inline-group-item">
+                <label>Property</label>
+                <div class="input-wrap">
+                  <input type="text" placeholder="Enter here..." >
+                </div>
+              </div>
+              <div class="form-inline-group-item">
+                <label>Trait</label>
+                <div class="input-wrap">
+                  <input type="text" placeholder="Enter here..." >
+                  <div class="btn-wrap">
+                    <button class="btn-solid btn-input">
+                      <svg class="icon">
+                        <use xlink:href="../dist/icons/32.sprite.svg#plus"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="hint">For example: Property: Eyes, Trait: Brown</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h4>Checkbox</h4>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+
+          <div class="form-group">
+
+            <label class="toogle-wrapper">
+              <span>Explicit or Sensitive Content</span>
+
+              <input type="checkbox">
+              <span class="toggle"></span>
+            </label>
+
+            <hr>
+
+            <span class="hint">Marking your NFT item as explicit or sensitive content will protect users from viewing NSFW, pornographic or triggering content.</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row" >
+        <div class="col-xs-12">
+          <h4>Labels</h4>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+
+          <label>Properties</label>
+          <p class="hint">
+            Create text traits that help describe your NFT item when viewed on marketplaces. For example, you may want to display an author, creative style, or keywords.
+          </p>
+        </div>
+
+
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h4>Validation states</h4>
+        </div>
 
         <div class="col-xs-12 col-sm-6">
 
@@ -185,15 +334,22 @@
             <span class="hint">Your something is invalid, please try again.</span>
           </div>
 
-                    
-          <label>Properties</label>
-          <p class="hint">
-            Create text traits that help describe your NFT item when viewed on marketplaces. For example, you may want to display an author, creative style, or keywords.
-          </p>
-    
         </div>
 
         <div class="col-xs-12 col-sm-6">
+          <button class="btn-inline" onclick="addErrors();">Add Errors</button>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-xs-12">
+          <h4>Text Area</h4>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+      
 
           <div class="form-group">
             <label>Description <span class="count">0 / 1200</span></label>
@@ -203,12 +359,20 @@
 
         </div>
 
+      </div>
+
+      <div class="row">
+
+        <div class="col-xs-12">
+          <h4>Select Lists</h4>
+        </div>
+
         <div class="col-xs-12 col-sm-6">
 
           <div class="form-group">
             <label>Category</label>
             <div class="select">
-              <svg class="icon">
+              <svg class="icon dropdown">
                 <use xlink:href="../dist/icons/32.sprite.svg#chevron-down"></use>
               </svg>
               <select>
@@ -225,27 +389,31 @@
             <span class="hint">Choose a category to help define this NFT collection</span>
           </div>
 
+        </div>
+        <div class="col-xs-12 col-sm-6">
+
           <div class="form-group">
             <label>Blockchain - custom select closed</label>
             
             <div class="custom-select">
               <div class="input-wrap select">
                 <div class="icon-wrap">
-                  <svg class="icon24">
+                  <svg class="icon32">
                     <use xlink:href="../dist/icons/32.sprite.svg#ethereum"></use>
                   </svg>
                 </div>
                 <input readonly type="text" value="Ethereum" >
-                <div class="icon-wrap">
-                  <svg class="icon">
-                    <use xlink:href="../dist/icons/32.sprite.svg#chevron-down"></use>
-                  </svg>
-                </div>
+                <svg class="icon dropdown">
+                  <use xlink:href="../dist/icons/32.sprite.svg#chevron-down"></use>
+                </svg>
               </div>
             </div>
 
             <span class="hint">Your NFTs will be added to this blockchain by default. This cannot be changed later.</span>
           </div>
+        
+        </div>
+        <div class="col-xs-12 col-sm-6">
 
           <div class="form-group">
             <label>Blockchain - custom select open</label>
@@ -253,21 +421,19 @@
             <div class="custom-select">
               <div class="input-wrap select" onclick="toggle()">
                 <div class="icon-wrap">
-                  <svg class="icon24">
+                  <svg class="icon32">
                     <use xlink:href="../dist/icons/32.sprite.svg#ethereum"></use>
                   </svg>
                 </div>
                 <input readonly type="text" value="Ethereum" >
-                <div class="icon-wrap">
-                  <svg class="icon">
-                    <use xlink:href="../dist/icons/32.sprite.svg#chevron-down"></use>
-                  </svg>
-                </div>
+                <svg class="icon dropdown">
+                  <use xlink:href="../dist/icons/32.sprite.svg#chevron-down"></use>
+                </svg>
               </div>
               <div class="custom-select-options" id="cs-options">
                 <div class="custom-select-option">
                   <div class="icon-wrap">
-                    <svg class="icon24">
+                    <svg class="icon32">
                       <use xlink:href="../dist/icons/32.sprite.svg#ethereum"></use>
                     </svg>
                   </div>
@@ -275,7 +441,7 @@
                 </div>
                 <div class="custom-select-option">
                   <div class="icon-wrap">
-                    <svg class="icon24">
+                    <svg class="icon32">
                       <use xlink:href="../dist/icons/32.sprite.svg#polygon"></use>
                     </svg>
                   </div>
@@ -287,6 +453,15 @@
             <span class="hint">Your NFTs will be added to this blockchain by default. This cannot be changed later.</span>
           </div>
 
+        </div>
+
+      </div>
+
+      
+      <div class="row">
+
+        <div class="col-xs-12">
+          <h4>Image Uploads</h4>
         </div>
 
         <div class="col-xs-12 col-sm-6">
@@ -429,26 +604,6 @@
 
         </div>
 
-        <div class="col-xs-12 col-sm-6">
-
-          <div class="form-group">
-
-            <label class="toogle-wrapper">
-              <span>Explicit or Sensitive Content</span>
-
-              <input type="checkbox">
-              <span class="toggle"></span>
-            </label>
-
-            <hr>
-
-            <span class="hint">Marking your NFT item as explicit or sensitive content will protect users from viewing NSFW, pornographic or triggering content.</span>
-
-          </div>
-
-        </div>
-
-          
       </div>
     </div>
   </div>
