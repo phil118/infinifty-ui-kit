@@ -144,7 +144,7 @@
               </div>
               <input type="text" placeholder="https://instagram.com/insta1323" >
               <div class="icon-wrap remove">
-                <button class="btn-solid" onclick="clearInput(event);">
+                <button class="btn-mini" onclick="clearInput(event);">
                   <svg class="icon24">
                     <use xlink:href="../dist/icons/32.sprite.svg#minus"></use>
                   </svg>
@@ -168,7 +168,7 @@
               </div>
               <input type="text" placeholder="https://facebook.com/facebookname" value="https://facebook.com/123">
               <div class="icon-wrap remove">
-                <button class="btn-solid" onclick="clearInput(event);">
+                <button class="btn-mini" onclick="clearInput(event);">
                   <svg class="icon24">
                     <use xlink:href="../dist/icons/32.sprite.svg#minus"></use>
                   </svg>
@@ -605,6 +605,63 @@
         </div>
 
       </div>
+
+
+      <div class="row">
+
+        <div class="col-xs-12">
+          <h4>Radio Boxes</h4>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+
+          <div class="form-group">
+
+            <p class="label-sm">Payment Tokens</p>
+            <p class="hint">Choose which tokens on your chosen blockchain can be used to buy and sell your NFTs</p>
+
+            <div class="card-mini-wrap">
+
+              <label class="card-mini-radio">
+                <input type="radio" value="ETH" name="payment-token" checked/>
+                <div class="card-mini">
+                  <div class="card-inner-left">
+                    <span class="heading-xs">ETH</span>
+                    <span class="text-sm">Ethereum</span>
+                  </div>
+                  <div class="card-inner-right">
+                    <svg class="icon">
+                      <use xlink:href="../dist/icons/32.sprite.svg#ethereum"></use>
+                    </svg>
+                  </div>
+                </div>
+              </label>
+
+              <label class="card-mini-radio">
+                <input type="radio" value="MATIC" name="payment-token"/>
+                <div class="card-mini">
+                  <div class="card-inner-left">
+                    <span class="heading-xs">MATIC</span>
+                    <span class="text-sm">Polygon</span>
+                  </div>
+                  <div class="card-inner-right">
+                    <svg class="icon">
+                      <use xlink:href="../dist/icons/32.sprite.svg#polygon"></use>
+                    </svg>
+                  </div>
+                </div>
+              </label>
+            
+            </div>
+
+
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
   </div>
 

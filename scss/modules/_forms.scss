@@ -77,10 +77,6 @@ input {
     border-color: $black;
   }
 
-  button {
-    margin: 0;
-  }
-
   .icon-wrap {
     padding: 1.1rem;
     flex: 0 0 2.4rem;
@@ -88,10 +84,6 @@ input {
 
     .icon32 {
       margin-top: -.4rem;
-    }
-
-    button {
-      height: 100%;
     }
 
     + input + .btn-wrap {
@@ -156,14 +148,6 @@ input {
 .form-inline-group {
   display: flex;
   gap: .3rem;
-}
-
-.hint {
-  display: block;
-  color: $grey-600;
-  font-weight: 300;
-  margin-top: .8rem;
-  max-width: 40rem;
 }
 
 .count {
@@ -347,6 +331,7 @@ select::-ms-expand {
   border-radius: 1.4rem;
   overflow: hidden;
   transition: all .3s ease;
+  cursor: pointer;
 
   &:before {
     display: block;
@@ -412,14 +397,12 @@ input:checked + .toggle {
 
 @media #{$hover-media-query} {
 
-  .input-wrap .icon-wrap button:hover {
-    [class^="icon"] {
-      fill: $black;
-    }
-  }
-
   .custom-select-option:hover {
     background: $grey-50;
+  }
+
+  .toggle:hover {
+    background: $grey-200;
   }
 
 }

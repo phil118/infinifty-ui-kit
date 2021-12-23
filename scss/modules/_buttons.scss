@@ -131,6 +131,14 @@ button,
   }
 }
 
+.btn-mini {
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: $black;
+  color: $white;
+  margin: 0;
+}
+
 
 @media #{$hover-media-query} {
   button:hover,
@@ -144,9 +152,16 @@ button,
     color: $white;
   }
 
+  .btn-mini:hover,
   .btn-solid:hover {
     background-color: transparent;
     color: $black;
+  }
+
+  .btn-mini:hover {
+    [class^="icon"] {
+      fill: $black;
+    }
   }
 
   .btn-solid-action:hover {
@@ -173,7 +188,7 @@ button,
       fill: $white;
     }
   }
-  
+
   .btn-input:hover,
   .btn-circle-solid:hover {
     background: transparent;

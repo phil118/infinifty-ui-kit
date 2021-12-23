@@ -303,6 +303,12 @@ p,
   letter-spacing: 0;
   margin-bottom: 1.4285714286em; }
 
+.hint {
+  display: block;
+  color: #545454;
+  font-weight: 300;
+  margin-top: .8rem; }
+
 .label-sm {
   font-family: "Inter", sans-serif;
   font-style: normal;
@@ -1305,6 +1311,13 @@ button,
 .btn-wrap .btn-input {
   margin: -.1rem; }
 
+.btn-mini {
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: #000;
+  color: #fff;
+  margin: 0; }
+
 @media only screen and (hover: hover) {
   button:hover,
   .btn:hover {
@@ -1313,9 +1326,12 @@ button,
   .btn-action:hover {
     background-color: #FF0096;
     color: #fff; }
+  .btn-mini:hover,
   .btn-solid:hover {
     background-color: transparent;
     color: #000; }
+  .btn-mini:hover [class^="icon"] {
+    fill: #000; }
   .btn-solid-action:hover {
     background-color: transparent;
     color: #FF0096; }
@@ -1398,16 +1414,12 @@ input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focu
   align-items: center; }
   .input-wrap:focus-within {
     border-color: #000; }
-  .input-wrap button {
-    margin: 0; }
   .input-wrap .icon-wrap {
     padding: 1.1rem;
     flex: 0 0 2.4rem;
     height: 2.4rem; }
     .input-wrap .icon-wrap .icon32 {
       margin-top: -.4rem; }
-    .input-wrap .icon-wrap button {
-      height: 100%; }
     .input-wrap .icon-wrap + input + .btn-wrap {
       padding-right: .5rem; }
   .input-wrap .remove {
@@ -1447,13 +1459,6 @@ input[type="checkbox"], input[type="radio"] {
 .form-inline-group {
   display: flex;
   gap: .3rem; }
-
-.hint {
-  display: block;
-  color: #545454;
-  font-weight: 300;
-  margin-top: .8rem;
-  max-width: 40rem; }
 
 .count {
   float: right;
@@ -1586,7 +1591,8 @@ select::-ms-expand {
   display: inline-block;
   border-radius: 1.4rem;
   overflow: hidden;
-  transition: all .3s ease; }
+  transition: all .3s ease;
+  cursor: pointer; }
   .toggle:before {
     display: block;
     content: "";
@@ -1637,10 +1643,10 @@ input:checked + .toggle {
   fill: #BF0025; }
 
 @media only screen and (hover: hover) {
-  .input-wrap .icon-wrap button:hover [class^="icon"] {
-    fill: #000; }
   .custom-select-option:hover {
-    background: #F6F6F6; } }
+    background: #F6F6F6; }
+  .toggle:hover {
+    background: #E2E2E2; } }
 
 .card {
   display: block; }
@@ -1654,16 +1660,36 @@ input:checked + .toggle {
     flex: auto; }
 
 .card-mini {
-  display: block;
+  display: grid;
+  grid-template-columns: auto 3.2rem;
   border: 0.1rem solid #000;
   box-sizing: border-box;
   padding: 1.6rem;
-  max-width: 23rem;
-  min-width: 19rem; }
+  max-width: 22.8rem;
+  min-width: 19rem;
+  background: #fff; }
+  .card-mini button {
+    float: right; }
+  .card-mini .heading-xs,
   .card-mini .text-sm {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap; }
+
+.card-mini-radio {
+  cursor: pointer; }
+  .card-mini-radio .card-mini {
+    border-color: #E2E2E2;
+    background: transparent; }
+  .card-mini-radio input {
+    display: none; }
+  .card-mini-radio input:checked + .card-mini {
+    border-color: #000;
+    background: #fff; }
+
+@media only screen and (hover: hover) {
+  .card-mini-radio:hover .card-mini {
+    border-color: #000; } }
 
 ul {
   list-style: circle inside; }
