@@ -1,0 +1,63 @@
+.card {
+  display: block;
+}
+
+.card-mini-wrap {
+  display: flex;
+  gap: 1.4rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+
+  .card-mini {
+    flex: auto;
+  }
+}
+
+.card-mini {
+  display: grid;
+  grid-template-columns: auto 3.2rem;
+  border: .1rem solid $black;
+  box-sizing: border-box;
+  padding: 1.6rem;
+  max-width: 22.8rem;
+  min-width: 19rem;
+  background: $white;
+
+  button {
+    float: right;
+  }
+
+  .heading-xs,
+  .text-sm {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.card-mini-radio {
+  cursor: pointer;
+
+  .card-mini {
+    border-color: $grey-200;
+    background: transparent;
+  }
+
+  input {
+    display: none;
+  }
+
+  input:checked + .card-mini {
+    border-color: $black;
+    background: $white;
+  }
+  
+}
+
+@media #{$hover-media-query} {
+  .card-mini-radio:hover {
+    .card-mini {
+      border-color: $black;
+    }
+  }
+}

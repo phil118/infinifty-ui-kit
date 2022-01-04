@@ -139,10 +139,6 @@ input {
   padding-right: 3.2rem;
   margin-bottom: 3.2rem;
   max-width: 40rem;
-
-  hr {
-    margin: 2rem 0 .8rem;
-  }
 }
 
 .form-inline-group {
@@ -311,6 +307,10 @@ select::-ms-expand {
   display: flex;
   align-items: center;
   margin: 0;
+
+  + hr {
+    margin: 2rem 0 .8rem;
+  }
 
   > span:first-child {
     flex: auto;

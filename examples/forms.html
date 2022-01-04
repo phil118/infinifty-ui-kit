@@ -65,6 +65,42 @@
       }
     }
 
+    function remove(event) {
+      var parent = getClosest(event.target, '.card-mini');
+      parent.remove();
+    }
+
+    function addProperty() {
+
+      var property = document.getElementById("property");
+      var trait = document.getElementById("trait");
+
+      if (property.value !== "" && trait.value !== "") {
+
+        var properties = document.getElementById("properties");
+        
+        var html = '<div class="card-mini">' +
+                '<div class="card-inner-left">' +
+                  '<span class="heading-xs">' + property.value + '</span>' +
+                  '<span class="text-sm">' + trait.value + '</span>' +
+                '</div>' +
+                '<div class="card-inner-right">' +
+                  '<button class="btn-mini" onclick="remove(event);">' +
+                    '<svg class="icon24">' +
+                      '<use xlink:href="../dist/icons/32.sprite.svg#minus"></use>' +
+                    '</svg>' +
+                  '</button>' +
+                '</div>' +
+              '</div>';
+
+        properties.insertAdjacentHTML('beforeend', html);
+
+        property.value = "";
+        trait.value = "";
+      }
+
+    }
+
     function clearInput(event) {
       var parent = getClosest(event.target, '.input-wrap');
       var input = parent.getElementsByTagName('input')[0];
@@ -77,7 +113,6 @@
         inputs[i].classList.add("error");
 
       }
-
     }
   </script>
 
@@ -253,15 +288,15 @@
               <div class="form-inline-group-item">
                 <label>Property</label>
                 <div class="input-wrap">
-                  <input type="text" placeholder="Enter here..." >
+                  <input type="text" placeholder="Enter here..." id="property">
                 </div>
               </div>
               <div class="form-inline-group-item">
                 <label>Trait</label>
                 <div class="input-wrap">
-                  <input type="text" placeholder="Enter here..." >
+                  <input type="text" placeholder="Enter here..." id="trait" >
                   <div class="btn-wrap">
-                    <button class="btn-solid btn-input">
+                    <button class="btn-solid btn-input" onclick="addProperty()">
                       <svg class="icon">
                         <use xlink:href="../dist/icons/32.sprite.svg#plus"></use>
                       </svg>
@@ -271,6 +306,45 @@
               </div>
             </div>
             <span class="hint">For example: Property: Eyes, Trait: Brown</span>
+          </div>
+
+          <div class="card-mini-wrap" id="properties">
+
+            <div class="card-mini">
+              <div class="card-inner-left">
+                <span class="heading-xs">Created With</span>
+                <span class="text-sm">Infinifty</span>
+              </div>
+            </div>
+
+            <div class="card-mini">
+              <div class="card-inner-left">
+                <span class="heading-xs">Creator</span>
+                <span class="text-sm">Tim Jarvis</span>
+              </div>
+              <div class="card-inner-right">
+                <button class="btn-mini" onclick="remove(event);">
+                  <svg class="icon24">
+                    <use xlink:href="../dist/icons/32.sprite.svg#minus"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="card-mini">
+              <div class="card-inner-left">
+                <span class="heading-xs">Eyes</span>
+                <span class="text-sm">Brown</span>
+              </div>
+              <div class="card-inner-right">
+                <button class="btn-mini" onclick="remove(event);">
+                  <svg class="icon24">
+                    <use xlink:href="../dist/icons/32.sprite.svg#minus"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
           </div>
 
         </div>

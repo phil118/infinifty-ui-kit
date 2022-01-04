@@ -4,14 +4,14 @@
 [x] - Icons
 [x] - Buttons / inline / single icon button
 [x] - Badges
-[] - Inputs / icon input / pre-filled
+[x] - Inputs / icon input / pre-filled
 [x] - Image upload
 [] - Noticebar
 [] - Radio buttons
 [x] - Toggle switches
 [] - Sliders
 [] - Colour selector 
-[] - Dropdown / icon Dropdown
+[x] - Dropdown / icon Dropdown
 [] - Selectable images
 [] - Selectable list items
 [] - Cards small and image based

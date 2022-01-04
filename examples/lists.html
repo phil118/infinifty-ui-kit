@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Infinifty UI Kit</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../dist/css/infinifty.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../images/favicons/favicon-32x32.png" />
+
+  <style>
+    .row {
+      margin-bottom: 64px!important;
+    }
+  </style>
+
+  <script>
+
+    var getClosest = function (elem, selector) {
+
+      // Element.matches() polyfill
+      if (!Element.prototype.matches) {
+          Element.prototype.matches =
+              Element.prototype.matchesSelector ||
+              Element.prototype.mozMatchesSelector ||
+              Element.prototype.msMatchesSelector ||
+              Element.prototype.oMatchesSelector ||
+              Element.prototype.webkitMatchesSelector ||
+              function(s) {
+                  var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+                      i = matches.length;
+                  while (--i >= 0 && matches.item(i) !== this) {}
+                  return i > -1;
+              };
+      }
+
+      // Get the closest matching element
+      for ( ; elem && elem !== document; elem = elem.parentNode ) {
+        if ( elem.matches( selector ) ) return elem;
+      }
+      return null;
+
+    };
+
+    function remove(event) {
+      var parent = getClosest(event.target, '.folder');
+      parent.remove();
+    }
+
+    function addFolder() {
+
+      var name = document.getElementById('foldername');
+
+      if(name.value != "") {
+
+        var folders = document.getElementById('folders');
+
+        var html = '<li class="folder">' +
+                  '<div class="icon-wrap">' +
+                    '<svg class="icon">' +
+                      '<use xlink:href="../dist/icons/32.sprite.svg#folder"></use>' +
+                    '</svg>' +
+                  '</div>' +
+                  '<label>' + name.value + '</label>' +
+                  '<div class="icon-wrap remove">' +
+                    '<button class="btn-mini" onclick="remove(event)">' +
+                      '<svg class="icon24">' +
+                        '<use xlink:href="../dist/icons/32.sprite.svg#minus"></use>' +
+                      '</svg>' +
+                    '</button>' +
+                  '</div>' +
+              '</li>';
+
+          folders.insertAdjacentHTML('beforeend', html);
+
+          name.value = "";
+      }
+
+    }
+
+  </script>
+
+
+</head>
+
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <div class="row center-xs" style="margin-top: 80px">
+    <div class="col-xs-12 col-md-10 col-no-gutter">
+
+      <div class="row">
+
+        <div class="col-xs-12">
+          <h4>Folder Lists</h4>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+
+          <div class="form-group">
+
+            <h6>Folders</h6>
+            <hr>
+            <p>Any folders you have added are listed below. Removing a folder that contains files will place all files on the root of your storage area, but will not delete any files.</p>
+
+            <ul class="folder-list">
+              <li class="folder disabled" id="placeholder">
+                <div class="icon-wrap">
+                  <svg class="icon">
+                    <use xlink:href="../dist/icons/32.sprite.svg#folder"></use>
+                  </svg>
+                </div>
+                <label>
+                  No Folders Yet
+                </label>
+              </li>
+              <li class="folder">
+                <div class="icon-wrap">
+                  <svg class="icon">
+                    <use xlink:href="../dist/icons/32.sprite.svg#folder"></use>
+                  </svg>
+                </div>
+                <label>
+                  Assets
+                </label>
+                <div class="icon-wrap remove">
+                  <button class="btn-mini" onclick="remove(event)">
+                    <svg class="icon24">
+                      <use xlink:href="../dist/icons/32.sprite.svg#minus"></use>
+                    </svg>
+                  </button>
+                </div>
+              </li>
+              <li class="folder">
+                <div class="icon-wrap">
+                  <svg class="icon">
+                    <use xlink:href="../dist/icons/32.sprite.svg#folder"></use>
+                  </svg>
+                </div>
+                <label>
+                  Finals
+                </label>
+                <div class="icon-wrap remove">
+                  <button class="btn-mini" onclick="remove(event)">
+                    <svg class="icon24">
+                      <use xlink:href="../dist/icons/32.sprite.svg#minus"></use>
+                    </svg>
+                  </button>
+                </div>
+              </li>
+              <li class="folder">
+                <div class="icon-wrap">
+                  <svg class="icon">
+                    <use xlink:href="../dist/icons/32.sprite.svg#folder"></use>
+                  </svg>
+                </div>
+                <label>
+                  Mockups
+                </label>
+                <div class="icon-wrap remove">
+                  <button class="btn-mini" onclick="remove(event)">
+                    <svg class="icon24">
+                      <use xlink:href="../dist/icons/32.sprite.svg#minus"></use>
+                    </svg>
+                  </button>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+
+          <div class="form-group">
+            <h6>Folders</h6>
+            <hr>
+            <p>Any folders you have added are listed below. Removing a folder that contains files will place all files on the root of your storage area, but will not delete any files.</p>
+
+            <ul class="folder-list" id="folders">
+              <li class="folder disabled" id="placeholder">
+                <div class="icon-wrap">
+                  <svg class="icon">
+                    <use xlink:href="../dist/icons/32.sprite.svg#folder"></use>
+                  </svg>
+                </div>
+                <label>
+                  No Folders Yet
+                </label>
+              </li>
+            </ul>
+
+            <label>Add a Folder</label>
+            <div class="input-wrap">
+              <div class="icon-wrap">
+                <svg class="icon24">
+                  <use xlink:href="../dist/icons/32.sprite.svg#folder"></use>
+                </svg>
+              </div>
+              <input type="text" placeholder="Folder name..." id="foldername">
+              <div class="btn-wrap">
+                <button class="btn-solid btn-input" onclick="addFolder()">
+                  <svg class="icon">
+                    <use xlink:href="../dist/icons/32.sprite.svg#plus"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <span class="hint">Add a new folder to your storage account.</span>
+          </div>
+
+        </div>
+
+        <div class="col-xs-12 ">
+          <h4>Asset List</h4>
+        </div>
+
+        <div class="col-xs-12 ">
+
+          <table class="asset-list">
+            <tbody>
+              <tr class="asset-list-heading">
+                <th class="asset-icon"></th>
+                <th class="asset-name">
+                  Filename
+                </th>
+                <th class="asset-size">
+                  Size
+                </th>
+                <th class="asset-folder">
+                  Folder
+                </th>
+                <th class="asset-action">
+                  <button class="btn-inline">
+                    Delete
+                  </button>
+                </th>
+              </tr>
+              <tr class="asset">
+                <td class="asset-icon">
+          
+                </td>
+                <td class="asset-name">
+                  Background_01.jpg
+                </td>
+                <td class="asset-size">
+                  1.3Mb
+                </td>
+                <td class="asset-folder">
+                  Assets
+                </td>
+                <td class="asset-action">
+                  <label class="checkbox">
+                    <input type="checkbox" >
+                  </label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>

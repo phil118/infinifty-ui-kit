@@ -28,3 +28,72 @@ ol {
 li {
   margin-bottom: 1rem;
 }
+
+
+.folder-list {
+  border: 1px solid $grey-200;
+  margin: 2.8rem 0 4.4rem;
+  position: relative;
+  min-height: 8rem;
+
+  .folder:last-child {
+    border-bottom: none;
+  }
+}
+
+.folder {
+  border-bottom: 1px solid $grey-200;
+  display: flex;
+  align-items: center;
+  height: 8rem;
+  margin: 0;
+  background: $white;
+
+  label {
+    flex: auto;
+    margin: 0;
+  }
+
+  .icon-wrap {
+    padding: 2.4rem;
+  }
+
+  .remove {
+    padding: 1.1rem;
+    flex: 0 0 2.4rem;
+    height: 2.4rem;
+
+    button {
+      margin: 0;
+    }
+  }
+
+  &.disabled {
+    color: $grey-200;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+
+    .icon {
+      fill: $grey-200;
+    }
+  }
+}
+
+.asset-list {
+  width: 100%;
+}
+
+.asset-list-heading,
+.asset {
+  min-height: 8rem;
+
+}
+
+.asset-icon {
+  border: none;
+}
+
+.asset-action {
+  text-align: right;
+}

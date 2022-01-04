@@ -200,7 +200,7 @@ a {
     color: #FF0096; }
 
 hr {
-  margin: 4.5rem auto;
+  margin: 1.2rem auto;
   border-width: 0;
   border-top: 1px solid #E2E2E2; }
 
@@ -1453,8 +1453,6 @@ input[type="checkbox"], input[type="radio"] {
   padding-right: 3.2rem;
   margin-bottom: 3.2rem;
   max-width: 40rem; }
-  .form-group hr {
-    margin: 2rem 0 .8rem; }
 
 .form-inline-group {
   display: flex;
@@ -1577,6 +1575,8 @@ select::-ms-expand {
   display: flex;
   align-items: center;
   margin: 0; }
+  .toogle-wrapper + hr {
+    margin: 2rem 0 .8rem; }
   .toogle-wrapper > span:first-child {
     flex: auto; }
   .toogle-wrapper input {
@@ -1710,6 +1710,53 @@ ol ol, ol ul {
 
 li {
   margin-bottom: 1rem; }
+
+.folder-list {
+  border: 1px solid #E2E2E2;
+  margin: 2.8rem 0 4.4rem;
+  position: relative;
+  min-height: 8rem; }
+  .folder-list .folder:last-child {
+    border-bottom: none; }
+
+.folder {
+  border-bottom: 1px solid #E2E2E2;
+  display: flex;
+  align-items: center;
+  height: 8rem;
+  margin: 0;
+  background: #fff; }
+  .folder label {
+    flex: auto;
+    margin: 0; }
+  .folder .icon-wrap {
+    padding: 2.4rem; }
+  .folder .remove {
+    padding: 1.1rem;
+    flex: 0 0 2.4rem;
+    height: 2.4rem; }
+    .folder .remove button {
+      margin: 0; }
+  .folder.disabled {
+    color: #E2E2E2;
+    position: absolute;
+    width: 100%;
+    z-index: -1; }
+    .folder.disabled .icon {
+      fill: #E2E2E2; }
+
+.asset-list {
+  width: 100%; }
+
+.asset-list-heading,
+.asset {
+  min-height: 8rem; }
+
+.asset-icon {
+  border: none; }
+
+.asset-action {
+  text-align: right; }
 
 th,
 td {
