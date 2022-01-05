@@ -161,6 +161,23 @@ li {
   background: $grey-50;
 }
 
+dl {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-columns: min-content;
+  grid-gap: .8rem 3.2rem;
+  margin-bottom: 2.4rem;
+
+  dt {
+   font-weight: 300; 
+  }
+
+  dd {
+    grid-row: 2;
+    margin: 0;
+  }
+}
+
 // @media all and (hover: hover) {
 //   .asset-wrap:hover .asset {
 //     background: $grey-50;
