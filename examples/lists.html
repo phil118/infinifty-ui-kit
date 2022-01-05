@@ -22,12 +22,6 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="../images/favicons/favicon-32x32.png" />
 
-  <style>
-    .row {
-      margin-bottom: 64px!important;
-    }
-  </style>
-
   <script>
 
     var getClosest = function (elem, selector) {
@@ -91,6 +85,11 @@
       }
 
     }
+
+  function toggleClass(e) { 
+    var wrap = getClosest(event.target, '.asset-wrap'); 
+    wrap.classList.toggle("open");
+  }
 
   </script>
 
@@ -233,46 +232,469 @@
 
         <div class="col-xs-12 ">
 
-          <table class="asset-list">
-            <tbody>
-              <tr class="asset-list-heading">
-                <th class="asset-icon"></th>
-                <th class="asset-name">
+          <ul class="asset-list">
+
+              <li class="asset">
+                <div class="asset-icon"></div>
+                <div class="asset-name">
                   Filename
-                </th>
-                <th class="asset-size">
+                </div>
+                <div class="asset-size">
                   Size
-                </th>
-                <th class="asset-folder">
+                </div>
+                <div class="asset-folder">
                   Folder
-                </th>
-                <th class="asset-action">
-                  <button class="btn-inline">
+                </div>
+                <div class="asset-action">
+                  <button class="btn-inline" onclick="confirm('delete selected items')">
                     Delete
                   </button>
-                </th>
-              </tr>
-              <tr class="asset">
-                <td class="asset-icon">
-          
-                </td>
-                <td class="asset-name">
-                  Background_01.jpg
-                </td>
-                <td class="asset-size">
-                  1.3Mb
-                </td>
-                <td class="asset-folder">
-                  Assets
-                </td>
-                <td class="asset-action">
-                  <label class="checkbox">
-                    <input type="checkbox" >
-                  </label>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                </div>
+              </li>
+
+              <li class="asset-wrap open" >
+
+                <div class="asset" onclick="toggleClass(event)">
+       
+                  <div class="asset-icon">
+                    <div class="img-wrap">
+                      <img src="https://static.fabrik.io/l2e/d0b96b79b6207401.jpg?lossless=1&w=2880&h=5120&fit=max&s=2bafc99ec11e14a0bd675f355e484615" />
+                    </div>
+                  </div>
+
+                  <div class="asset-name">
+                    Background_01.jpg
+                  </div>
+
+                  <div class="asset-size">
+                    1.3Mb
+                  </div>
+
+                  <div class="asset-folder">
+                    Assets
+                  </div>
+
+                  <div class="asset-action">
+                    <label class="checkbox">
+                      <input type="checkbox">
+                      <svg class="icon24">
+                        <use xlink:href="../dist/icons/32.sprite.svg#check"></use>
+                      </svg>
+                    </label>
+                  </div>
+                </div>
+       
+                <div class="asset-details-wrap">
+
+                  <div class="asset-details">
+
+                    <form>
+
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+
+                          <div class="form-group">
+                            <label>Filename</label>
+                            <input type="text" placeholder="Enter here..." value="Background_01.jpg">
+                            <span class="hint">Special characters are allowed.</span>
+                          </div>
+                
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6">
+
+                          <div class="form-group">
+                            <label>Folder</label>
+                            <div class="select">
+                              <svg class="icon dropdown">
+                                <use xlink:href="../dist/icons/32.sprite.svg#chevron-down"></use>
+                              </svg>
+                              <select>
+                                <option selected>Assets</option>
+                                <option>Finals</option>
+                                <option>Mockups</option>
+                              </select>
+                            </div>
+                            <span class="hint">Choose which folder this file is located within.</span>
+                          </div>
+                
+                        </div>
+
+                        <div class="col-xs-12">
+
+                          <button class="btn-solid">
+                            <i class="circle">
+                              <svg class="icon">
+                                <use xlink:href="../dist/icons/32.sprite.svg#check"></use>
+                              </svg>
+                            </i>
+                            Update
+                          </button>
+
+                        </div>
+
+                      </div>  
+
+                    </form>
+                </div>
+                </div>
+              </li>
+
+              <li class="asset-wrap" >
+
+                <div class="asset" onclick="toggleClass(event)">
+       
+                  <div class="asset-icon">
+                    <div class="img-wrap">
+                      <img src="https://static.fabrik.io/l2e/d0b96b79b6207401.jpg?lossless=1&w=2880&h=5120&fit=max&s=2bafc99ec11e14a0bd675f355e484615" />
+                    </div>
+                  </div>
+
+                  <div class="asset-name">
+                    Background_02.jpg
+                  </div>
+
+                  <div class="asset-size">
+                    1.3Mb
+                  </div>
+
+                  <div class="asset-folder">
+                    Assets
+                  </div>
+
+                  <div class="asset-action">
+                    <label class="checkbox">
+                      <input type="checkbox">
+                      <svg class="icon24">
+                        <use xlink:href="../dist/icons/32.sprite.svg#check"></use>
+                      </svg>
+                    </label>
+                  </div>
+                </div>
+       
+                <div class="asset-details-wrap">
+
+                  <div class="asset-details">
+
+                    <form>
+
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+
+                          <div class="form-group">
+                            <label>Filename</label>
+                            <input type="text" placeholder="Enter here..." value="Background_02.jpg">
+                            <span class="hint">Special characters are allowed.</span>
+                          </div>
+                
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6">
+
+                          <div class="form-group">
+                            <label>Folder</label>
+                            <div class="select">
+                              <svg class="icon dropdown">
+                                <use xlink:href="../dist/icons/32.sprite.svg#chevron-down"></use>
+                              </svg>
+                              <select>
+                                <option selected>Assets</option>
+                                <option>Finals</option>
+                                <option>Mockups</option>
+                              </select>
+                            </div>
+                            <span class="hint">Choose which folder this file is located within.</span>
+                          </div>
+                
+                        </div>
+
+                        <div class="col-xs-12">
+
+                          <button class="btn-solid">
+                            <i class="circle">
+                              <svg class="icon">
+                                <use xlink:href="../dist/icons/32.sprite.svg#check"></use>
+                              </svg>
+                            </i>
+                            Update
+                          </button>
+
+                        </div>
+
+                      </div>  
+
+                    </form>
+                </div>
+                </div>
+              </li>
+
+              <li class="asset-wrap" >
+
+                <div class="asset" onclick="toggleClass(event)">
+       
+                  <div class="asset-icon">
+                    <div class="img-wrap">
+                      <img src="https://static.fabrik.io/l2e/d0b96b79b6207401.jpg?lossless=1&w=2880&h=5120&fit=max&s=2bafc99ec11e14a0bd675f355e484615" />
+                    </div>
+                  </div>
+
+                  <div class="asset-name">
+                    Background_03.jpg
+                  </div>
+
+                  <div class="asset-size">
+                    1.3Mb
+                  </div>
+
+                  <div class="asset-folder">
+                    Assets
+                  </div>
+
+                  <div class="asset-action">
+                    <label class="checkbox">
+                      <input type="checkbox">
+                      <svg class="icon24">
+                        <use xlink:href="../dist/icons/32.sprite.svg#check"></use>
+                      </svg>
+                    </label>
+                  </div>
+                </div>
+       
+                <div class="asset-details-wrap">
+
+                  <div class="asset-details">
+
+                    <form>
+
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+
+                          <div class="form-group">
+                            <label>Filename</label>
+                            <input type="text" placeholder="Enter here..." value="Background_03.jpg">
+                            <span class="hint">Special characters are allowed.</span>
+                          </div>
+                
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6">
+
+                          <div class="form-group">
+                            <label>Folder</label>
+                            <div class="select">
+                              <svg class="icon dropdown">
+                                <use xlink:href="../dist/icons/32.sprite.svg#chevron-down"></use>
+                              </svg>
+                              <select>
+                                <option selected>Assets</option>
+                                <option>Finals</option>
+                                <option>Mockups</option>
+                              </select>
+                            </div>
+                            <span class="hint">Choose which folder this file is located within.</span>
+                          </div>
+                
+                        </div>
+
+                        <div class="col-xs-12">
+
+                          <button class="btn-solid">
+                            <i class="circle">
+                              <svg class="icon">
+                                <use xlink:href="../dist/icons/32.sprite.svg#check"></use>
+                              </svg>
+                            </i>
+                            Update
+                          </button>
+
+                        </div>
+
+                      </div>  
+
+                    </form>
+                </div>
+                </div>
+              </li>
+
+              <li class="asset-wrap" >
+
+                <div class="asset" onclick="toggleClass(event)">
+       
+                  <div class="asset-icon">
+                    <div class="img-wrap">
+                      <img src="https://static.fabrik.io/l2e/d0b96b79b6207401.jpg?lossless=1&w=2880&h=5120&fit=max&s=2bafc99ec11e14a0bd675f355e484615" />
+                    </div>
+                  </div>
+
+                  <div class="asset-name">
+                    Background_04.jpg
+                  </div>
+
+                  <div class="asset-size">
+                    1.3Mb
+                  </div>
+
+                  <div class="asset-folder">
+                    Assets
+                  </div>
+
+                  <div class="asset-action">
+                    <label class="checkbox">
+                      <input type="checkbox">
+                      <svg class="icon24">
+                        <use xlink:href="../dist/icons/32.sprite.svg#check"></use>
+                      </svg>
+                    </label>
+                  </div>
+                </div>
+       
+                <div class="asset-details-wrap">
+
+                  <div class="asset-details">
+
+                    <form>
+
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+
+                          <div class="form-group">
+                            <label>Filename</label>
+                            <input type="text" placeholder="Enter here..." value="Background_04.jpg">
+                            <span class="hint">Special characters are allowed.</span>
+                          </div>
+                
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6">
+
+                          <div class="form-group">
+                            <label>Folder</label>
+                            <div class="select">
+                              <svg class="icon dropdown">
+                                <use xlink:href="../dist/icons/32.sprite.svg#chevron-down"></use>
+                              </svg>
+                              <select>
+                                <option selected>Assets</option>
+                                <option>Finals</option>
+                                <option>Mockups</option>
+                              </select>
+                            </div>
+                            <span class="hint">Choose which folder this file is located within.</span>
+                          </div>
+                
+                        </div>
+
+                        <div class="col-xs-12">
+
+                          <button class="btn-solid">
+                            <i class="circle">
+                              <svg class="icon">
+                                <use xlink:href="../dist/icons/32.sprite.svg#check"></use>
+                              </svg>
+                            </i>
+                            Update
+                          </button>
+
+                        </div>
+
+                      </div>  
+
+                    </form>
+                </div>
+                </div>
+              </li>
+
+              <li class="asset-wrap" >
+
+                <div class="asset" onclick="toggleClass(event)">
+       
+                  <div class="asset-icon">
+                    <div class="img-wrap">
+                      <img src="https://static.fabrik.io/l2e/d0b96b79b6207401.jpg?lossless=1&w=2880&h=5120&fit=max&s=2bafc99ec11e14a0bd675f355e484615" />
+                    </div>
+                  </div>
+
+                  <div class="asset-name">
+                    Background_05.jpg
+                  </div>
+
+                  <div class="asset-size">
+                    1.3Mb
+                  </div>
+
+                  <div class="asset-folder">
+                    Assets
+                  </div>
+
+                  <div class="asset-action">
+                    <label class="checkbox">
+                      <input type="checkbox">
+                      <svg class="icon24">
+                        <use xlink:href="../dist/icons/32.sprite.svg#check"></use>
+                      </svg>
+                    </label>
+                  </div>
+                </div>
+       
+                <div class="asset-details-wrap">
+
+                  <div class="asset-details">
+
+                    <form>
+
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+
+                          <div class="form-group">
+                            <label>Filename</label>
+                            <input type="text" placeholder="Enter here..." value="Background_06.jpg">
+                            <span class="hint">Special characters are allowed.</span>
+                          </div>
+                
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6">
+
+                          <div class="form-group">
+                            <label>Folder</label>
+                            <div class="select">
+                              <svg class="icon dropdown">
+                                <use xlink:href="../dist/icons/32.sprite.svg#chevron-down"></use>
+                              </svg>
+                              <select>
+                                <option selected>Assets</option>
+                                <option>Finals</option>
+                                <option>Mockups</option>
+                              </select>
+                            </div>
+                            <span class="hint">Choose which folder this file is located within.</span>
+                          </div>
+                
+                        </div>
+
+                        <div class="col-xs-12">
+
+                          <button class="btn-solid">
+                            <i class="circle">
+                              <svg class="icon">
+                                <use xlink:href="../dist/icons/32.sprite.svg#check"></use>
+                              </svg>
+                            </i>
+                            Update
+                          </button>
+
+                        </div>
+
+                      </div>  
+
+                    </form>
+                </div>
+                </div>
+              </li>
+
+              
+  
+            </ul>
 
         </div>
 

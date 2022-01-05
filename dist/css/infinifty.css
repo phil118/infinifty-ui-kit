@@ -1613,6 +1613,31 @@ input:checked + .toggle {
     -ms-transform: translateX(2.4rem);
     transform: translateX(2.4rem); }
 
+.checkbox {
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+  vertical-align: bottom; }
+  .checkbox svg {
+    background: none;
+    border-radius: 100%;
+    fill: white;
+    border: 1px solid #000;
+    box-sizing: border-box; }
+  .checkbox use {
+    display: none; }
+  .checkbox input {
+    display: none; }
+    .checkbox input:checked + svg {
+      background: #000; }
+      .checkbox input:checked + svg use {
+        display: block; }
+  .checkbox.highlight svg {
+    border-color: #fff; }
+  .checkbox.highlight input:checked + svg {
+    background: #00BF00;
+    border-color: #00BF00; }
+
 .error input[type='email'],
 .error input[type='number'],
 .error input[type='search'],
@@ -1748,15 +1773,63 @@ li {
 .asset-list {
   width: 100%; }
 
-.asset-list-heading,
+.asset-wrap {
+  display: grid;
+  grid-template-columns: 8rem auto;
+  grid-template-rows: 8rem auto;
+  cursor: pointer;
+  margin: 0; }
+  .asset-wrap.open .asset-details-wrap {
+    max-height: 50rem; }
+
 .asset {
-  min-height: 8rem; }
+  font-weight: 500;
+  display: grid;
+  grid-template-columns: 8rem 2fr 1fr 1fr 7rem;
+  grid-template-rows: 8rem;
+  grid-column: 1 / span 2;
+  margin: 0;
+  align-items: center; }
+  .asset:after {
+    display: block;
+    content: "";
+    grid-column: 2 / span 4;
+    border-bottom: 1px solid #E2E2E2;
+    position: relative; }
+
+.asset-name {
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 .asset-icon {
-  border: none; }
+  padding: 1.6rem;
+  align-self: stretch; }
+  .asset-icon .img-wrap {
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 100%;
+    overflow: hidden; }
+    .asset-icon .img-wrap img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%; }
 
 .asset-action {
   text-align: right; }
+  .asset-action .checkbox {
+    display: inline-block;
+    margin: 0 1.6rem; }
+
+.asset-details-wrap {
+  grid-column: 2;
+  grid-row: 2;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease; }
+
+.asset-details {
+  padding: 3.7rem;
+  background: #F6F6F6; }
 
 th,
 td {

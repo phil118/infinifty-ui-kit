@@ -359,6 +359,49 @@ input:checked + .toggle {
 
 }
 
+.checkbox {
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+  vertical-align: bottom;
+  
+  svg {
+    background: none;
+    border-radius: 100%;
+    fill: white;
+    border: 1px solid $black;
+    box-sizing: border-box;
+  }
+
+  use {
+    display: none;
+  }
+
+  input {
+    display: none;
+
+    &:checked + svg {
+      background: $black;
+
+      use {
+        display: block;
+      }
+    }
+  }
+
+  &.highlight {
+    svg {
+      border-color: $white;
+    }
+
+    input:checked + svg {
+      background: $green-500;
+      border-color: $green-500;
+    }
+  }
+
+}
+
 .error {
   input[type='email'],
   input[type='number'],
