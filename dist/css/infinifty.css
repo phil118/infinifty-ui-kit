@@ -194,10 +194,17 @@ body {
   letter-spacing: 0;
   color: #000; }
 
+img {
+  vertical-align: bottom; }
+
 a {
   color: inherit; }
   a:hover {
     color: #FF0096; }
+
+p a {
+  text-decoration: none;
+  font-weight: 600; }
 
 hr {
   margin: 1.2rem auto;
@@ -1207,6 +1214,9 @@ span.label-sm {
   width: 1.6rem;
   height: 1.6rem; }
 
+.logo {
+  max-width: 7.4rem; }
+
 button,
 .btn {
   border: 1px solid #000;
@@ -1674,7 +1684,34 @@ input:checked + .toggle {
     background: #E2E2E2; } }
 
 .card {
-  display: block; }
+  display: block;
+  box-sizing: border-box;
+  padding: 1.6rem;
+  background: #fff; }
+  .card img {
+    max-width: 100%; }
+  .card.dark {
+    background: #000;
+    color: white; }
+  .card .heading-xs {
+    margin: 0; }
+  .card .card-head {
+    margin-bottom: 2rem; }
+
+.card-image {
+  margin-bottom: 1.6rem; }
+
+.card-head {
+  display: grid;
+  grid-template-columns: auto 3.2rem; }
+  .card-head button {
+    float: right; }
+  .card-head .heading-xs,
+  .card-head .label-sm,
+  .card-head .text-sm {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
 
 .card-mini-wrap {
   display: flex;
@@ -1685,21 +1722,14 @@ input:checked + .toggle {
     flex: auto; }
 
 .card-mini {
-  display: grid;
-  grid-template-columns: auto 3.2rem;
   border: 0.1rem solid #000;
   box-sizing: border-box;
   padding: 1.6rem;
   max-width: 22.8rem;
   min-width: 19rem;
   background: #fff; }
-  .card-mini button {
-    float: right; }
-  .card-mini .heading-xs,
-  .card-mini .text-sm {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap; }
+  .card-mini .card-head {
+    margin-bottom: 1.2rem; }
 
 .card-mini-radio {
   cursor: pointer; }
@@ -1735,6 +1765,15 @@ ol ol, ol ul {
 
 li {
   margin-bottom: 1rem; }
+
+.inline-list {
+  display: flex;
+  list-style: none;
+  gap: 1.6rem; }
+  .inline-list li {
+    margin: 0; }
+    .inline-list li .btn {
+      margin: 0; }
 
 .folder-list {
   border: 1px solid #E2E2E2;
@@ -1856,3 +1895,13 @@ td:first-child {
 th:last-child,
 td:last-child {
   padding-right: 0; }
+
+.hash-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; }
+  .hash-bg path {
+    fill: #FF0096; }

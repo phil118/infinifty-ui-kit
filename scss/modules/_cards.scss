@@ -1,5 +1,47 @@
 .card {
   display: block;
+  box-sizing: border-box;
+  padding: 1.6rem;
+  background: $white;
+
+  img {
+    max-width: 100%;
+  }
+
+  &.dark {
+    background: $black;
+    color: white;
+  }
+
+  .heading-xs {
+    margin: 0;
+  }
+
+  .card-head {
+    margin-bottom: 2rem;
+  }
+}
+
+.card-image {
+  margin-bottom: 1.6rem;
+}
+
+.card-head {
+  display: grid;
+  grid-template-columns: auto 3.2rem;
+
+  button {
+    float: right;
+  }
+
+  .heading-xs,
+  .label-sm,
+  .text-sm {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
 }
 
 .card-mini-wrap {
@@ -14,8 +56,6 @@
 }
 
 .card-mini {
-  display: grid;
-  grid-template-columns: auto 3.2rem;
   border: .1rem solid $black;
   box-sizing: border-box;
   padding: 1.6rem;
@@ -23,15 +63,8 @@
   min-width: 19rem;
   background: $white;
 
-  button {
-    float: right;
-  }
-
-  .heading-xs,
-  .text-sm {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  .card-head {
+    margin-bottom: 1.2rem;
   }
 }
 
@@ -53,6 +86,7 @@
   }
   
 }
+
 
 @media #{$hover-media-query} {
   .card-mini-radio:hover {

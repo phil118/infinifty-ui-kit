@@ -29,6 +29,20 @@ li {
   margin-bottom: 1rem;
 }
 
+.inline-list {
+  display: flex;
+  list-style: none;
+  gap: 1.6rem;
+
+  li {
+    margin: 0;
+
+    .btn {
+      margin: 0;
+    }
+  }  
+}
+
 
 .folder-list {
   border: 1px solid $grey-200;
