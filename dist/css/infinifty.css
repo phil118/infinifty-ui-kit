@@ -1217,6 +1217,13 @@ span.label-sm {
 .logo {
   max-width: 7.4rem; }
 
+.infinifty-tag {
+  width: 4.8rem;
+  height: 4.8rem;
+  background: #fff;
+  box-sizing: border-box;
+  padding: .8rem; }
+
 button,
 .btn {
   border: 1px solid #000;
@@ -1362,10 +1369,36 @@ button,
     .btn-circle-solid:hover [class^="icon"] {
       fill: #000; } }
 
+.btn-down {
+  width: 4.8rem;
+  height: 9.6rem;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 2.4rem;
+  display: block; }
+  .btn-down .icon {
+    width: 3.6rem;
+    height: 3.6rem;
+    background: #fff;
+    border-radius: 100%;
+    fill: #000;
+    position: absolute;
+    bottom: .5rem;
+    left: .5rem; }
+
 @media only screen and (min-width: 601px) {
   .btn,
   button {
-    max-width: 25.6rem; } }
+    max-width: 25.6rem; }
+  .btn-down:hover .icon {
+    animation: MoveUpDown .75s linear infinite; } }
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: .5rem; }
+  50% {
+    bottom: 5.2rem; } }
 
 input[type='email'],
 input[type='number'],
@@ -1690,16 +1723,37 @@ input:checked + .toggle {
   background: #fff; }
   .card img {
     max-width: 100%; }
-  .card.dark {
+  .card.dark, .card.minted {
     background: #000;
-    color: white; }
+    color: #fff; }
+    .card.dark .card-details, .card.minted .card-details {
+      border-color: #fff; }
+      .card.dark .card-details .badge, .card.minted .card-details .badge {
+        background-color: #333333; }
+    .card.dark .infinifty-tag, .card.minted .infinifty-tag {
+      background: #000; }
+      .card.dark .infinifty-tag .icon, .card.minted .infinifty-tag .icon {
+        fill: #fff; }
   .card .heading-xs {
     margin: 0; }
   .card .card-head {
     margin-bottom: 2rem; }
 
+.card-details {
+  border-top: 1px solid #000;
+  margin-top: 3.6rem; }
+  .card-details dl {
+    margin-bottom: 0; }
+
 .card-image {
-  margin-bottom: 1.6rem; }
+  margin-bottom: 1.6rem;
+  position: relative; }
+  .card-image .infinifty-tag {
+    position: absolute;
+    top: 0;
+    right: 0; }
+  .card-image img {
+    transition: opacity .75s ease; }
 
 .card-head {
   display: grid;

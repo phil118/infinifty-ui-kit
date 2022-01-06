@@ -22,6 +22,15 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="../images/favicons/favicon-32x32.png" />
 
+  <style>
+    .card-image img {
+      opacity: 0;
+    }
+
+    .card-image img.loaded {
+      opacity: 1;
+    }
+  </style>
 
 </head>
 
@@ -288,36 +297,418 @@
   <div class="row center-xs" style="margin-top: 80px; background: #EEEEEE;">
     <div class="col-xs-12">
 
-      <p>Card with image</p>
+      <p>Fresh Mints</p>
 
-      <div class="row">
+      <div class="row masonry">
 
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="card-mini-wrap">
-
-            <div class="card">
-              <div class="card-image">
-                <img src="https://assets.codepen.io/12005/windmill.jpg" alt=""/>
+        <div class="col col-xs-12 col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://storage.opensea.io/static/promocards/akwaa-promocard.png" alt=""/>
+            </div>
+            <div class="card-head">
+              <div class="card-head-left">
+                <span class="heading-xs">Mwah</span>
+                <span class="label-sm">Akwaa Mariin</span>
               </div>
-              <div class="card-head">
-                <div class="card-head-left">
-                  <span class="heading-xs">Windmills</span>
-                  <span class="label-sm">Tim Jarvis</span>
-                </div>
+              <div class="card-head-right">
+                <svg class="icon">
+                  <use xlink:href="../dist/icons/32.sprite.svg#ethereum"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-xs-12 col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://storage.opensea.io/static/promocards/anthos-promocard.png" alt=""/>
+            </div>
+            <div class="card-head">
+              <div class="card-head-left">
+                <span class="heading-xs">Anthos #22</span>
+                <span class="label-sm">Pip</span>
+              </div>
+              <div class="card-head-right">
+                <svg class="icon">
+                  <use xlink:href="../dist/icons/32.sprite.svg#polygon"></use>
+                </svg>
+              </div>
+            </div>
+          </div> 
+        </div>
+
+        <div class="col col-xs-12 col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://lh3.googleusercontent.com/5iIRqx4IZDYSi_gsWO3aXlFFwkMM-QsTjEHxGymx2Ln4IioDNkRBxqwqna2d5chucCvPKqY0d7lkOdz1jjTFXJbrvAFFyvmhlSbp0w=w600" alt=""/>
+            </div>
+            <div class="card-head">
+              <div class="card-head-left">
+                <span class="heading-xs">Stunner</span>
+                <span class="label-sm">Akwaa Mariin</span>
+              </div>
+              <div class="card-head-right">
+                <svg class="icon">
+                  <use xlink:href="../dist/icons/32.sprite.svg#polygon"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-xs-12 col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://lh3.googleusercontent.com/aHHOhyek7AIjVaIzmLAG_jWSw4URVJnRC1GeTCyp1E2qL2GxSsla_QKU_xmaKWhEjiJgeofIXKkSITv0ETmA5_uHClELH8SGqPtZKVE=w600" alt=""/>
+            </div>
+            <div class="card-head">
+              <div class="card-head-left">
+                <span class="heading-xs">Anthos</span>
+                <span class="label-sm">Bistorta</span>
+              </div>
+              <div class="card-head-right">
+                <svg class="icon">
+                  <use xlink:href="../dist/icons/32.sprite.svg#ethereum"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-xs-12 col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://lh3.googleusercontent.com/5iIRqx4IZDYSi_gsWO3aXlFFwkMM-QsTjEHxGymx2Ln4IioDNkRBxqwqna2d5chucCvPKqY0d7lkOdz1jjTFXJbrvAFFyvmhlSbp0w=w600" alt=""/>
+            </div>
+            <div class="card-head">
+              <div class="card-head-left">
+                <span class="heading-xs">Stunner</span>
+                <span class="label-sm">Akwaa Mariin</span>
+              </div>
+              <div class="card-head-right">
+                <svg class="icon">
+                  <use xlink:href="../dist/icons/32.sprite.svg#ethereum"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-xs-12 col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://lh3.googleusercontent.com/aHHOhyek7AIjVaIzmLAG_jWSw4URVJnRC1GeTCyp1E2qL2GxSsla_QKU_xmaKWhEjiJgeofIXKkSITv0ETmA5_uHClELH8SGqPtZKVE=w600" alt=""/>
+            </div>
+            <div class="card-head">
+              <div class="card-head-left">
+                <span class="heading-xs">Anthos</span>
+                <span class="label-sm">Bistorta</span>
+              </div>
+              <div class="card-head-right">
+                <svg class="icon">
+                  <use xlink:href="../dist/icons/32.sprite.svg#ethereum"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-xs-12 col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://storage.opensea.io/static/promocards/anthos-promocard.png" alt=""/>
+            </div>
+            <div class="card-head">
+              <div class="card-head-left">
+                <span class="heading-xs">Grass</span>
+                <span class="label-sm">Tim Jarvis</span>
+              </div>
+              <div class="card-head-right">
+                <svg class="icon">
+                  <use xlink:href="../dist/icons/32.sprite.svg#ethereum"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-xs-12 col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://storage.opensea.io/static/promocards/akwaa-promocard.png" alt=""/>
+            </div>
+            <div class="card-head">
+              <div class="card-head-left">
+                <span class="heading-xs">Mwah</span>
+                <span class="label-sm">Akwaa Mariin</span>
+              </div>
+              <div class="card-head-right">
+                <svg class="icon">
+                  <use xlink:href="../dist/icons/32.sprite.svg#ethereum"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row center-xs" style="margin-top: 80px; background: #EEEEEE;">
+    <div class="col-xs-12 col-md-10 col-no-gutter">
+
+      <p>My Collection</p>
+
+      <div class="row masonry">
+
+        <div class="col col-xs-12 col-sm-6 col-md-4">
+          <div class="card minted">
+            <div class="card-image">
+              <div class="infinifty-tag">
+                <svg class="icon">
+                  <use xlink:href="../dist/icons/32.sprite.svg#infinifty-logo"></use>
+                </svg>
+              </div>
+              <img src="https://storage.opensea.io/static/promocards/anthos-promocard.png" alt=""/>
+            </div>
+            <div class="card-head">
+              <div class="card-head-left">
+                <span class="heading-xs">Grass</span>
+                <span class="label-sm">Tim Jarvis</span>
+              </div>
+            </div>
+            <div class="card-details">
+              <dl>
+                <dt>12</dt>
+                <dd><span class="badge">Files</span></dd>
+                <dt>124Mb</dt>
+                <dd><span class="badge">Size</span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-xs-12 col-sm-6 col-md-4">
+          <div class="card">
+            <div class="card-image">
+              <div class="infinifty-tag">
+                <svg class="icon">
+                  <use xlink:href="../dist/icons/32.sprite.svg#infinifty-logo"></use>
+                </svg>
+              </div>
+              <img src="https://storage.opensea.io/static/promocards/akwaa-promocard.png" alt=""/>
+            </div>
+            <div class="card-head">
+              <div class="card-head-left">
+                <span class="heading-xs">Mwah</span>
+                <span class="label-sm">Akwaa Mariin</span>
+                <span class="badge badge-action">Not Yet Minted</span>
+              </div>
+            </div>
+            <div class="card-details">
+              <dl>
+                <dt>0</dt>
+                <dd><span class="badge">Files</span></dd>
+                <dt>0Mb</dt>
+                <dd><span class="badge">Size</span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-xs-12 col-sm-6 col-md-4">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://lh3.googleusercontent.com/5iIRqx4IZDYSi_gsWO3aXlFFwkMM-QsTjEHxGymx2Ln4IioDNkRBxqwqna2d5chucCvPKqY0d7lkOdz1jjTFXJbrvAFFyvmhlSbp0w=w600" alt=""/>
+            </div>
+            <div class="card-head">
+              <div class="card-head-left">
+                <span class="heading-xs">Stunner</span>
+                <span class="label-sm">Akwaa Mariin</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-xs-12 col-sm-6 col-md-4">
+          <div class="card minted">
+            <div class="card-image">
+              <div class="infinifty-tag">
+                <svg class="icon">
+                  <use xlink:href="../dist/icons/32.sprite.svg#infinifty-logo"></use>
+                </svg>
+              </div>
+              <img src="https://lh3.googleusercontent.com/ehDrZE1igczvr5s3jZBo80onIQTP4GGqGk82YOsUkOt3TmjkdaPNdNTGjzvvn1nPCMCYLIA6RYKWbQUqY8gPQuz8YghG7LXzmUvw7Q=w600" alt=""/>
+            </div>
+            <div class="card-head">
+              <div class="card-head-left">
+                <span class="heading-xs">Music</span>
+                <span class="label-sm">Gxng Yxng</span>
+              </div>
+            </div>
+            <div class="card-details">
+              <dl>
+                <dt>8</dt>
+                <dd><span class="badge">Files</span></dd>
+                <dt>10Mb</dt>
+                <dd><span class="badge">Size</span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-xs-12 col-sm-6 col-md-4">
+          <div class="card minted">
+            <div class="card-image">
+              <div class="infinifty-tag">
+                <svg class="icon">
+                  <use xlink:href="../dist/icons/32.sprite.svg#infinifty-logo"></use>
+                </svg>
+              </div>
+              <img src="https://lh3.googleusercontent.com/ujepnqpnL0nDQIHsWxlCXzyw4pf01yjz1Jmb4kAQHumJAPrSEj0-e3ABMZlZ1HEpJoqwOcY_kgnuJGzfXbd2Tijri66GXUtfN2MXQA=w600" alt=""/>
+            </div>
+            <div class="card-head">
+              <div class="card-head-left">
+                <span class="heading-xs">Jolly</span>
+                <span class="label-sm">Tim Jarvis</span>
+              </div>
+            </div>
+            <div class="card-details">
+              <dl>
+                <dt>100</dt>
+                <dd><span class="badge">Files</span></dd>
+                <dt>1244Mb</dt>
+                <dd><span class="badge">Size</span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-xs-12 col-sm-6 col-md-4">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://lh3.googleusercontent.com/xP2wVbkKB3kIAqPaBYt7yuuZ9_y0hpVZxlJKuXMgkXKxi28ZEuGal3L3S3PiitdpiMCWBFRQLLZJkjoW-3GU3-4rCDAu4eaIfmjotYs=w600" alt=""/>
+            </div>
+            <div class="card-head">
+              <div class="card-head-left">
+                <span class="heading-xs">No Cap</span>
+                <span class="label-sm">Akwaa Mariin</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-xs-12 col-sm-6 col-md-4">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://lh3.googleusercontent.com/6G3gZPaCUe1I37zJVgWQ45DYP6pT_Nl6T7oowlYm0SLCn-0ZAvX3PmwjdTmynJh3Zlj-Ya0FVTWWyw4_tQpPWRUH8bO7aHO40HhFqw=w600" alt=""/>
+            </div>
+            <div class="card-head">
+              <div class="card-head-left">
+                <span class="heading-xs">Anthos #23</span>
+                <span class="label-sm">Pip</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-xs-12 col-sm-6 col-md-4">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://lh3.googleusercontent.com/5iIRqx4IZDYSi_gsWO3aXlFFwkMM-QsTjEHxGymx2Ln4IioDNkRBxqwqna2d5chucCvPKqY0d7lkOdz1jjTFXJbrvAFFyvmhlSbp0w=w600" alt=""/>
+            </div>
+            <div class="card-head">
+              <div class="card-head-left">
+                <span class="heading-xs">Stunner</span>
+                <span class="label-sm">Akwaa Mariin</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-xs-12 col-sm-6 col-md-4">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://lh3.googleusercontent.com/aHHOhyek7AIjVaIzmLAG_jWSw4URVJnRC1GeTCyp1E2qL2GxSsla_QKU_xmaKWhEjiJgeofIXKkSITv0ETmA5_uHClELH8SGqPtZKVE=w600" alt=""/>
+            </div>
+            <div class="card-head">
+              <div class="card-head-left">
+                <span class="heading-xs">Anthos</span>
+                <span class="label-sm">Bistorta</span>
               </div>
             </div>
           </div>
         </div>
 
       </div>
-
-
     </div>
   </div>
 
-
   <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- https://github.com/ApoorvSaxena/lozad.js -->
+  <script src="https://cdn.jsdelivr.net/npm/lozad"></script>
+  <!-- https://github.com/desandro/masonry -->
+  <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+
+  <script>
+
+    var getClosest = function (elem, selector) {
+
+      // Element.matches() polyfill
+      if (!Element.prototype.matches) {
+        Element.prototype.matches =
+          Element.prototype.matchesSelector ||
+          Element.prototype.mozMatchesSelector ||
+          Element.prototype.msMatchesSelector ||
+          Element.prototype.oMatchesSelector ||
+          Element.prototype.webkitMatchesSelector ||
+          function (s) {
+            var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+              i = matches.length;
+            while (--i >= 0 && matches.item(i) !== this) { }
+            return i > -1;
+          };
+      }
+
+      // Get the closest matching element
+      for (; elem && elem !== document; elem = elem.parentNode) {
+        if (elem.matches(selector)) return elem;
+      }
+      
+      return null;
+
+    };
+
+    var elems = document.getElementsByClassName('masonry');
+
+    for (var i = 0; i < elems.length; i++) {
+      var msnry = new Masonry( elems[i], {
+        itemSelector: '.col'
+      });
+    }
+
+    const observer = lozad('.card-image img', {
+      loaded: function(el) {
+
+          el.classList.add('loaded');
+
+          var parentContainer = getClosest(el, '.masonry');
+          var msnry = Masonry.data(parentContainer);
+
+          msnry.layout();
+      }
+    });
+
+    observer.observe();
+
+  </script>
+
 </body>
 
 </html>

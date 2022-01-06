@@ -14,11 +14,11 @@
 [x] - Dropdown / icon Dropdown
 [] - Selectable images
 [] - Selectable list items
-[] - Cards small and image based
+[x] - Cards small and image based
+[] - Create collection Card
 [] - Wallets
 [] - Sidebar
 [] - Accordian
-[] - Create collection Card
 [] - Tabs
 [x] - table
 [] - dark mode

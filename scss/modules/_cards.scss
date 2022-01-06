@@ -8,9 +8,26 @@
     max-width: 100%;
   }
 
-  &.dark {
+  &.dark,
+  &.minted {
     background: $black;
-    color: white;
+    color: $white;
+
+    .card-details {
+      border-color: $white;
+
+      .badge {
+        background-color: $grey-700;
+      }
+    }
+
+    .infinifty-tag {
+      background: $black;
+
+      .icon {
+        fill: $white;
+      }
+    }
   }
 
   .heading-xs {
@@ -22,8 +39,29 @@
   }
 }
 
+
+.card-details {
+  border-top: 1px solid $black;
+  margin-top: 3.6rem;
+
+  dl {
+    margin-bottom: 0;
+  }
+}
+
 .card-image {
   margin-bottom: 1.6rem;
+  position: relative;
+
+  .infinifty-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  img {
+    transition: opacity .75s ease;
+  }
 }
 
 .card-head {
