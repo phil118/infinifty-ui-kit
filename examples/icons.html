@@ -16,11 +16,11 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="../dist/css/infinifty.css">
+  <link rel="stylesheet" href="/dist/css/infinifty.css">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="../images/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" href="/dist/images/favicons/favicon-32x32.png" />
 
   <style>
     .icon32, 
@@ -131,7 +131,7 @@
       svg.classList.add('icon' + rowId); 
 
       var use = document.createElementNS("http://www.w3.org/2000/svg", 'use'); 
-      use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '../dist/icons/' + rowId + '.sprite.svg#' + iconName);
+      use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/dist/icons/' + rowId + '.sprite.svg#' + iconName);
       
       svg.appendChild(use);
       div.appendChild(badge);

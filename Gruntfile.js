@@ -58,6 +58,21 @@ module.exports = function(grunt) {
                   rename: function(dest, src) {
                     return dest + '/' + src.substring(0, src.indexOf('/')) + '.sprite.svg';
                   }
+                },
+                {
+                    expand: true, 
+                    src: ['images/wallets/**'], 
+                    dest: 'dist'
+                },
+                {
+                    expand: true, 
+                    src: ['images/favicons/**'], 
+                    dest: 'dist'
+                },
+                {
+                    expand: true, 
+                    src: ['images/logo.svg'], 
+                    dest: 'dist'
                 }
               ]
             }

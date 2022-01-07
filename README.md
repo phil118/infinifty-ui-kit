@@ -21,7 +21,6 @@ InfiniftyUiKit is the base components for building out the frontend applications
 To see examples make sure running on server for icons to work correctly `python -m SimpleHTTPServer`
 
 ### What's in the download?
-
 The download includes Infinifty's CSS, ~~Normalize CSS as a reset, ~~ a favicon set, icon set including logo and an index.html as a starting point with examples
 
 ```
@@ -38,3 +37,6 @@ infinifty/
 ├── Gruntfile.js
 └── README.md
 ```
+
+## Using
+Anything needed for development should be found in root dist folder after running grunt script.

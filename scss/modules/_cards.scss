@@ -13,7 +13,7 @@
     background: $black;
     color: $white;
 
-    .card-details {
+    .card-stats {
       border-color: $white;
 
       .badge {
@@ -39,16 +39,6 @@
   }
 }
 
-
-.card-details {
-  border-top: 1px solid $black;
-  margin-top: 3.6rem;
-
-  dl {
-    margin-bottom: 0;
-  }
-}
-
 .card-image {
   margin-bottom: 1.6rem;
   position: relative;
@@ -60,13 +50,19 @@
   }
 
   img {
+    opacity: 0;
     transition: opacity .75s ease;
+
+    &.loaded {
+      opacity: 1;
+    }
   }
 }
 
 .card-head {
   display: grid;
-  grid-template-columns: auto 3.2rem;
+  grid-template-columns: minmax(0, 1fr) 3.2rem;
+
 
   button {
     float: right;
@@ -81,6 +77,121 @@
   }
 
 }
+
+.card-stats {
+  border-top: 1px solid $black;
+  margin-top: 3.6rem;
+
+  dl {
+    margin-bottom: 0;
+  }
+}
+
+.card-bordered {
+  border: 1px solid $grey-200;
+  box-sizing: border-box;
+  padding: 1.6rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .btn {
+    margin-top: 2.8rem;
+  }
+
+  .img-circle {
+    margin-bottom: .8rem;
+  }
+
+  .card-bordered-details {
+    flex: auto;
+  }
+}
+
+.card-create {
+  display: block;
+  border: 1px solid $grey-200;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: border-color .3s ease;
+
+  .img-circle {
+    transition: all .3s ease;
+  }
+
+  .card-create-actions {
+    padding-bottom: 18rem;
+    flex: auto;
+  }
+}
+
+.card-create-actions {
+  padding: 1.6rem;
+}
+
+.card-created {
+  display: block;
+  background: $grey-50;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: background .3s ease;
+
+  .placeholder {
+    background: $grey-200;
+  }
+
+  .card-stats {
+    .badge {
+      background: $grey-100;
+      transition: background .3s ease;
+    }
+  }
+}
+
+.card-created-contents {
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  border: 1px solid $grey-200;
+  border-top: 0;
+
+  .img-circle {
+    margin-bottom: .8rem;
+  }
+
+  h6,.heading-xs {
+    margin: 0;
+  }
+
+  .card-head {
+    margin-bottom: 1.2rem;
+  }
+
+  .card-details {
+    flex: auto;
+  }
+
+  .card-stats {
+    border: none;
+    margin-top: 2.8rem;
+  }
+
+  p {
+    margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    max-height: 8rem;
+  }
+}
+
+// Mini Cards //
 
 .card-mini-wrap {
   display: flex;
@@ -130,6 +241,30 @@
   .card-mini-radio:hover {
     .card-mini {
       border-color: $black;
+    }
+  }
+
+  .card-create:hover {
+    border-color: $action;
+
+    .img-circle,
+    .btn,
+    .circle {
+      background: $action;
+      color: $white;
+      border-color: $action;
+    }
+
+    .icon {
+      fill: $white;
+    }
+  }
+
+  .card-created:hover {
+    background: $white;
+
+    .card-stats .badge {
+      background: $grey-50;
     }
   }
 }

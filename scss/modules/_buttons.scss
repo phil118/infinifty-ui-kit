@@ -23,7 +23,7 @@ button,
   width: 100%;
   text-align: center;
   position: relative;
-  transition: background 0.3s ease, color .3s ease, border-color .3s ease;
+  transition: all .3s ease;
 
   .circle {
     display: block;
@@ -34,7 +34,7 @@ button,
     position: absolute;
     top: .5rem;
     left: .5rem;
-    transition: background 0.3s ease, color .3s ease;
+    transition: all .3s ease;
   }
 
   [class^="icon"] {
@@ -231,16 +231,17 @@ button,
   }
 
   .btn-down:hover .icon {
-    animation: MoveUpDown .75s linear infinite;
+    animation: bounce .75s ease;
   }
 
 }
 
-@keyframes MoveUpDown {
-  0%, 100% {
-    bottom: .5rem;
-  }
-  50% {
-    bottom: 5.2rem;
-  }
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  10%  { transform: translateY(0); }
+  30%  { transform: translateY(-2.4rem); }
+  50%  { transform: translateY(0); }
+  57%  { transform: translateY(-.5rem); }
+  64%  { transform: translateY(0); }
+  100% { transform: translateY(0); }
 }

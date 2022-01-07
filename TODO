@@ -6,23 +6,23 @@
 [x] - Badges
 [x] - Inputs / icon input / pre-filled
 [x] - Image upload
+[x] - Toggle switches
+[x] - Dropdown / icon Dropdown
+[x] - Cards small and image based
+[x] - Create collection Card
+[x] - Wallets
+[x] - table
+[x] - down button
 [] - Noticebar
 [] - Radio buttons
-[x] - Toggle switches
 [] - Sliders
 [] - Colour selector 
-[x] - Dropdown / icon Dropdown
 [] - Selectable images
 [] - Selectable list items
-[x] - Cards small and image based
-[] - Create collection Card
-[] - Wallets
 [] - Sidebar
 [] - Accordian
 [] - Tabs
-[x] - table
 [] - dark mode
-[] - down button
 [] - profile image
 [] - header
 [] - footer
