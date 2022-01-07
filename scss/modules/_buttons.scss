@@ -23,7 +23,7 @@ button,
   width: 100%;
   text-align: center;
   position: relative;
-  transition: all .3s ease;
+  transition: background .3s ease, color .3s ease, border .3s ease, opacity .3s ease;
 
   .circle {
     display: block;
@@ -172,6 +172,11 @@ button,
   .btn-solid-action:hover {
     background-color: transparent;
     color: $action;
+  }
+
+  .btn-solid-action.no-hover:hover {
+    color: $white;
+    background-color: $action;
   }
 
   .btn-hover-white:hover {

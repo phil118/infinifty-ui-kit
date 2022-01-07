@@ -1266,7 +1266,7 @@ button,
   width: 100%;
   text-align: center;
   position: relative;
-  transition: all .3s ease; }
+  transition: background .3s ease, color .3s ease, border .3s ease, opacity .3s ease; }
   button .circle,
   .btn .circle {
     display: block;
@@ -1375,6 +1375,9 @@ button,
   .btn-solid-action:hover {
     background-color: transparent;
     color: #FF0096; }
+  .btn-solid-action.no-hover:hover {
+    color: #fff;
+    background-color: #FF0096; }
   .btn-hover-white:hover {
     background-color: #fff;
     color: #000;
@@ -1938,6 +1941,37 @@ input:checked + .toggle {
     border-color: #000;
     background: #fff; }
 
+.presets {
+  margin: 0 -1.6rem; }
+  .presets .col {
+    padding: 2.4rem; }
+
+.preset {
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  width: 100%;
+  flex-direction: column; }
+  .preset .card-head {
+    margin: 1.2rem 0 .8rem;
+    border-bottom: 1px solid #000;
+    padding-bottom: 3.6rem;
+    grid-template-columns: minmax(0, 1fr) 4.8rem;
+    flex: auto; }
+    .preset .card-head .icon24 {
+      margin: 1.2rem; }
+  .preset img {
+    transition: opacity .3s ease; }
+  .preset .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; }
+  .preset h6,
+  .preset .heading-xs {
+    margin: 0; }
+
 @media only screen and (hover: hover) {
   .card-mini-radio:hover .card-mini {
     border-color: #000; }
@@ -1972,7 +2006,11 @@ input:checked + .toggle {
         fill: #FF0096; }
     .card-add:hover .btn {
       background: #fff;
-      color: #FF0096; } }
+      color: #FF0096; }
+  .preset:hover img {
+    opacity: .15; }
+  .preset:hover .btn {
+    opacity: 1; } }
 
 ul {
   list-style: circle inside; }
@@ -2116,10 +2154,11 @@ td:last-child {
   padding-right: 0; }
 
 .placeholder {
-  position: relative; }
+  position: relative;
+  display: block; }
   .placeholder:before {
     display: block;
-    padding-top: 66.66666666666%;
+    padding-top: 66.6667%;
     content: ""; }
   .placeholder img {
     object-fit: cover;
@@ -2128,6 +2167,33 @@ td:last-child {
     position: absolute;
     top: 0;
     left: 0; }
+
+.ratio-4\:3:before {
+  padding-top: 75%; }
+
+.ratio-16\:9:before {
+  padding-top: 56.25%; }
+
+.ratio-16\:10:before {
+  padding-top: 62.5%; }
+
+.ratio-3\:2:before {
+  padding-top: 66.6667%; }
+
+.ratio-1\:1:before {
+  padding-top: 100%; }
+
+.ratio-21\:9:before {
+  padding-top: 42.85%; }
+
+.ratio-2\:1:before {
+  padding-top: 50%; }
+
+.ratio-3\:4:before {
+  padding-top: 133.3334%; }
+
+.ratio-2\:3:before {
+  padding-top: 150%; }
 
 .hash-bg {
   width: 100%;

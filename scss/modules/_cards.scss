@@ -292,6 +292,54 @@
   
 }
 
+// Presets //
+
+.presets {
+  margin: 0 -1.6rem;
+
+  .col {
+    padding: 2.4rem;
+  }
+}
+
+.preset {
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  .card-head {
+    margin: 1.2rem 0 .8rem;
+    border-bottom: 1px solid $black;
+    padding-bottom: 3.6rem;
+    grid-template-columns: minmax(0, 1fr) 4.8rem;
+    flex: auto;
+
+    .icon24 {
+      margin: 1.2rem;
+    }
+  }
+
+  img {
+    transition: opacity .3s ease;
+  }
+
+  .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+    opacity: 0;
+  }
+
+  h6,
+  .heading-xs {
+    margin: 0;
+  }
+
+}
+
 
 @media #{$hover-media-query} {
   .card-mini-radio:hover {
@@ -348,6 +396,16 @@
     .btn {
       background: $white;
       color: $action;
+    }
+  }
+
+  .preset:hover {
+
+    img {
+      opacity: .15;
+    }
+    .btn {
+      opacity: 1;
     }
   }
 }

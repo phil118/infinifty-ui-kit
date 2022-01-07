@@ -1,9 +1,10 @@
 .placeholder {
   position: relative;
+  display: block;
 
   &:before {
     display: block;
-    padding-top: 66.66666666666%;
+    padding-top: 66.6667%;
     content: "";
   }
 
@@ -15,4 +16,40 @@
     top: 0;
     left: 0;
   }
+}
+
+.ratio-4\:3:before {
+  padding-top: 75%;
+}
+
+.ratio-16\:9:before {
+  padding-top: 56.25%;
+}
+
+.ratio-16\:10:before {
+  padding-top: 62.5%;
+}
+
+.ratio-3\:2:before {
+  padding-top: 66.6667%;
+}
+
+.ratio-1\:1:before {
+  padding-top: 100%;
+}
+
+.ratio-21\:9:before {
+  padding-top: 42.85%
+}
+
+.ratio-2\:1:before {
+  padding-top: 50%
+}
+
+.ratio-3\:4:before {
+  padding-top: 133.3334%;
+}
+
+.ratio-2\:3:before {
+  padding-top: 150%;
 }
