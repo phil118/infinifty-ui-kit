@@ -13,12 +13,14 @@
 [x] - Wallets
 [x] - table
 [x] - down button
+[x] - loadingbar
 [] - Noticebar
 [] - Radio buttons
 [] - Sliders
 [] - Colour selector 
 [] - Selectable images
 [] - Selectable list items
+[] - wallet details
 [] - Sidebar
 [] - Accordian
 [] - Tabs

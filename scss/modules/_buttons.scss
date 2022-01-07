@@ -147,6 +147,11 @@ button,
     background-color: $black;
   }
 
+  .btn.no-hover:hover {
+    color: initial;
+    background-color: unset;
+  }
+
   .btn-action:hover {
     background-color: $action;
     color: $white;

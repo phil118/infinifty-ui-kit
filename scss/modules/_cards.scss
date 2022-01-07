@@ -122,13 +122,31 @@
     transition: all .3s ease;
   }
 
-  .card-create-actions {
+  .card-actions {
     padding-bottom: 18rem;
     flex: auto;
   }
+
+  .btn {
+    max-width: none;
+  }
+
+  &.first-time {
+    .img-circle,
+    .btn,
+    .circle {
+      background: $action;
+      color: $white;
+      border-color: $action;
+    }
+  
+    .icon {
+      fill: $white;
+    }
+  }
 }
 
-.card-create-actions {
+.card-actions {
   padding: 1.6rem;
 }
 
@@ -191,6 +209,44 @@
   }
 }
 
+.card-add {
+  background: $white;
+  padding: 1.6rem;
+  display: block;
+  text-decoration: none;
+  transition: all .3s ease;
+  width: 100vw;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  .infinifty-tag .icon {
+    fill: $action;
+  }
+
+  .card-image {
+    border: 1px solid $grey-200;
+
+    &:before {
+      padding-top: 133.333333%;
+      display: block;
+      content: "";
+    }
+  }
+
+  .btn {
+    max-width: none;
+  }
+
+  .img-circle {
+    border-color: $action;
+    margin-bottom: 1.2rem;
+
+    .icon {
+      fill: $action;
+    }
+  }
+}
+
 // Mini Cards //
 
 .card-mini-wrap {
@@ -245,26 +301,53 @@
   }
 
   .card-create:hover {
+    border-color: $black;
+  }
+
+  .card-create.first-time:hover {
     border-color: $action;
-
-    .img-circle,
-    .btn,
-    .circle {
-      background: $action;
-      color: $white;
-      border-color: $action;
-    }
-
-    .icon {
-      fill: $white;
-    }
   }
 
   .card-created:hover {
     background: $white;
 
+    .card-created-contents {
+      border-color: $black;
+    }
+
+    .placeholder:empty:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      box-sizing: border-box;
+      border: 1px solid $black;
+      border-bottom: 0;
+    }
+
     .card-stats .badge {
       background: $grey-50;
+    }
+  }
+
+  .card-add:hover {
+    background: $action;
+
+    .circle,
+    .img-circle {
+      background: $white;
+      border-color: $white;
+
+      .icon {
+        fill: $action;
+      }
+    }
+
+    .btn {
+      background: $white;
+      color: $action;
     }
   }
 }

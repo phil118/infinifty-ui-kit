@@ -1228,7 +1228,9 @@ span.label-sm {
   width: 4.8rem;
   height: 4.8rem;
   border-radius: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: all .3s ease; }
   .img-circle img {
     object-fit: cover;
     width: 100%;
@@ -1237,7 +1239,10 @@ span.label-sm {
     background: #F6F6F6;
     border: 1px solid #F6F6F6; }
   .img-circle .icon {
-    margin: .8rem; }
+    margin: .7rem;
+    transition: all .3s ease; }
+  .img-circle.bordered {
+    border: 1px solid #000; }
 
 button,
 .btn {
@@ -1355,6 +1360,9 @@ button,
   .btn:hover {
     color: #fff;
     background-color: #000; }
+  .btn.no-hover:hover {
+    color: initial;
+    background-color: unset; }
   .btn-action:hover {
     background-color: #FF0096;
     color: #fff; }
@@ -1820,11 +1828,21 @@ input:checked + .toggle {
   transition: border-color .3s ease; }
   .card-create .img-circle {
     transition: all .3s ease; }
-  .card-create .card-create-actions {
+  .card-create .card-actions {
     padding-bottom: 18rem;
     flex: auto; }
+  .card-create .btn {
+    max-width: none; }
+  .card-create.first-time .img-circle,
+  .card-create.first-time .btn,
+  .card-create.first-time .circle {
+    background: #FF0096;
+    color: #fff;
+    border-color: #FF0096; }
+  .card-create.first-time .icon {
+    fill: #fff; }
 
-.card-create-actions {
+.card-actions {
   padding: 1.6rem; }
 
 .card-created {
@@ -1866,6 +1884,31 @@ input:checked + .toggle {
     -webkit-box-orient: vertical;
     max-height: 8rem; }
 
+.card-add {
+  background: #fff;
+  padding: 1.6rem;
+  display: block;
+  text-decoration: none;
+  transition: all .3s ease;
+  width: 100vw;
+  max-width: 100%;
+  box-sizing: border-box; }
+  .card-add .infinifty-tag .icon {
+    fill: #FF0096; }
+  .card-add .card-image {
+    border: 1px solid #E2E2E2; }
+    .card-add .card-image:before {
+      padding-top: 133.333333%;
+      display: block;
+      content: ""; }
+  .card-add .btn {
+    max-width: none; }
+  .card-add .img-circle {
+    border-color: #FF0096;
+    margin-bottom: 1.2rem; }
+    .card-add .img-circle .icon {
+      fill: #FF0096; }
+
 .card-mini-wrap {
   display: flex;
   gap: 1.4rem;
@@ -1899,19 +1942,37 @@ input:checked + .toggle {
   .card-mini-radio:hover .card-mini {
     border-color: #000; }
   .card-create:hover {
+    border-color: #000; }
+  .card-create.first-time:hover {
     border-color: #FF0096; }
-    .card-create:hover .img-circle,
-    .card-create:hover .btn,
-    .card-create:hover .circle {
-      background: #FF0096;
-      color: #fff;
-      border-color: #FF0096; }
-    .card-create:hover .icon {
-      fill: #fff; }
   .card-created:hover {
     background: #fff; }
+    .card-created:hover .card-created-contents {
+      border-color: #000; }
+    .card-created:hover .placeholder:empty:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      box-sizing: border-box;
+      border: 1px solid #000;
+      border-bottom: 0; }
     .card-created:hover .card-stats .badge {
-      background: #F6F6F6; } }
+      background: #F6F6F6; }
+  .card-add:hover {
+    background: #FF0096; }
+    .card-add:hover .circle,
+    .card-add:hover .img-circle {
+      background: #fff;
+      border-color: #fff; }
+      .card-add:hover .circle .icon,
+      .card-add:hover .img-circle .icon {
+        fill: #FF0096; }
+    .card-add:hover .btn {
+      background: #fff;
+      color: #FF0096; } }
 
 ul {
   list-style: circle inside; }
@@ -2077,3 +2138,38 @@ td:last-child {
   z-index: -1; }
   .hash-bg path {
     fill: #FF0096; }
+
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1.6rem;
+  background: #000;
+  height: 4.8rem;
+  line-height: 1.6rem;
+  color: #fff;
+  overflow: hidden;
+  font-weight: 500; }
+  .loading-bar > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    background: #FF0096;
+    width: 0; }
+  .loading-bar > span {
+    position: relative; }
+
+@media only screen and (min-width: 601px) {
+  .loading-bar {
+    padding-left: 3.2rem;
+    padding-right: 3.2rem; } }
+
+@media only screen and (min-width: 769px) {
+  .loading-bar {
+    padding-left: 6.4rem;
+    padding-right: 6.4rem; } }

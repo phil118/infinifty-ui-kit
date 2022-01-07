@@ -1,8 +1,6 @@
 /* Required Google Font. */
 @import 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap';
 
-
-
 /* Base files */
 @import "base/normalize";
 @import "base/variables";
@@ -26,3 +24,4 @@
 @import "modules/tables";
 @import "modules/placeholders";
 @import "modules/backgrounds";
+@import "modules/loadingbar";
