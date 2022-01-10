@@ -18,7 +18,7 @@
 [x] - Radio buttons
 [x] - tos
 [] - Noticebar
-[] - Sliders
+[x] - Sliders
 [] - Colour selector 
 [] - Selectable images
 [] - Selectable list items
@@ -29,7 +29,4 @@
 [] - dark mode
 [] - profile image
 [] - Sidebar
-[] - header
-[] - footer
-[] - menu li (footer)
 [x] - social icons 
