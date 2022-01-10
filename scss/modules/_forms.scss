@@ -139,6 +139,10 @@ input {
   padding-right: 3.2rem;
   margin-bottom: 3.2rem;
   max-width: 40rem;
+
+  > .icon {
+    margin-bottom: .8rem;
+  }
 }
 
 .form-inline-group {
@@ -399,7 +403,39 @@ input:checked + .toggle {
       border-color: $green-500;
     }
   }
+}
 
+.wrapped-checkbox input {
+  display: none;
+
+  &:checked + .wrapped-checkbox-border {
+    border-color: $black; 
+  
+    svg {
+      background: $black;
+  
+      use {
+        display: block;
+      }
+    }
+  }
+}
+
+.wrapped-checkbox-border {
+  border: 1px solid $grey-200;
+  padding: 1.2rem;
+  line-height: 2.4rem;
+  display: flex;
+  cursor: pointer;
+
+  .checkbox {
+    display: inline-block;
+  }
+  p {
+    flex: auto;
+    margin: 0 0 0 1.2rem;
+    line-height: 2.4rem;
+  }
 }
 
 .error {

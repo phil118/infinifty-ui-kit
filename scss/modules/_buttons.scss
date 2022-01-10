@@ -137,8 +137,15 @@ button,
   background-color: $black;
   color: $white;
   margin: 0;
-}
 
+  &.invert {
+    background-color: $white;
+
+    .icon24 {
+      fill: $black;
+    }
+  }
+}
 
 @media #{$hover-media-query} {
   button:hover,
@@ -166,6 +173,14 @@ button,
   .btn-mini:hover {
     [class^="icon"] {
       fill: $black;
+    }
+  }
+
+  .btn-mini.invert:hover {
+    background-color: $black;
+
+    [class^="icon"] {
+      fill: $white;
     }
   }
 

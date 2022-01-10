@@ -1354,6 +1354,10 @@ button,
   background-color: #000;
   color: #fff;
   margin: 0; }
+  .btn-mini.invert {
+    background-color: #fff; }
+    .btn-mini.invert .icon24 {
+      fill: #000; }
 
 @media only screen and (hover: hover) {
   button:hover,
@@ -1372,6 +1376,10 @@ button,
     color: #000; }
   .btn-mini:hover [class^="icon"] {
     fill: #000; }
+  .btn-mini.invert:hover {
+    background-color: #000; }
+    .btn-mini.invert:hover [class^="icon"] {
+      fill: #fff; }
   .btn-solid-action:hover {
     background-color: transparent;
     color: #FF0096; }
@@ -1435,6 +1443,105 @@ button,
     transform: translateY(0); }
   100% {
     transform: translateY(0); } }
+
+.slider {
+  height: 2.8rem;
+  position: relative;
+  margin: 2.2rem 0 4.4rem; }
+  .slider .handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -1.4rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    background: #fff;
+    border: 0.5px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.16), 0px 3px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 100%;
+    box-sizing: border-box; }
+  .slider .track {
+    height: .2rem;
+    position: absolute;
+    top: 50%;
+    margin-top: -0.1rem;
+    background: #000;
+    width: 100%;
+    border-radius: .1rem;
+    box-sizing: border-box;
+    overflow: hidden; }
+    .slider .track.bordered {
+      border: 1px solid #000;
+      height: .4rem;
+      border-radius: .2rem; }
+    .slider .track .fill {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 0%;
+      display: block;
+      background: #000; }
+
+.selectors {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -.4rem; }
+
+.selector {
+  margin: 0;
+  cursor: pointer; }
+  .selector input[type="radio"] {
+    display: none; }
+  .selector input:checked + .selector-sample {
+    border: 0.4rem solid #000; }
+
+.selector-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.4rem; }
+
+.selector-sample {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 100%; }
+
+.slider-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem; }
+  .slider-wrap .btn-mini {
+    width: 2.8rem;
+    height: 2.8rem; }
+  .slider-wrap .track {
+    background: #fff; }
+
+.slider-contols-center {
+  flex: auto;
+  width: 100%; }
+  .slider-contols-center .slider {
+    margin: 0; }
+
+.slider-title {
+  text-align: center;
+  margin-bottom: 1rem; }
+  .slider-title label {
+    margin: 0 auto;
+    padding: 1.2rem 1.6rem;
+    border-radius: 2.4rem;
+    display: inline-block;
+    background: #EEEEEE;
+    line-height: 2.4rem;
+    position: relative; }
+    .slider-title label:after {
+      position: absolute;
+      background: #EEEEEE;
+      height: 2.2rem;
+      width: .2rem;
+      bottom: -2.2rem;
+      left: 50%;
+      margin-left: -.1rem;
+      content: ""; }
 
 input[type='email'],
 input[type='number'],
@@ -1532,6 +1639,8 @@ input[type="checkbox"], input[type="radio"] {
   padding-right: 3.2rem;
   margin-bottom: 3.2rem;
   max-width: 40rem; }
+  .form-group > .icon {
+    margin-bottom: .8rem; }
 
 .form-inline-group {
   display: flex;
@@ -1716,6 +1825,28 @@ input:checked + .toggle {
   .checkbox.highlight input:checked + svg {
     background: #00BF00;
     border-color: #00BF00; }
+
+.wrapped-checkbox input {
+  display: none; }
+  .wrapped-checkbox input:checked + .wrapped-checkbox-border {
+    border-color: #000; }
+    .wrapped-checkbox input:checked + .wrapped-checkbox-border svg {
+      background: #000; }
+      .wrapped-checkbox input:checked + .wrapped-checkbox-border svg use {
+        display: block; }
+
+.wrapped-checkbox-border {
+  border: 1px solid #E2E2E2;
+  padding: 1.2rem;
+  line-height: 2.4rem;
+  display: flex;
+  cursor: pointer; }
+  .wrapped-checkbox-border .checkbox {
+    display: inline-block; }
+  .wrapped-checkbox-border p {
+    flex: auto;
+    margin: 0 0 0 1.2rem;
+    line-height: 2.4rem; }
 
 .error input[type='email'],
 .error input[type='number'],

@@ -14,19 +14,22 @@
 [x] - table
 [x] - down button
 [x] - loadingbar
+[x] - presets
+[x] - Radio buttons
+[x] - tos
 [] - Noticebar
-[] - Radio buttons
 [] - Sliders
 [] - Colour selector 
 [] - Selectable images
 [] - Selectable list items
-[] - wallet details
-[] - Sidebar
+[] - wallet details / mint step
+[] - properties boxes on mobile
 [] - Accordian
 [] - Tabs
 [] - dark mode
 [] - profile image
+[] - Sidebar
 [] - header
 [] - footer
 [] - menu li (footer)
-[] - social icons 
+[x] - social icons 
