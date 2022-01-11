@@ -1848,6 +1848,16 @@ input:checked + .toggle {
     margin: 0 0 0 1.2rem;
     line-height: 2.4rem; }
 
+.radio-icon-selector {
+  display: flex;
+  justify-content: space-between; }
+  .radio-icon-selector input {
+    display: none; }
+    .radio-icon-selector input:checked + .icon {
+      fill: #000; }
+  .radio-icon-selector .icon {
+    fill: #AFAFAF; }
+
 .error input[type='email'],
 .error input[type='number'],
 .error input[type='search'],
@@ -1857,7 +1867,8 @@ input:checked + .toggle {
 .error input[type='password'],
 .error textarea,
 .error .upload-area,
-.error .input-wrap {
+.error .input-wrap,
+.error .wrapped-checkbox-border {
   border-color: #FF7F98;
   background: #FFF2F5; }
 

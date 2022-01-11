@@ -438,6 +438,23 @@ input:checked + .toggle {
   }
 }
 
+.radio-icon-selector {
+  display: flex;
+  justify-content: space-between;
+
+  input {
+    display: none;
+
+    &:checked + .icon {
+      fill: $black;
+    }
+  }
+
+  .icon {
+    fill: $grey-400;
+  }
+}
+
 .error {
   input[type='email'],
   input[type='number'],
@@ -448,7 +465,8 @@ input:checked + .toggle {
   input[type='password'],
   textarea,
   .upload-area,
-  .input-wrap {
+  .input-wrap,
+  .wrapped-checkbox-border {
     border-color: $red-200;
     background: $red-50;
   }
@@ -472,6 +490,8 @@ input:checked + .toggle {
   .input-wrap [class^="icon"] {
     fill: $red-500;
   }
+
+
 }
 
 @media #{$hover-media-query} {

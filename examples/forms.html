@@ -386,6 +386,17 @@
 
           <div class="form-group">
 
+            <label class="toogle-wrapper">
+              <span>Full screen background</span>
+
+              <input type="checkbox">
+              <span class="toggle"></span>
+            </label>
+
+          </div>
+
+          <div class="form-group">
+
             <label>basic checkbox</label>
 
             <label class="checkbox">
@@ -806,6 +817,85 @@
 
         </div>
 
+        <div class="col-xs-12 col-sm-6">
+
+          <div class="form-group">
+            <div class="radio-icon-selector">
+              <label>
+                <input type="radio" value="left" name="layout-alignment" checked/>
+                <svg class="icon">
+                  <use xlink:href="/dist/icons/32.sprite.svg#layout-left"></use>
+                </svg>
+              </label>
+
+              <label>
+                <input type="radio" value="center" name="layout-alignment" />
+                <svg class="icon">
+                  <use xlink:href="/dist/icons/32.sprite.svg#layout-center"></use>
+                </svg>
+              </label>
+
+              <label>
+                <input type="radio" value="right" name="layout-alignment" />
+                <svg class="icon">
+                  <use xlink:href="/dist/icons/32.sprite.svg#layout-right"></use>
+                </svg>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="radio-icon-selector">
+              <label>
+                <input type="radio" value="left" name="text-alignment" checked/>
+                <svg class="icon">
+                  <use xlink:href="/dist/icons/32.sprite.svg#align-left"></use>
+                </svg>
+              </label>
+
+              <label>
+                <input type="radio" value="center" name="text-alignment" />
+                <svg class="icon">
+                  <use xlink:href="/dist/icons/32.sprite.svg#align-center"></use>
+                </svg>
+              </label>
+
+              <label>
+                <input type="radio" value="right" name="text-alignment" />
+                <svg class="icon">
+                  <use xlink:href="/dist/icons/32.sprite.svg#align-right"></use>
+                </svg>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="radio-icon-selector">
+              <label>
+                <input type="radio" value="left" name="vertical-alignment" checked/>
+                <svg class="icon">
+                  <use xlink:href="/dist/icons/32.sprite.svg#align-top"></use>
+                </svg>
+              </label>
+
+              <label>
+                <input type="radio" value="center" name="vertical-alignment" />
+                <svg class="icon">
+                  <use xlink:href="/dist/icons/32.sprite.svg#align-middle"></use>
+                </svg>
+              </label>
+
+              <label>
+                <input type="radio" value="right" name="vertical-alignment" />
+                <svg class="icon">
+                  <use xlink:href="/dist/icons/32.sprite.svg#align-bottom"></use>
+                </svg>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
       <div class="row">
@@ -818,28 +908,31 @@
             <!-- Slider are used to build out an HSLA value -->
             <!-- The hue slider will dictact the colours shown in the satuaration and lightness slector -->
             <!-- hue slider will run in chunks of 60, 0-60, 60-120, 120-180, 240-300, 300-360 -->
-            
+
             <div class="form-group">
 
               <div class="slider">
-                <div class="track" id="hue" style="background: linear-gradient(90deg, hsl(0, 100%, 50%) 0%, hsl(60, 100%, 50%) 100%);">
+                <div class="track" id="hue"
+                  style="background: linear-gradient(90deg, hsl(0, 100%, 50%) 0%, hsl(60, 100%, 50%) 100%);">
                   <div class="handle" id="hueHandle" draggable></div>
                 </div>
-                
+
               </div>
 
               <div class="slider">
-                <div class="track" id="saturation" style="background: linear-gradient(90deg, #ABABAB 0%, hsl(0, 100%, 50%) 100%);" >
+                <div class="track" id="saturation"
+                  style="background: linear-gradient(90deg, #ABABAB 0%, hsl(0, 100%, 50%) 100%);">
                   <div class="handle" id="saturationHandle" draggable style="left: 75%;"></div>
                 </div>
-                
+
               </div>
 
               <div class="slider">
-                <div class="track" id="lightness" style="background: linear-gradient(90deg, #FFFFFF 0%, hsl(0, 100%, 50%) 50%, #040002 100%);">
+                <div class="track" id="lightness"
+                  style="background: linear-gradient(90deg, #FFFFFF 0%, hsl(0, 100%, 50%) 50%, #040002 100%);">
                   <div class="handle" id="lightnessHandle" draggable style="left: 30%;"></div>
                 </div>
-               
+
               </div>
 
               <div class="selectors">
@@ -898,10 +991,11 @@
               <label>Background Opacity</label>
 
               <div class="slider">
-                <div class="track bordered" id="alpha" style="background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #000 100%);">
+                <div class="track bordered" id="alpha"
+                  style="background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #000 100%);">
                   <div class="handle" draggable style="left: 97%;"></div>
                 </div>
-                
+
               </div>
             </div>
 
@@ -917,8 +1011,8 @@
             </div>
 
           </form>
-
-
+        </div>
+        <div class="col-xs-12 col-sm-6">
           <div class="form-group">
 
             <div class="slider-title">
@@ -940,6 +1034,114 @@
                     <span class="fill" style="width: 50%;">
                     </span>
                     <div class="handle" draggable style="left: 50%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="slider-contols-right">
+                <button class="btn-mini invert">
+                  <svg class="icon24">
+                    <use xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+
+            <div class="slider-title">
+              <label class="label-sm">Speed</label>
+            </div>
+
+            <div class="slider-wrap">
+              <div class="slider-contols-left">
+                <button class="btn-mini invert">
+                  <svg class="icon24">
+                    <use xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="slider-contols-center">
+                <div class="slider">
+                  <div class="track bordered">
+                    <span class="fill" style="width: 60%;">
+                    </span>
+                    <div class="handle" draggable style="left: 60%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="slider-contols-right">
+                <button class="btn-mini invert">
+                  <svg class="icon24">
+                    <use xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+
+            <div class="slider-title">
+              <label class="label-sm">Entropy</label>
+            </div>
+
+            <div class="slider-wrap">
+              <div class="slider-contols-left">
+                <button class="btn-mini invert">
+                  <svg class="icon24">
+                    <use xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="slider-contols-center">
+                <div class="slider">
+                  <div class="track bordered">
+                    <span class="fill" style="width: 80%;">
+                    </span>
+                    <div class="handle" draggable style="left: 80%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="slider-contols-right">
+                <button class="btn-mini invert">
+                  <svg class="icon24">
+                    <use xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+
+            <div class="slider-title">
+              <label class="label-sm">Spawn Rate</label>
+            </div>
+
+            <div class="slider-wrap">
+              <div class="slider-contols-left">
+                <button class="btn-mini invert">
+                  <svg class="icon24">
+                    <use xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="slider-contols-center">
+                <div class="slider">
+                  <div class="track bordered">
+                    <span class="fill" style="width: 30%;">
+                    </span>
+                    <div class="handle" draggable style="left:30%;"></div>
                   </div>
                 </div>
               </div>
@@ -977,44 +1179,44 @@
     };
 
     var h = hueRanges[hueRange][1],
-    s = '50%',
-    l = '50%',
-    a = '50%';
+      s = '50%',
+      l = '50%',
+      a = '50%';
 
     function rangeSlider(id, onDrag) {
 
       var range = document.getElementById(id),
-          dragger = range.children[0],
-          down = false,
-          rangeWidth = range.offsetWidth,
-          rangeLeft;
+        dragger = range.children[0],
+        down = false,
+        rangeWidth = range.offsetWidth,
+        rangeLeft;
 
       dragger.style.left = (rangeWidth / 2) + 'px';
 
-      range.addEventListener("mousedown", function(e) {
-          rangeWidth = this.offsetWidth;
-          rangeLeft = this.getBoundingClientRect().left;
+      range.addEventListener("mousedown", function (e) {
+        rangeWidth = this.offsetWidth;
+        rangeLeft = this.getBoundingClientRect().left;
 
-          down = true;
-          updateDragger(e);
+        down = true;
+        updateDragger(e);
 
-          document.addEventListener("mousemove", updateDragger);
-          return false;
+        document.addEventListener("mousemove", updateDragger);
+        return false;
       });
 
-      document.addEventListener("mouseup", function() {
-          down = false;
-          document.removeEventListener('mousemove', updateDragger);
+      document.addEventListener("mouseup", function () {
+        down = false;
+        document.removeEventListener('mousemove', updateDragger);
       });
 
       function updateDragger(e) {
 
-          if (down && e.pageX >= rangeLeft && e.pageX <= (rangeLeft + rangeWidth)) {
-              dragger.style.left = e.pageX - rangeLeft + 'px';
-              if (typeof onDrag == "function") { 
-                onDrag(Math.round(((e.pageX - rangeLeft) / rangeWidth) * 100));
-              }
+        if (down && e.pageX >= rangeLeft && e.pageX <= (rangeLeft + rangeWidth)) {
+          dragger.style.left = e.pageX - rangeLeft + 'px';
+          if (typeof onDrag == "function") {
+            onDrag(Math.round(((e.pageX - rangeLeft) / rangeWidth) * 100));
           }
+        }
       }
 
     }
@@ -1047,48 +1249,48 @@
     var colourRadios = document.colorSelector.color;
 
     for (var i = 0; i < colourRadios.length; i++) {
-        colourRadios[i].addEventListener('change', function() {
-          setSlidersColours(this.value);
-        });
+      colourRadios[i].addEventListener('change', function () {
+        setSlidersColours(this.value);
+      });
     }
 
     function updateResult() {
       var resultDiv = document.getElementById('result');
-      resultDiv.style.background = 'hsla('+h+','+s+','+l+','+a+')';
+      resultDiv.style.background = 'hsla(' + h + ',' + s + ',' + l + ',' + a + ')';
     }
 
-    rangeSlider('hue', function(value) {
+    rangeSlider('hue', function (value) {
 
-        var increment = Math.round((60 / 100) * parseInt(value));
-        var bottomValue = hueRanges[hueRange][0];
-        h = bottomValue + increment;
+      var increment = Math.round((60 / 100) * parseInt(value));
+      var bottomValue = hueRanges[hueRange][0];
+      h = bottomValue + increment;
 
-        document.getElementById('hue-result').innerHTML = h;
-        updateResult();
+      document.getElementById('hue-result').innerHTML = h;
+      updateResult();
 
-        var saturationCss = 'linear-gradient(90deg, #ABABAB 0%,  hsl(' + h + ', 100%, 50%) 100%)';
-        var lightnessCss = 'linear-gradient(90deg, #FFFFFF 0%,  hsl(' + h + ', 100%, 50%) 50%, #040002 100%)';
+      var saturationCss = 'linear-gradient(90deg, #ABABAB 0%,  hsl(' + h + ', 100%, 50%) 100%)';
+      var lightnessCss = 'linear-gradient(90deg, #FFFFFF 0%,  hsl(' + h + ', 100%, 50%) 50%, #040002 100%)';
 
-        var saturation = document.getElementById('saturation');
-        var lightness = document.getElementById('lightness');
+      var saturation = document.getElementById('saturation');
+      var lightness = document.getElementById('lightness');
 
-        saturation.style.background = saturationCss;
-        lightness.style.background = lightnessCss;
+      saturation.style.background = saturationCss;
+      lightness.style.background = lightnessCss;
     });
 
-    rangeSlider('saturation', function(value) {
+    rangeSlider('saturation', function (value) {
       s = value + '%';
       document.getElementById('saturation-result').innerHTML = s;
       updateResult();
     });
 
-    rangeSlider('lightness', function(value) {
+    rangeSlider('lightness', function (value) {
       l = (100 - value) + '%';
       document.getElementById('lightness-result').innerHTML = l;
       updateResult();
     });
 
-    rangeSlider('alpha', function(value) {
+    rangeSlider('alpha', function (value) {
       a = value + '%';
       document.getElementById('alpha-result').innerHTML = a;
       updateResult();
