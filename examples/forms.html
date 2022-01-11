@@ -114,6 +114,7 @@
 
       }
     }
+
   </script>
 
 
@@ -813,84 +814,109 @@
         </div>
 
         <div class="col-xs-12 col-sm-6">
-          <div class="form-group">
+          <form name="colorSelector">
+            <!-- Slider are used to build out an HSLA value -->
+            <!-- The hue slider will dictact the colours shown in the satuaration and lightness slector -->
+            <!-- hue slider will run in chunks of 60, 0-60, 60-120, 120-180, 240-300, 300-360 -->
+            
+            <div class="form-group">
 
-            <div class="slider">
-              <div class="track" style="background: linear-gradient(90deg, #FF00E5 0%, #FF0000 100%);"></div>
-              <div class="handle" draggable></div>
+              <div class="slider">
+                <div class="track" id="hue" style="background: linear-gradient(90deg, hsl(0, 100%, 50%) 0%, hsl(60, 100%, 50%) 100%);">
+                  <div class="handle" id="hueHandle" draggable></div>
+                </div>
+                
+              </div>
+
+              <div class="slider">
+                <div class="track" id="saturation" style="background: linear-gradient(90deg, #ABABAB 0%, hsl(0, 100%, 50%) 100%);" >
+                  <div class="handle" id="saturationHandle" draggable style="left: 75%;"></div>
+                </div>
+                
+              </div>
+
+              <div class="slider">
+                <div class="track" id="lightness" style="background: linear-gradient(90deg, #FFFFFF 0%, hsl(0, 100%, 50%) 50%, #040002 100%);">
+                  <div class="handle" id="lightnessHandle" draggable style="left: 30%;"></div>
+                </div>
+               
+              </div>
+
+              <div class="selectors">
+
+                <!-- Hue selector selecting this sets the hue range -->
+
+                <div class="selector-wrap">
+                  <label class="selector">
+                    <input type="radio" name="color" value="0" checked>
+                    <div class="selector-sample" style="background: hsl(0, 100%, 50%);"></div>
+                  </label>
+                </div>
+
+                <div class="selector-wrap">
+                  <label class="selector">
+                    <input type="radio" name="color" value="60">
+                    <div class="selector-sample" style="background: hsl(60, 100%, 50%);"></div>
+                  </label>
+                </div>
+
+                <div class="selector-wrap">
+                  <label class="selector">
+                    <input type="radio" name="color" value="120">
+                    <div class="selector-sample" style="background: hsl(120, 100%, 50%);"></div>
+                  </label>
+                </div>
+
+                <div class="selector-wrap">
+                  <label class="selector">
+                    <input type="radio" name="color" value="180">
+                    <div class="selector-sample" style="background: hsl(180, 100%, 50%);"></div>
+                  </label>
+                </div>
+
+                <div class="selector-wrap">
+                  <label class="selector">
+                    <input type="radio" name="color" value="240">
+                    <div class="selector-sample" style="background: hsl(240, 100%, 50%);"></div>
+                  </label>
+                </div>
+
+                <div class="selector-wrap">
+                  <label class="selector">
+                    <input type="radio" name="color" value="300">
+                    <div class="selector-sample" style="background: hsl(300, 100%, 50%);"></div>
+                  </label>
+                </div>
+
+              </div>
+            </div>
+            <div class="form-group">
+
+              <svg class="icon">
+                <use xlink:href="/dist/icons/32.sprite.svg#opacity"></use>
+              </svg>
+              <label>Background Opacity</label>
+
+              <div class="slider">
+                <div class="track bordered" id="alpha" style="background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #000 100%);">
+                  <div class="handle" draggable style="left: 97%;"></div>
+                </div>
+                
+              </div>
             </div>
 
-            <div class="slider">
-              <div class="track" style="background: linear-gradient(90deg, #ABABAB 0%, #FF007A 100%);"></div>
-              <div class="handle" draggable style="left: 75%;"></div>
+            <div class="form-group">
+              <p>Hue: <span id="hue-result"></span></p>
+              <p>Saturation: <span id="saturation-result"></span></p>
+              <p>Lightness: <span id="lightness-result"></span></p>
+              <p>Alpha: <span id="alpha-result"></span></p>
+
+              <div id="result" style="width: 100%; height: 50px; background: hsla(30,50%,50%,50%)">
+
+              </div>
             </div>
 
-            <div class="slider">
-              <div class="track" style="background: linear-gradient(90deg, #FFFFFF 0%, #FF007A 50%, #040002 100%);"></div>
-              <div class="handle" draggable style="left: 30%;"></div>
-            </div>
-
-            <div class="selectors">
-
-              <div class="selector-wrap">
-                <label class="selector">
-                  <input type="radio" name="color" value="#FF0096" checked>
-                  <div class="selector-sample" style="background: #FF0096;"></div>
-                </label>
-              </div>
-
-              <div class="selector-wrap">
-                <label class="selector">
-                  <input type="radio" name="color" value="#FF6400">
-                  <div class="selector-sample" style="background: #FF6400;"></div>
-                </label>
-              </div>
-
-              <div class="selector-wrap">
-                <label class="selector">
-                  <input type="radio" name="color" value="#FFC800">
-                  <div class="selector-sample" style="background: #FFC800;"></div>
-                </label>
-              </div>
-
-              <div class="selector-wrap">
-                <label class="selector">
-                  <input type="radio" name="color" value="#96FF00">
-                  <div class="selector-sample" style="background: #96FF00;"></div>
-                </label>
-              </div>
-
-              <div class="selector-wrap">
-                <label class="selector">
-                  <input type="radio" name="color" value="#00C8FF">
-                  <div class="selector-sample" style="background: #00C8FF;"></div>
-                </label>
-              </div>
-
-              <div class="selector-wrap">
-                <label class="selector">
-                  <input type="radio" name="color" value="#9664FF">
-                  <div class="selector-sample" style="background: #9664FF;"></div>
-                </label>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="form-group">
-
-            <svg class="icon">
-              <use xlink:href="/dist/icons/32.sprite.svg#opacity"></use>
-            </svg>
-            <label>Background Opacity</label>
-
-            <div class="slider">
-              <div class="track bordered" style="background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #000 100%);"></div>
-              <div class="handle" draggable style="left: 3%;"></div>
-            </div>
-
-          </div>
+          </form>
 
 
           <div class="form-group">
@@ -911,9 +937,10 @@
               <div class="slider-contols-center">
                 <div class="slider">
                   <div class="track bordered">
-                    <span class="fill" style="width: 50%;"></span>
+                    <span class="fill" style="width: 50%;">
+                    </span>
+                    <div class="handle" draggable style="left: 50%;"></div>
                   </div>
-                  <div class="handle" draggable style="left: 50%;"></div>
                 </div>
               </div>
 
@@ -931,13 +958,144 @@
       </div>
 
 
-
     </div>
   </div>
 
 
-  <!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script>
+
+    // this is a bit of a mess and needs refactoring but demonstrates how colour picker could work
+
+    var hueRange = 0;
+    var hueRanges = {
+      0: [0, 30, 60],
+      60: [60, 90, 120],
+      120: [120, 150, 180],
+      180: [180, 210, 240],
+      240: [240, 270, 300],
+      300: [300, 330, 360]
+    };
+
+    var h = hueRanges[hueRange][1],
+    s = '50%',
+    l = '50%',
+    a = '50%';
+
+    function rangeSlider(id, onDrag) {
+
+      var range = document.getElementById(id),
+          dragger = range.children[0],
+          down = false,
+          rangeWidth = range.offsetWidth,
+          rangeLeft;
+
+      dragger.style.left = (rangeWidth / 2) + 'px';
+
+      range.addEventListener("mousedown", function(e) {
+          rangeWidth = this.offsetWidth;
+          rangeLeft = this.getBoundingClientRect().left;
+
+          down = true;
+          updateDragger(e);
+
+          document.addEventListener("mousemove", updateDragger);
+          return false;
+      });
+
+      document.addEventListener("mouseup", function() {
+          down = false;
+          document.removeEventListener('mousemove', updateDragger);
+      });
+
+      function updateDragger(e) {
+
+          if (down && e.pageX >= rangeLeft && e.pageX <= (rangeLeft + rangeWidth)) {
+              dragger.style.left = e.pageX - rangeLeft + 'px';
+              if (typeof onDrag == "function") { 
+                onDrag(Math.round(((e.pageX - rangeLeft) / rangeWidth) * 100));
+              }
+          }
+      }
+
+    }
+
+    function setSlidersColours(hue) {
+
+      hueRange = parseInt(hue);
+
+      var nextHueValue = hueRanges[hueRange][2];
+      var startingHue = hueRanges[hueRange][1];
+
+      var hueCss = 'linear-gradient(90deg, hsl(' + hueRange + ', 100%, 50%) 0%, hsl(' + nextHueValue + ', 100%, 50%) 100%';
+      var saturationCss = 'linear-gradient(90deg, #ABABAB 0%,  hsl(' + startingHue + ', 100%, 50%) 100%)';
+      var lightnessCss = 'linear-gradient(90deg, #FFFFFF 0%,  hsl(' + startingHue + ', 100%, 50%) 50%, #040002 100%)';
+
+      var hue = document.getElementById('hue');
+      var saturation = document.getElementById('saturation');
+      var lightness = document.getElementById('lightness');
+
+      hue.style.background = hueCss;
+      saturation.style.background = saturationCss;
+      lightness.style.background = lightnessCss;
+
+      h = startingHue;
+      updateResult();
+    }
+
+    setSlidersColours(0);
+
+    var colourRadios = document.colorSelector.color;
+
+    for (var i = 0; i < colourRadios.length; i++) {
+        colourRadios[i].addEventListener('change', function() {
+          setSlidersColours(this.value);
+        });
+    }
+
+    function updateResult() {
+      var resultDiv = document.getElementById('result');
+      resultDiv.style.background = 'hsla('+h+','+s+','+l+','+a+')';
+    }
+
+    rangeSlider('hue', function(value) {
+
+        var increment = Math.round((60 / 100) * parseInt(value));
+        var bottomValue = hueRanges[hueRange][0];
+        h = bottomValue + increment;
+
+        document.getElementById('hue-result').innerHTML = h;
+        updateResult();
+
+        var saturationCss = 'linear-gradient(90deg, #ABABAB 0%,  hsl(' + h + ', 100%, 50%) 100%)';
+        var lightnessCss = 'linear-gradient(90deg, #FFFFFF 0%,  hsl(' + h + ', 100%, 50%) 50%, #040002 100%)';
+
+        var saturation = document.getElementById('saturation');
+        var lightness = document.getElementById('lightness');
+
+        saturation.style.background = saturationCss;
+        lightness.style.background = lightnessCss;
+    });
+
+    rangeSlider('saturation', function(value) {
+      s = value + '%';
+      document.getElementById('saturation-result').innerHTML = s;
+      updateResult();
+    });
+
+    rangeSlider('lightness', function(value) {
+      l = (100 - value) + '%';
+      document.getElementById('lightness-result').innerHTML = l;
+      updateResult();
+    });
+
+    rangeSlider('alpha', function(value) {
+      a = value + '%';
+      document.getElementById('alpha-result').innerHTML = a;
+      updateResult();
+    });
+
+  </script>
+
 </body>
 
 </html>
