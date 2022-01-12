@@ -1359,6 +1359,67 @@ button,
     .btn-mini.invert .icon24 {
       fill: #000; }
 
+.group-btn {
+  display: flex;
+  height: 4.8rem;
+  width: 100%; }
+  .group-btn button {
+    flex: auto;
+    max-width: none;
+    padding: 1.2rem;
+    height: 100%;
+    line-height: 2.4rem;
+    border: none;
+    min-width: 8rem;
+    border-radius: 0;
+    background: #EEEEEE;
+    color: #757575;
+    margin: 0;
+    text-align: left; }
+  .group-btn .discard {
+    flex: 0; }
+  .group-btn .save {
+    background: #00BF00;
+    color: #fff;
+    display: flex; }
+    .group-btn .save .icon24 {
+      fill: #00BF00;
+      background: #fff;
+      border-radius: 100%;
+      position: static;
+      transform: none;
+      margin-right: 1.2rem; }
+  .group-btn .disconnect {
+    background: #FFD640;
+    color: #000;
+    display: flex; }
+    .group-btn .disconnect .icon24 {
+      background: #000;
+      border-radius: 100%;
+      padding: .4rem;
+      margin-right: 1.2rem;
+      box-sizing: border-box;
+      position: static;
+      transform: none; }
+    .group-btn .disconnect .icon16 {
+      fill: #FFD640;
+      position: static;
+      transform: none; }
+
+.btn-sq {
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 0;
+  margin: 0;
+  border: 0;
+  padding: 1.2rem;
+  background: #F6F6F6; }
+  .btn-sq .icon,
+  .btn-sq .icon24 {
+    fill: #000; }
+  .btn-sq.active {
+    background: #fff; }
+
 @media only screen and (hover: hover) {
   button:hover,
   .btn:hover {
@@ -1401,7 +1462,15 @@ button,
     background: transparent; }
     .btn-input:hover [class^="icon"],
     .btn-circle-solid:hover [class^="icon"] {
-      fill: #000; } }
+      fill: #000; }
+  .save:hover {
+    background: #00FF00; }
+    .save:hover .icon24 {
+      fill: #00FF00; }
+  .btn-sq:hover {
+    background: #E2E2E2; }
+  .btn-sq.active:hover {
+    background: #fff; } }
 
 .btn-down {
   width: 4.8rem;
@@ -2398,3 +2467,37 @@ td:last-child {
   .loading-bar {
     padding-left: 6.4rem;
     padding-right: 6.4rem; } }
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transition: transform ease .5s;
+  transform: translateX(42rem); }
+  .sidebar.open {
+    transform: translateX(0); }
+
+.sidebar-content {
+  width: 42rem;
+  height: 100vh;
+  background: #fff;
+  overflow: auto; }
+
+.sidebar-tabs {
+  position: absolute;
+  top: 4.8rem;
+  left: -4.8rem;
+  width: 4.8rem; }
+
+.sidebar-header {
+  height: 4.8rem;
+  position: relative; }
+  .sidebar-header .disconnect-wallet {
+    position: absolute;
+    top: 0;
+    right: 0; }
+
+.fixed-notice {
+  position: fixed;
+  top: 0;
+  width: inherit; }

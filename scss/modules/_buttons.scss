@@ -147,6 +147,87 @@ button,
   }
 }
 
+.group-btn {
+  display: flex;
+  height: 4.8rem;
+  width: 100%;
+
+  button {
+    flex: auto;
+    max-width: none;
+    padding: 1.2rem;
+    height: 100%;
+    line-height: 2.4rem;
+    border: none;
+    min-width: 8rem;
+    border-radius: 0;
+    background: $grey-100;
+    color: $grey-500;
+    margin: 0;
+    text-align: left;
+  }
+
+  .discard {
+    flex: 0;
+  }
+
+  .save {
+    background: $green-500;
+    color: $white;
+    display: flex;
+
+    .icon24 {
+      fill: $green-500;
+      background: $white;
+      border-radius: 100%;
+      position: static;
+      transform: none;
+      margin-right: 1.2rem;
+    }
+  }
+
+  .disconnect {
+    background: $yellow-300;
+    color: $black;
+    display: flex;
+
+    .icon24 {
+      background: $black;
+      border-radius: 100%;
+      padding: .4rem;
+      margin-right: 1.2rem;
+      box-sizing: border-box;
+      position: static;
+      transform: none;
+    }
+
+    .icon16 {
+      fill: $yellow-300;
+      position: static;
+      transform: none;
+    }
+  }
+}
+
+.btn-sq {
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 0;
+  margin: 0;
+  border: 0;
+  padding: 1.2rem;
+  background: $grey-50;
+
+  .icon,
+  .icon24 {
+    fill: $black;
+  }
+
+  &.active {
+    background: $white;
+  }
+}
+
 @media #{$hover-media-query} {
   button:hover,
   .btn:hover {
@@ -223,6 +304,21 @@ button,
     }
   }
 
+  .save:hover {
+    background: $green-400;
+
+    .icon24 {
+      fill: $green-400;
+    }
+  }
+
+  .btn-sq:hover {
+    background: $grey-200;   
+  }
+
+  .btn-sq.active:hover {
+    background: $white;   
+  }
 }
 
 

@@ -17,16 +17,12 @@
 [x] - presets
 [x] - Radio buttons
 [x] - tos
-[] - Noticebar
 [x] - Sliders
-[] - Colour selector 
-[] - Selectable images
+[x] - Colour selector 
+[x] - Selectable images
 [] - Selectable list items
 [] - wallet details / mint step
 [] - properties boxes on mobile
 [] - Accordian
-[] - Tabs
-[] - dark mode
-[] - profile image
-[] - Sidebar
+[x] - Sidebar
 [x] - social icons 
