@@ -1,0 +1,46 @@
+.accordion-head {
+  padding: 0 4.6rem;
+  height: 6.4rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid $grey-200;
+  background: $white;
+
+  .label-md {
+    margin: 0;
+    flex: auto;
+  }
+
+  .minus {
+    display: none;
+  }
+
+  &.open {
+    .minus {
+      display: block;
+    }
+
+    .plus {
+      display: none;
+    }
+
+    + .accordion-content {
+      max-height: 999em;
+    }
+  }
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+
+  .accordion-head {
+    background: $grey-50;
+  }
+}
+
+
+@media #{$hover-media-query} {
+
+}

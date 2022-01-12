@@ -1,0 +1,42 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transition: transform ease .5s;
+  transform: translateX(42rem);
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+.sidebar-content {
+  width: 42rem;
+  height: 100vh;
+  background: #fff;
+  overflow: auto;
+}
+
+.sidebar-tabs {
+  position: absolute;
+  top: 4.8rem;
+  left: -4.8rem;
+  width: 4.8rem;
+}
+
+.sidebar-header {
+  height: 4.8rem;
+  position: relative;
+
+  .disconnect-wallet {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+}
+
+.fixed-notice {
+  position: fixed;
+  top: 0;
+  width: inherit;
+}

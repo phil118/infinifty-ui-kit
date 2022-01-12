@@ -179,7 +179,7 @@ dl {
   }
 }
 
-// @media all and (hover: hover) {
+// @media #{$hover-media-query} { {
 //   .asset-wrap:hover .asset {
 //     background: $grey-50;
 

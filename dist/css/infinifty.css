@@ -2468,6 +2468,32 @@ td:last-child {
     padding-left: 6.4rem;
     padding-right: 6.4rem; } }
 
+.accordion-head {
+  padding: 0 4.6rem;
+  height: 6.4rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid #E2E2E2;
+  background: #fff; }
+  .accordion-head .label-md {
+    margin: 0;
+    flex: auto; }
+  .accordion-head .minus {
+    display: none; }
+  .accordion-head.open .minus {
+    display: block; }
+  .accordion-head.open .plus {
+    display: none; }
+  .accordion-head.open + .accordion-content {
+    max-height: 999em; }
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden; }
+  .accordion-content .accordion-head {
+    background: #F6F6F6; }
+
 .sidebar {
   position: fixed;
   top: 0;
