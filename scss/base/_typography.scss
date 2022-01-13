@@ -133,6 +133,12 @@ label,
   display: block;
 }
 
+.icon + label,
+.icon + .label-sm,
+.icon + .lable-md {
+  margin-top: .8rem;
+}
+
 
 // Weights
 .font-thin	{ 

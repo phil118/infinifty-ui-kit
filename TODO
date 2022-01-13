@@ -20,9 +20,10 @@
 [x] - Sliders
 [x] - Colour selector 
 [x] - Selectable images
-[] - Selectable list items
-[] - wallet details / mint step
-[] - properties boxes on mobile
-[] - Accordian
+[x] - Selectable list items
+[x] - Accordian
 [x] - Sidebar
 [x] - social icons 
+[] - sidebar - internal of folder
+[] - sidebar - customise/layout
+[] - sidebar - customise/styles

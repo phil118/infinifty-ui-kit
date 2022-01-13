@@ -49,9 +49,29 @@ li {
   margin: 2.8rem 0 4.4rem;
   position: relative;
   min-height: 8rem;
+  list-style: none;
 
+  .file:last-child,
   .folder:last-child {
     border-bottom: none;
+  }
+}
+
+.file {
+  border-bottom: 1px solid $grey-200;
+  background: $white;
+
+  label {
+    cursor: pointer;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    margin: 0;
+
+    > span {
+      flex: auto;
+      margin: 0;
+    }
   }
 }
 
@@ -175,6 +195,17 @@ dl {
 
   dd {
     grid-row: 2;
+    margin: 0;
+  }
+}
+
+.bordered-list {
+  list-style: none;
+  margin-top: .8rem;
+
+  li {
+    border-bottom: 1px solid $grey-200;
+    padding: 1.8rem 0;
     margin: 0;
   }
 }

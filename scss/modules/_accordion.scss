@@ -1,6 +1,6 @@
 .accordion-head {
-  padding: 0 4.6rem;
-  height: 6.4rem;
+  padding: 0 4.8rem;
+  height: 4.8rem;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -17,6 +17,7 @@
   }
 
   &.open {
+
     .minus {
       display: block;
     }
@@ -34,9 +35,30 @@
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  
+
+  .form-group {
+    padding: 0 4.8rem;
+    margin: 4.8rem 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
   .accordion-head {
     background: $grey-50;
+
+    .label-md {
+      font-weight: 400;
+    }
+  }
+
+  .accordion-content { 
+    background: $grey-50;
+
+    .accordion-content-inner {
+      border-bottom: 1px solid $grey-200;
+    }
   }
 }
 

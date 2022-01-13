@@ -211,19 +211,22 @@ hr {
   border-width: 0;
   border-top: 1px solid #E2E2E2; }
 
-.u-full-width {
+.full-width {
   width: 100%;
   box-sizing: border-box; }
 
-.u-max-full-width {
+.max-full-width {
   max-width: 100%;
   box-sizing: border-box; }
 
-.u-pull-right {
+.pull-right {
   float: right; }
 
-.u-pull-left {
+.pull-left {
   float: left; }
+
+.pull-center {
+  margin: 0 auto; }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0; }
@@ -336,6 +339,11 @@ label,
   letter-spacing: 0;
   margin-bottom: 0.5714285714em;
   display: block; }
+
+.icon + label,
+.icon + .label-sm,
+.icon + .lable-md {
+  margin-top: .8rem; }
 
 .font-thin {
   font-weight: 100; }
@@ -1708,8 +1716,9 @@ input[type="checkbox"], input[type="radio"] {
   padding-right: 3.2rem;
   margin-bottom: 3.2rem;
   max-width: 40rem; }
-  .form-group > .icon {
-    margin-bottom: .8rem; }
+
+.form-group-titles {
+  margin-bottom: 4.8rem; }
 
 .form-inline-group {
   display: flex;
@@ -1910,6 +1919,15 @@ input:checked + .toggle {
     position: absolute;
     top: 2.4rem;
     right: 2.4rem; }
+  .selectable .placeholder .pattern-src {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; }
+    .selectable .placeholder .pattern-src rect {
+      width: 100%;
+      height: 100%; }
 
 .wrapped-checkbox input {
   display: none; }
@@ -2272,9 +2290,24 @@ li {
   border: 1px solid #E2E2E2;
   margin: 2.8rem 0 4.4rem;
   position: relative;
-  min-height: 8rem; }
+  min-height: 8rem;
+  list-style: none; }
+  .folder-list .file:last-child,
   .folder-list .folder:last-child {
     border-bottom: none; }
+
+.file {
+  border-bottom: 1px solid #E2E2E2;
+  background: #fff; }
+  .file label {
+    cursor: pointer;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    margin: 0; }
+    .file label > span {
+      flex: auto;
+      margin: 0; }
 
 .folder {
   border-bottom: 1px solid #E2E2E2;
@@ -2364,6 +2397,14 @@ dl {
     font-weight: 300; }
   dl dd {
     grid-row: 2;
+    margin: 0; }
+
+.bordered-list {
+  list-style: none;
+  margin-top: .8rem; }
+  .bordered-list li {
+    border-bottom: 1px solid #E2E2E2;
+    padding: 1.8rem 0;
     margin: 0; }
 
 th,
@@ -2469,8 +2510,8 @@ td:last-child {
     padding-right: 6.4rem; } }
 
 .accordion-head {
-  padding: 0 4.6rem;
-  height: 6.4rem;
+  padding: 0 4.8rem;
+  height: 4.8rem;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -2491,8 +2532,19 @@ td:last-child {
 .accordion-content {
   max-height: 0;
   overflow: hidden; }
+  .accordion-content .form-group {
+    padding: 0 4.8rem;
+    margin: 4.8rem 0; }
+  .accordion-content img {
+    max-width: 100%; }
   .accordion-content .accordion-head {
     background: #F6F6F6; }
+    .accordion-content .accordion-head .label-md {
+      font-weight: 400; }
+  .accordion-content .accordion-content {
+    background: #F6F6F6; }
+    .accordion-content .accordion-content .accordion-content-inner {
+      border-bottom: 1px solid #E2E2E2; }
 
 .sidebar {
   position: fixed;
@@ -2502,12 +2554,36 @@ td:last-child {
   transform: translateX(42rem); }
   .sidebar.open {
     transform: translateX(0); }
+  .sidebar.infinifty #infinifty {
+    display: block; }
+  .sidebar.files #files {
+    display: block; }
+  .sidebar.customise #customise {
+    display: block; }
+  .sidebar.permissions #permissions {
+    display: block; }
+  .sidebar.owner #owner {
+    display: block; }
+  .sidebar .accordion-head.open {
+    position: sticky;
+    top: 0;
+    z-index: 100; }
+  .sidebar .accordion-content .accordion-head.open {
+    position: static; }
+  .sidebar .folder-list {
+    border-left: 0;
+    border-right: 0; }
+    .sidebar .folder-list li {
+      padding-left: 2.4rem;
+      padding-right: 3.7rem; }
 
 .sidebar-content {
   width: 42rem;
   height: 100vh;
   background: #fff;
   overflow: auto; }
+  .sidebar-content .sidebar-tab-contents {
+    display: none; }
 
 .sidebar-tabs {
   position: absolute;
@@ -2523,7 +2599,29 @@ td:last-child {
     top: 0;
     right: 0; }
 
+.sidebar-section {
+  padding: 0 4.8rem;
+  margin: 1.2rem 0 4.8rem; }
+  .sidebar-section .stats {
+    margin-top: 2.4rem; }
+  .sidebar-section .heading-xs {
+    margin: 0; }
+    .sidebar-section .heading-xs + p {
+      margin: 1.2rem 0 2.8rem; }
+  .sidebar-section .pull-right {
+    margin-top: 2.6rem; }
+
+.sidebar-input {
+  margin: 2.4rem 0; }
+
 .fixed-notice {
   position: fixed;
   top: 0;
-  width: inherit; }
+  width: inherit;
+  z-index: 200; }
+
+.permission {
+  display: flex;
+  align-items: center; }
+  .permission .permission-left {
+    flex: auto; }

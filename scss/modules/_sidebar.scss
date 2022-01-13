@@ -4,8 +4,59 @@
   right: 0;
   transition: transform ease .5s;
   transform: translateX(42rem);
+
   &.open {
     transform: translateX(0);
+  }
+
+  &.infinifty {
+    #infinifty {
+      display: block;
+    }
+  }
+
+  &.files {
+    #files {
+      display: block;
+    }
+  }
+
+  &.customise {
+    #customise {
+      display: block;
+    }
+  }
+
+  &.permissions {
+    #permissions {
+      display: block;
+    }
+  }
+
+  &.owner {
+    #owner {
+      display: block;
+    }
+  }
+
+  .accordion-head.open {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .accordion-content .accordion-head.open {
+    position: static;
+  }
+
+  .folder-list {
+    border-left: 0;
+    border-right: 0;
+
+    li {
+      padding-left: 2.4rem;
+      padding-right: 3.7rem;
+    }
   }
 }
 
@@ -14,6 +65,10 @@
   height: 100vh;
   background: #fff;
   overflow: auto;
+
+  .sidebar-tab-contents {
+    display: none;
+  }
 }
 
 .sidebar-tabs {
@@ -32,11 +87,46 @@
     top: 0;
     right: 0;
   }
-
 }
+
+.sidebar-section {
+  padding: 0 4.8rem;
+  margin: 1.2rem 0 4.8rem;
+
+  .stats {
+    margin-top: 2.4rem;
+  }
+
+  .heading-xs {
+    margin: 0; 
+
+    + p {
+      margin: 1.2rem 0 2.8rem;
+    }
+  }
+
+  .pull-right {
+    margin-top: 2.6rem;
+  }
+}
+
+.sidebar-input {
+  margin: 2.4rem 0;
+}
+
 
 .fixed-notice {
   position: fixed;
   top: 0;
   width: inherit;
+  z-index: 200;
+}
+
+.permission {
+  display: flex;
+  align-items: center;
+
+  .permission-left {
+    flex: auto;
+  }
 }

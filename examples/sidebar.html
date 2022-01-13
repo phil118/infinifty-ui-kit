@@ -47,9 +47,37 @@
       }
     }
 
-    function showSidebar() {
+    function showSide() {
       var sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle("open");
+      sidebar.classList.toggle('open');
+    }
+
+    function showSidebar(btn, id) {
+
+      var sidebar = document.getElementById('sidebar');
+
+      sidebar.classList.remove('infinifty', 'files', 'customise', 'owner', 'permissions');
+
+      if(id === 'permissions' || id === 'owner') {
+        var back = document.getElementById('back');
+        back.style.display = "block";
+      }
+
+      if (sidebar.classList.contains('open') && btn.classList.contains('active')) {        
+        sidebar.classList.remove('open');
+      }
+      else if (!sidebar.classList.contains('open')) {
+        sidebar.classList.add('open');
+      }
+
+      var tabs = document.getElementsByClassName('sidebar-tab');
+      for (var i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove('active');
+      }
+
+      btn.classList.toggle('active');
+      sidebar.classList.add(id)
+
     }
 
   </script>
@@ -67,9 +95,16 @@
       <div class="row" style="margin-bottom: 0;">
         <div class="col" id="controls">
 
-          <button onclick="showSidebar()">Show/Hide Sidebar</button><br/>
+          <button onclick="showSide()">Show/Hide Sidebar</button><br/>
           <button onclick="showHide('save')">Show/Hide Save confirm Button</button><br/>
-          <button onclick="showHide('disconnect')">Show/Hide Disconnect confirm Button</button>
+          <button onclick="showHide('disconnect')">Show/Hide Disconnect confirm Button</button><br/>
+          <button onclick="showHide('back')">Show/Hide Back Button</button> <br/><br/>
+
+          <p>Basic layout for sidebar.</p>
+          <p>Note: any sub section that you step into the back button should then show and pull you back to the previous</p>
+          <p>Note: any edit made should show the save icon to fully commit the changes</p>
+          <p>Note: any edit made to background colour/image/pattern should refect in mock up on sidebar</p>
+          <p>Note: in files, download button should be disabled until file(s) selected</p>
 
         </div>
         
@@ -79,16 +114,16 @@
 
 
 
-  <div class="sidebar open" id="sidebar">
+  <div class="sidebar open infinifty" id="sidebar">
     <div class="sidebar-tabs">
 
-      <button class="btn-sq" onclick="showSidebar()" >
+      <button class="btn-sq active sidebar-tab" onclick="showSidebar(this, 'infinifty')" >
         <svg class="icon24"><use xlink:href="/dist/icons/32.sprite.svg#infinifty-logo"></use></svg>
       </button> 
-      <button class="btn-sq" onclick="showSidebar()">
+      <button class="btn-sq sidebar-tab" onclick="showSidebar(this, 'files')">
         <svg class="icon24"><use xlink:href="/dist/icons/32.sprite.svg#files"></use></svg>
       </button>
-      <button class="btn-sq active" onclick="showSidebar()">
+      <button class="btn-sq sidebar-tab" onclick="showSidebar(this, 'customise')">
         <svg class="icon24"><use xlink:href="/dist/icons/32.sprite.svg#customise"></use></svg>
       </button>
 
@@ -97,7 +132,7 @@
     <div class="sidebar-content">
 
       <div class="sidebar-header">
-        <button class="btn-sq back">
+        <button class="btn-sq" id="back" style="display: none;">
           <svg class="icon">
             <use xlink:href="/dist/icons/32.sprite.svg#chevron-left"></use>
           </svg>
@@ -140,110 +175,989 @@
         </div>
       </div>
 
-      <div class="accordion">
-        <div class="accordion-head">
-          <span class="label-md">Background</span>
-          <div class="accordion-icon">
-            <svg class="icon">
-              <use class="plus" xlink:href="/dist/icons/32.sprite.svg#plus"></use>
-              <use class="minus" xlink:href="/dist/icons/32.sprite.svg#minus"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="accordion-content">
-          <div class="accordion-content-inner">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum in magna sit amet tincidunt. Vivamus dictum dui vel nunc blandit, vel aliquam nibh commodo. Nullam luctus vestibulum tincidunt. Donec ut libero sed mi ultricies scelerisque. Fusce arcu elit, fermentum eget metus eget, eleifend placerat enim. Suspendisse potenti. Donec sed pretium ante. Duis cursus, massa ac malesuada ullamcorper, erat augue scelerisque mauris, non feugiat ante libero vel lacus. In id urna id lacus viverra ornare ac eu ante. Aliquam suscipit auctor ullamcorper. Phasellus congue aliquet facilisis. Morbi elementum nibh non felis imperdiet, consequat dictum nulla semper. Aenean imperdiet sollicitudin lorem, at pulvinar dolor pellentesque eget.</p>
+      <div class="sidebar-tab-contents" id="infinifty">
+        <div class="sidebar-section">
+          <h4 class="heading-xs">Monolith III</h4>
+          <span class="label-sm">Tim Jarvis</span>
 
-            <p>Vivamus lobortis ipsum a ultrices interdum. Aliquam sagittis arcu mauris, eu ornare arcu congue eu. Nulla varius erat convallis, dictum turpis id, convallis ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec augue lectus, convallis nec interdum vitae, dignissim vitae risus. Phasellus volutpat malesuada dui, et varius leo ultricies id. Nam finibus tincidunt neque ut dictum. Donec enim leo, molestie ut tempus eget, porttitor bibendum ex. Duis suscipit cursus nunc eget consequat. Cras ut mauris quis leo ultricies consectetur. Aliquam erat volutpat. Proin cursus, nulla vel molestie viverra, enim mauris lacinia eros, et varius justo urna quis libero. Sed eget mauris mollis, blandit turpis ac, volutpat sem.</p>
-            
-            <p>Curabitur et gravida tellus. Sed aliquam dolor nec enim cursus scelerisque. Curabitur pulvinar pulvinar ante, ac imperdiet risus bibendum id. Sed id porttitor mi. Praesent eleifend augue ac enim condimentum, vitae consequat massa porttitor. Proin rutrum lacus in ante bibendum interdum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque tellus diam, fermentum sit amet facilisis sed, eleifend sed quam. Maecenas accumsan pharetra mauris quis luctus. Maecenas vitae auctor diam. Curabitur dignissim orci ac purus semper commodo.</p>
-            
-            <p>Praesent lacinia dapibus libero, sed aliquam tortor vulputate at. Suspendisse semper varius nisi, id lacinia dolor pellentesque et. Suspendisse ullamcorper libero eget odio tincidunt faucibus. Vestibulum vitae quam commodo, lacinia felis id, egestas urna. Sed eget rutrum lacus. Sed ut mi ac felis ornare vehicula quis a nulla. Pellentesque rhoncus velit sem, nec tempus tellus tincidunt ac. Sed hendrerit tristique massa vehicula consequat. Mauris eget justo non purus tempor dignissim. Integer et auctor leo. Aliquam aliquam tellus in elit feugiat placerat. Fusce ac accumsan odio. Sed vel tortor ut mauris sollicitudin posuere. Nunc cursus nunc vitae nunc faucibus, et tincidunt urna dapibus. Integer gravida eros eget augue tristique sagittis. Nulla ut ipsum id massa bibendum posuere.</p>
-            
-            <p>Cras iaculis ullamcorper feugiat. Phasellus vitae ultrices enim. Pellentesque quis lectus dolor. Integer rhoncus lorem tortor, ac venenatis magna viverra a. Duis fringilla euismod lobortis. Praesent ultrices, velit sit amet pharetra blandit, magna lorem sollicitudin nibh, vitae aliquam libero nunc in felis. Sed convallis eros odio, sed pretium ipsum condimentum non. Nulla facilisi. Vivamus volutpat, tellus sed commodo condimentum, urna risus pulvinar metus, quis vulputate arcu augue vitae nisi. Quisque cursus suscipit urna non rutrum. Pellentesque et scelerisque purus, quis tincidunt erat. Vestibulum sodales nulla eget elementum mollis. Etiam sed tristique justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi ac lacus dignissim, malesuada risus in, auctor magna. Suspendisse auctor dapibus tortor, non feugiat nisi lacinia quis.</p>
+          <dl class="stats">
+            <dt>2388</dt>
+            <dd><span class="badge">Token</span></dd>
+            <dt>JPG</dt>
+            <dd><span class="badge">File</span></dd>
+            <dt>2.3Mb</dt>
+            <dd><span class="badge">Size</span></dd>
+            <dt>4320x2880</dt>
+            <dd><span class="badge">Pixels</span></dd>
+          </dl>
+        </div>
+        <div class="sidebar-section">
+          <button class="btn btn-inline pull-right" onclick="showSidebar(this, 'owner')">Edit</button>
+          <svg class="icon">
+            <use class="plus" xlink:href="/dist/icons/32.sprite.svg#owner"></use>
+          </svg>
+          <span class="label-sm">Phil Jenkins</span>
+          <span class="badge">Owner</span>
+
+        </div>
+        <div class="sidebar-section">
+          <button class="btn btn-inline pull-right" onclick="showSidebar(this, 'permissions')">Edit</button>
+          <svg class="icon">
+            <use class="plus" xlink:href="/dist/icons/32.sprite.svg#locked"></use>
+          </svg>
+          <span class="label-sm">Blocked from 3 domains</span>
+          <span class="badge">Permissions</span>
+        </div>
+        <div class="sidebar-section">
+          <svg class="icon">
+            <use class="plus" xlink:href="/dist/icons/32.sprite.svg#settings"></use>
+          </svg>
+
+          <ul class="bordered-list">
+            <li>
+              <label class="toogle-wrapper">
+                <span>Dark Mode</span>
+                <input type="checkbox">
+                <span class="toggle"></span>
+              </label>
+            </li>
+            <li>
+              <label class="toogle-wrapper">
+                <span>Display Owner</span>
+                <input type="checkbox" checked>
+                <span class="toggle"></span>
+              </label>
+            </li>
+            <li>
+              <label class="toogle-wrapper">
+                <span>Display Summary</span>
+                <input type="checkbox" checked>
+                <span class="toggle"></span>
+              </label>
+            </li>
+            <li>
+              <label class="toogle-wrapper">
+                <span>Display Media Preview</span>
+                <input type="checkbox" checked>
+                <span class="toggle"></span>
+              </label>
+            </li>
+          </ul>
+
+        </div>
+    
+      </div>
+
+      <div class="sidebar-tab-contents" id="owner">
+        <div class="sidebar-section">
+          <h6 class="heading-xs">Owner</h6>
+          <p>Change the owner of this NFT. This does not affect the token’s creator metadata in any way.</p>
+     
+          <label>New Owner</label>
+          <input type="text" placeholder="Enter here...">
+          <span class="hint">Special characters are allowed</span>
+          
+        </div>
+      </div>
+
+      <div class="sidebar-tab-contents" id="permissions">
+        <div class="sidebar-section">
+          <h6 class="heading-xs">Permissions</h6>
+          <p>Control which domains can display your NFT by building an allow list, or a block list.</p>
+          <p>Where can this NFT be displayed?</p>
+
+          <ul class="bordered-list">
+            <li>
+              <label class="toogle-wrapper">
+                <span>Allow Anywhere</span>
+                <div class="checkbox">
+                  <input type="radio" name="access" checked>
+                  <svg class="icon24">
+                    <use xlink:href="/dist/icons/32.sprite.svg#check"></use>
+                  </svg>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label class="toogle-wrapper">
+                <span>Block Everywhere</span>
+                <div class="checkbox">
+                  <input type="radio" name="access">
+                  <svg class="icon24">
+                    <use xlink:href="/dist/icons/32.sprite.svg#check"></use>
+                  </svg>
+                </div>
+              </label>
+
+            </li>
+          </ul>
+
+          <div class="sidebar-input">
+            <label>Except</label>
+            <div class="input-wrap">
+              <input type="text" placeholder="https://">
+              <div class="btn-wrap">
+                <button class="btn-solid btn-input">
+                  <svg class="icon">
+                    <use xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <span class="hint">Add a valid URL here</span>
           </div>
+     
+     
+          
+        </div>
+        <hr/>
+        <div class="sidebar-section">
+          <ul class="bordered-list">
+            <li>
+              <div class="permission">
+                <div class="permission-left">
+                  <label>bbc.co.uk</label>
+                  <span class="badge">Blocked</span>
+                </div>
+                <div class="permission-right">
+                  <div class="remove">
+                    <button class="btn-mini" onclick="remove(event)">
+                      <svg class="icon24">
+                        <use xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="permission">
+                <div class="permission-left">
+                  <label>itv.co.uk</label>
+                  <span class="badge">Blocked</span>
+                </div>
+                <div class="permission-right">
+                  <div class="remove">
+                    <button class="btn-mini" onclick="remove(event)">
+                      <svg class="icon24">
+                        <use xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="permission">
+                <div class="permission-left">
+                  <label>instagram.com</label>
+                  <span class="badge">Allowed</span>
+                </div>
+                <div class="permission-right">
+                  <div class="remove">
+                    <button class="btn-mini" onclick="remove(event)">
+                      <svg class="icon24">
+                        <use xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="permission">
+                <div class="permission-left">
+                  <label>twitter.com</label>
+                  <span class="badge">Allowed</span>
+                </div>
+                <div class="permission-right">
+                  <div class="remove">
+                    <button class="btn-mini" onclick="remove(event)">
+                      <svg class="icon24">
+                        <use xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="permission">
+                <div class="permission-left">
+                  <label>facebook.com</label>
+                  <span class="badge">Allowed</span>
+                </div>
+                <div class="permission-right">
+                  <div class="remove">
+                    <button class="btn-mini" onclick="remove(event)">
+                      <svg class="icon24">
+                        <use xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+           
+          </ul>
+        </div>
+      </div>
+
+
+
+      <div class="sidebar-tab-contents" id="files">
+        <div class="sidebar-section">
+          <h4 class="heading-xs">Monolith III</h4>
+          <span class="label-sm">Tim Jarvis</span>
+
+          <dl class="stats">
+            <dt>12</dt>
+            <dd><span class="badge">Files</span></dd>
+            <dt>124Mb</dt>
+            <dd><span class="badge">Size</span></dd>
+          </dl>
         </div>
 
-        <div class="accordion-head">
-          <span class="label-md">Layout</span>
-          <div class="accordion-icon">
-            <svg class="icon">
-              <use class="plus" xlink:href="/dist/icons/32.sprite.svg#plus"></use>
-              <use class="minus" xlink:href="/dist/icons/32.sprite.svg#minus"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="accordion-content">
-          <div class="accordion-content-inner">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum in magna sit amet tincidunt. Vivamus dictum dui vel nunc blandit, vel aliquam nibh commodo. Nullam luctus vestibulum tincidunt. Donec ut libero sed mi ultricies scelerisque. Fusce arcu elit, fermentum eget metus eget, eleifend placerat enim. Suspendisse potenti. Donec sed pretium ante. Duis cursus, massa ac malesuada ullamcorper, erat augue scelerisque mauris, non feugiat ante libero vel lacus. In id urna id lacus viverra ornare ac eu ante. Aliquam suscipit auctor ullamcorper. Phasellus congue aliquet facilisis. Morbi elementum nibh non felis imperdiet, consequat dictum nulla semper. Aenean imperdiet sollicitudin lorem, at pulvinar dolor pellentesque eget.</p>
+        <ul class="folder-list">
+          <li class="folder">
+            <div class="icon-wrap">
+              <svg class="icon">
+                <use xlink:href="/dist/icons/32.sprite.svg#folder"></use>
+              </svg>
+            </div>
+            <label>
+              Assets
+            </label>
+          </li>
+          
+          <li class="folder">
+            <div class="icon-wrap">
+              <svg class="icon">
+                <use xlink:href="/dist/icons/32.sprite.svg#folder"></use>
+              </svg>
+            </div>
+            <label>
+              Finals
+            </label>
+          </li>
 
-            <p>Vivamus lobortis ipsum a ultrices interdum. Aliquam sagittis arcu mauris, eu ornare arcu congue eu. Nulla varius erat convallis, dictum turpis id, convallis ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec augue lectus, convallis nec interdum vitae, dignissim vitae risus. Phasellus volutpat malesuada dui, et varius leo ultricies id. Nam finibus tincidunt neque ut dictum. Donec enim leo, molestie ut tempus eget, porttitor bibendum ex. Duis suscipit cursus nunc eget consequat. Cras ut mauris quis leo ultricies consectetur. Aliquam erat volutpat. Proin cursus, nulla vel molestie viverra, enim mauris lacinia eros, et varius justo urna quis libero. Sed eget mauris mollis, blandit turpis ac, volutpat sem.</p>
+          <li class="file">
+            <label>
+              <div class="asset-icon">
+                <div class="img-circle">
+                  <img src="https://static.fabrik.io/l2e/d0b96b79b6207401.jpg?lossless=1&amp;w=2880&amp;h=5120&amp;fit=max&amp;s=2bafc99ec11e14a0bd675f355e484615">
+                </div>
+              </div>
             
-            <p>Curabitur et gravida tellus. Sed aliquam dolor nec enim cursus scelerisque. Curabitur pulvinar pulvinar ante, ac imperdiet risus bibendum id. Sed id porttitor mi. Praesent eleifend augue ac enim condimentum, vitae consequat massa porttitor. Proin rutrum lacus in ante bibendum interdum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque tellus diam, fermentum sit amet facilisis sed, eleifend sed quam. Maecenas accumsan pharetra mauris quis luctus. Maecenas vitae auctor diam. Curabitur dignissim orci ac purus semper commodo.</p>
-            
-            <p>Praesent lacinia dapibus libero, sed aliquam tortor vulputate at. Suspendisse semper varius nisi, id lacinia dolor pellentesque et. Suspendisse ullamcorper libero eget odio tincidunt faucibus. Vestibulum vitae quam commodo, lacinia felis id, egestas urna. Sed eget rutrum lacus. Sed ut mi ac felis ornare vehicula quis a nulla. Pellentesque rhoncus velit sem, nec tempus tellus tincidunt ac. Sed hendrerit tristique massa vehicula consequat. Mauris eget justo non purus tempor dignissim. Integer et auctor leo. Aliquam aliquam tellus in elit feugiat placerat. Fusce ac accumsan odio. Sed vel tortor ut mauris sollicitudin posuere. Nunc cursus nunc vitae nunc faucibus, et tincidunt urna dapibus. Integer gravida eros eget augue tristique sagittis. Nulla ut ipsum id massa bibendum posuere.</p>
-            
-            <p>Cras iaculis ullamcorper feugiat. Phasellus vitae ultrices enim. Pellentesque quis lectus dolor. Integer rhoncus lorem tortor, ac venenatis magna viverra a. Duis fringilla euismod lobortis. Praesent ultrices, velit sit amet pharetra blandit, magna lorem sollicitudin nibh, vitae aliquam libero nunc in felis. Sed convallis eros odio, sed pretium ipsum condimentum non. Nulla facilisi. Vivamus volutpat, tellus sed commodo condimentum, urna risus pulvinar metus, quis vulputate arcu augue vitae nisi. Quisque cursus suscipit urna non rutrum. Pellentesque et scelerisque purus, quis tincidunt erat. Vestibulum sodales nulla eget elementum mollis. Etiam sed tristique justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi ac lacus dignissim, malesuada risus in, auctor magna. Suspendisse auctor dapibus tortor, non feugiat nisi lacinia quis.</p>
-          </div>
-        </div>
-
-        <div class="accordion-head">
-          <span class="label-md">Styles</span>
-          <div class="accordion-icon">
-            <svg class="icon">
-              <use class="plus" xlink:href="/dist/icons/32.sprite.svg#plus"></use>
-              <use class="minus" xlink:href="/dist/icons/32.sprite.svg#minus"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="accordion-content">
-          <div class="accordion-content-inner">
-            <div class="accordion-head">
-              <span class="label-md">Titles</span>
-              <div class="accordion-icon">
-                <svg class="icon">
-                  <use class="plus" xlink:href="/dist/icons/32.sprite.svg#plus"></use>
-                  <use class="minus" xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+              <span>Background_01.jpg</span>
+           
+              <div class="checkbox">
+                <input type="checkbox" >
+                <svg class="icon24">
+                  <use xlink:href="/dist/icons/32.sprite.svg#check"></use>
                 </svg>
               </div>
-            </div>
-            <div class="accordion-content">
-              <div class="accordion-content-inner">
-                Edit titles
-              </div>
-            </div>
+            </label>
+          </li>
 
-            <div class="accordion-head">
-              <span class="label-md">Headings</span>
-              <div class="accordion-icon">
-                <svg class="icon">
-                  <use class="plus" xlink:href="/dist/icons/32.sprite.svg#plus"></use>
-                  <use class="minus" xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+          <li class="file">
+            <label>
+              <div class="asset-icon">
+                <div class="img-circle">
+                  <img src="https://static.fabrik.io/l2e/d0b96b79b6207401.jpg?lossless=1&amp;w=2880&amp;h=5120&amp;fit=max&amp;s=2bafc99ec11e14a0bd675f355e484615">
+                </div>
+              </div>
+            
+              <span>Background_02.jpg</span>
+           
+              <div class="checkbox">
+                <input type="checkbox">
+                <svg class="icon24">
+                  <use xlink:href="/dist/icons/32.sprite.svg#check"></use>
                 </svg>
               </div>
-            </div>
-            <div class="accordion-content">
-              <div class="accordion-content-inner">
-                Edit headings
-              </div>
-            </div>
+            </label>
+          </li>
 
-            <div class="accordion-head">
-              <span class="label-md">Text</span>
-              <div class="accordion-icon">
-                <svg class="icon">
-                  <use class="plus" xlink:href="/dist/icons/32.sprite.svg#plus"></use>
-                  <use class="minus" xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+          <li class="file">
+            <label>
+              <div class="asset-icon">
+                <div class="img-circle">
+                  <img src="https://static.fabrik.io/l2e/d0b96b79b6207401.jpg?lossless=1&amp;w=2880&amp;h=5120&amp;fit=max&amp;s=2bafc99ec11e14a0bd675f355e484615">
+                </div>
+              </div>
+            
+              <span>Background_03.jpg</span>
+           
+              <div class="checkbox">
+                <input type="checkbox"  >
+                <svg class="icon24">
+                  <use xlink:href="/dist/icons/32.sprite.svg#check"></use>
                 </svg>
               </div>
-            </div>
-            <div class="accordion-content">
-              <div class="accordion-content-inner">
-                Edit text
+            </label>
+          </li>
+
+          <li class="file">
+            <label>
+              <div class="asset-icon">
+                <div class="img-circle">
+                  <img src="https://static.fabrik.io/l2e/d0b96b79b6207401.jpg?lossless=1&amp;w=2880&amp;h=5120&amp;fit=max&amp;s=2bafc99ec11e14a0bd675f355e484615">
+                </div>
               </div>
+            
+              <span>Video Example 1.m4v</span>
+           
+              <div class="checkbox">
+                <input type="checkbox" >
+                <svg class="icon24">
+                  <use xlink:href="/dist/icons/32.sprite.svg#check"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+
+          <li class="file">
+            <label>
+              <div class="asset-icon">
+                <div class="img-circle">
+                  <img src="https://static.fabrik.io/l2e/d0b96b79b6207401.jpg?lossless=1&amp;w=2880&amp;h=5120&amp;fit=max&amp;s=2bafc99ec11e14a0bd675f355e484615">
+                </div>
+              </div>
+            
+              <span>Video Example 2.m4v</span>
+           
+              <div class="checkbox">
+                <input type="checkbox"  >
+                <svg class="icon24">
+                  <use xlink:href="/dist/icons/32.sprite.svg#check"></use>
+                </svg>
+              </div>
+            </label>
+          </li>
+
+          
+        </ul>
+
+        <div class="sidebar-section">
+          <button class="pull-center">
+            <i class="circle">
+              <svg class="icon16">
+                <use xlink:href="/dist/icons/16.sprite.svg#download"></use>
+              </svg>
+            </i>
+            Download
+          </button>
+        </div>
+      </div>
+
+      <div class="sidebar-tab-contents" id="customise">
+        <div class="accordion">
+          <div class="accordion-head">
+            <span class="label-md">Background</span>
+            <div class="accordion-icon">
+              <svg class="icon">
+                <use class="plus" xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                <use class="minus" xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+              </svg>
             </div>
+          </div>
 
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <div class="placeholder ratio-3:2 background-mockup">
+                <img id="bg-image" src="https://static.fabrik.io/l2e/7de28982de33152b.jpg?lossless=1&w=2880&h=1920&fit=max&s=7b155fab75fe23e89e3f031209fc0ece" />
+              </div>
+              <div class="accordion-head">
+                <span class="label-md">Colour</span>
+                <div class="accordion-icon">
+                  <svg class="icon">
+                    <use class="plus" xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                    <use class="minus" xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
 
+                  <div class="form-group">
+
+                    <svg class="icon">
+                      <use xlink:href="/dist/icons/32.sprite.svg#colours"></use>
+                    </svg>
+                    <label class="label-sm">Background Colour</label>
+
+                    <div class="slider">
+                      <div class="track" id="hue" style="background: linear-gradient(90deg, hsl(0, 100%, 50%) 0%, hsl(60, 100%, 50%) 100%);">
+                        <div class="handle" id="hueHandle" draggable="" style="left: 200px;"></div>
+                      </div>
+      
+                    </div>
+      
+                    <div class="slider">
+                      <div class="track" id="saturation" style="background: linear-gradient(90deg, rgb(171, 171, 171) 0%, rgb(255, 128, 0) 100%);">
+                        <div class="handle" id="saturationHandle" draggable="" style="left: 200px;"></div>
+                      </div>
+                    </div>
+      
+                    <div class="slider">
+                      <div class="track" id="lightness" style="background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 128, 0) 50%, rgb(4, 0, 2) 100%);">
+                        <div class="handle" id="lightnessHandle" draggable="" style="left: 200px;"></div>
+                      </div>
+      
+                    </div>
+      
+                    <div class="selectors">
+      
+                      <!-- Hue selector selecting this sets the hue range -->
+      
+                      <div class="selector-wrap">
+                        <label class="selector">
+                          <input type="radio" name="color" value="0" checked="">
+                          <div class="selector-sample" style="background: hsl(0, 100%, 50%);"></div>
+                        </label>
+                      </div>
+      
+                      <div class="selector-wrap">
+                        <label class="selector">
+                          <input type="radio" name="color" value="60">
+                          <div class="selector-sample" style="background: hsl(60, 100%, 50%);"></div>
+                        </label>
+                      </div>
+      
+                      <div class="selector-wrap">
+                        <label class="selector">
+                          <input type="radio" name="color" value="120">
+                          <div class="selector-sample" style="background: hsl(120, 100%, 50%);"></div>
+                        </label>
+                      </div>
+      
+                      <div class="selector-wrap">
+                        <label class="selector">
+                          <input type="radio" name="color" value="180">
+                          <div class="selector-sample" style="background: hsl(180, 100%, 50%);"></div>
+                        </label>
+                      </div>
+      
+                      <div class="selector-wrap">
+                        <label class="selector">
+                          <input type="radio" name="color" value="240">
+                          <div class="selector-sample" style="background: hsl(240, 100%, 50%);"></div>
+                        </label>
+                      </div>
+      
+                      <div class="selector-wrap">
+                        <label class="selector">
+                          <input type="radio" name="color" value="300">
+                          <div class="selector-sample" style="background: hsl(300, 100%, 50%);"></div>
+                        </label>
+                      </div>
+      
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+
+                    <svg class="icon">
+                      <use xlink:href="/dist/icons/32.sprite.svg#opacity"></use>
+                    </svg>
+                    <label class="label-sm">Background Opacity</label>
+      
+                    <div class="slider">
+                      <div class="track bordered" id="alpha" style="background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #000 100%);">
+                        <div class="handle" draggable="" style="left: 200px;"></div>
+                      </div>
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-head">
+                <span class="label-md">Images</span>
+                <div class="accordion-icon">
+                  <svg class="icon">
+                    <use class="plus" xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                    <use class="minus" xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
+
+                  <form name="backgroundImages">
+
+                    <label class="selectable">
+                      <img src="https://static.fabrik.io/l2e/7de28982de33152b.jpg?lossless=1&amp;w=2880&amp;h=1920&amp;fit=max&amp;s=7b155fab75fe23e89e3f031209fc0ece" alt="">
+                      <div class="checkbox highlight">
+                        <input type="radio" name="backgroundImage" value="https://static.fabrik.io/l2e/7de28982de33152b.jpg?lossless=1&amp;w=2880&amp;h=1920&amp;fit=max&amp;s=7b155fab75fe23e89e3f031209fc0ece" checked="">
+                        <svg class="icon24">
+                          <use xlink:href="/dist/icons/32.sprite.svg#check"></use>
+                        </svg>
+                      </div>
+                    </label>
+          
+                    <label class="selectable">
+                      <img src="https://static.fabrik.io/l2e/100979002701298c.jpg?lossless=1&amp;w=2880&amp;h=1920&amp;fit=max&amp;s=15b00be0bbaf52c9802e4fcdb8d1838c" alt="">
+                      <div class="checkbox highlight">
+                        <input type="radio" name="backgroundImage" value="https://static.fabrik.io/l2e/100979002701298c.jpg?lossless=1&amp;w=2880&amp;h=1920&amp;fit=max&amp;s=15b00be0bbaf52c9802e4fcdb8d1838c">
+                        <svg class="icon24">
+                          <use xlink:href="/dist/icons/32.sprite.svg#check"></use>
+                        </svg>
+                      </div>
+                    </label>
+          
+                    <label class="selectable">
+                      <img src="https://static.fabrik.io/l2e/4f65fd88908e4dbe.jpg?lossless=1&amp;w=2880&amp;h=1920&amp;fit=max&amp;s=259306112699cdb88cc0234c55ffbbc9" alt="">
+                      <div class="checkbox highlight">
+                        <input type="radio" name="backgroundImage" value="https://static.fabrik.io/l2e/4f65fd88908e4dbe.jpg?lossless=1&amp;w=2880&amp;h=1920&amp;fit=max&amp;s=259306112699cdb88cc0234c55ffbbc9">
+                        <svg class="icon24">
+                          <use xlink:href="/dist/icons/32.sprite.svg#check"></use>
+                        </svg>
+                      </div>
+                    </label>
+
+                  </form>
+          
+                </div>
+              </div>
+
+              <div class="accordion-head">
+                <span class="label-md">Paterns</span>
+                <div class="accordion-icon">
+                  <svg class="icon">
+                    <use class="plus" xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                    <use class="minus" xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
+                  <div class="form-group">
+
+                    <svg class="icon">
+                      <use xlink:href="/dist/icons/32.sprite.svg#colours"></use>
+                    </svg>
+                    <label class="label-sm">Pattern Colour</label>
+
+                    <div class="slider">
+                      <div class="track" id="hue" style="background: linear-gradient(90deg, hsl(0, 100%, 50%) 0%, hsl(60, 100%, 50%) 100%);">
+                        <div class="handle" id="hueHandle" draggable="" style="left: 200px;"></div>
+                      </div>
+      
+                    </div>
+      
+                    <div class="slider">
+                      <div class="track" id="saturation" style="background: linear-gradient(90deg, rgb(171, 171, 171) 0%, rgb(255, 128, 0) 100%);">
+                        <div class="handle" id="saturationHandle" draggable="" style="left: 200px;"></div>
+                      </div>
+                    </div>
+      
+                    <div class="slider">
+                      <div class="track" id="lightness" style="background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 128, 0) 50%, rgb(4, 0, 2) 100%);">
+                        <div class="handle" id="lightnessHandle" draggable="" style="left: 200px;"></div>
+                      </div>
+      
+                    </div>
+      
+                    <div class="selectors">
+      
+                      <!-- Hue selector selecting this sets the hue range -->
+      
+                      <div class="selector-wrap">
+                        <label class="selector">
+                          <input type="radio" name="color" value="0" >
+                          <div class="selector-sample" style="background: hsl(0, 100%, 50%);"></div>
+                        </label>
+                      </div>
+      
+                      <div class="selector-wrap">
+                        <label class="selector">
+                          <input type="radio" name="color" value="60">
+                          <div class="selector-sample" style="background: hsl(60, 100%, 50%);"></div>
+                        </label>
+                      </div>
+      
+                      <div class="selector-wrap">
+                        <label class="selector">
+                          <input type="radio" name="color" value="120">
+                          <div class="selector-sample" style="background: hsl(120, 100%, 50%);"></div>
+                        </label>
+                      </div>
+      
+                      <div class="selector-wrap">
+                        <label class="selector">
+                          <input type="radio" name="color" value="180">
+                          <div class="selector-sample" style="background: hsl(180, 100%, 50%);"></div>
+                        </label>
+                      </div>
+      
+                      <div class="selector-wrap">
+                        <label class="selector">
+                          <input type="radio" name="color" value="240">
+                          <div class="selector-sample" style="background: hsl(240, 100%, 50%);"></div>
+                        </label>
+                      </div>
+      
+                      <div class="selector-wrap">
+                        <label class="selector">
+                          <input type="radio" name="color" value="300" checked="">
+                          <div class="selector-sample" style="background: hsl(300, 100%, 50%);"></div>
+                        </label>
+                      </div>
+      
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+
+                    <svg class="icon">
+                      <use xlink:href="/dist/icons/32.sprite.svg#opacity"></use>
+                    </svg>
+                    <label class="label-sm">Pattern Opacity</label>
+      
+                    <div class="slider">
+                      <div class="track bordered" id="alpha" style="background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #000 100%);">
+                        <div class="handle" draggable="" style="left: 200px;"></div>
+                      </div>
+      
+                    </div>
+                  </div>
+
+                  <!-- background set from the colour set in background tab -->
+                  <!-- svg fill set from above selectors -->
+
+                  <label class="selectable">
+                    
+                    <div class="placeholder ratio-4:3" style="background: #9a6d37;">
+                      <svg class="pattern-src">
+                        <defs>
+                          <pattern viewBox='0 0 28 49' id="pattern1" x="0" y="0" width="28" height="49" patternUnits="userSpaceOnUse">
+                            <path class="bg-pattern" fill='hsl(300, 100%, 50%)' fill-rule='evenodd' d="M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z"></path>
+                          </pattern>
+                        </defs>
+                        <rect x="0" y="0" fill="url(#pattern1)"></rect>
+                      </svg>
+                    </div>
+
+                    <div class="checkbox highlight">
+                      <input type="radio" name="backgroundImage" value="pattern1" >
+                      <svg class="icon24">
+                        <use xlink:href="/dist/icons/32.sprite.svg#check"></use>
+                      </svg>
+                    </div>
+                  </label>
+
+                  <label class="selectable">
+                    
+                    <div class="placeholder ratio-4:3" style="background: #9a6d37;">
+                      <svg class="pattern-src">
+                        <defs>
+                          <pattern viewBox='0 0 4 4' id="pattern2" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+                            <path class="bg-pattern" fill='hsl(300, 100%, 50%)' fill-rule='evenodd' d="M1 3h1v1H1V3zm2-2h1v1H3V1z"></path>
+                          </pattern>
+                        </defs>
+                        <rect x="0" y="0" fill="url(#pattern2)"></rect>
+                      </svg>
+                    </div>
+
+                    <div class="checkbox highlight">
+                      <input type="radio" name="backgroundImage" value="pattern1" >
+                      <svg class="icon24">
+                        <use xlink:href="/dist/icons/32.sprite.svg#check"></use>
+                      </svg>
+                    </div>
+                  </label>
+
+                  <label class="selectable">
+                    
+                    <div class="placeholder ratio-4:3" style="background: #9a6d37;">
+                      <svg class="pattern-src">
+                        <defs>
+                          <pattern viewBox='0 0 112 92' id="pattern3" x="0" y="0" width="112" height="92" patternUnits="userSpaceOnUse">
+                            <path class="bg-pattern" fill='hsl(300, 100%, 50%)' fill-rule='evenodd' d="M72 10H40L16 20H0v8h16l24-14h32l24 14h16v-8H96L72 10zm0-8H40L16 4H0v8h16l24-6h32l24 6h16V4H96L72 2zm0 84H40l-24-6H0v8h16l24 2h32l24-2h16v-8H96l-24 6zm0-8H40L16 64H0v8h16l24 10h32l24-10h16v-8H96L72 78zm0-12H40L16 56H0v4h16l24 14h32l24-14h16v-4H96L72 66zm0-16H40l-24-2H0v4h16l24 6h32l24-6h16v-4H96l-24 2zm0-16H40l-24 6H0v4h16l24-2h32l24 2h16v-4H96l-24-6zm0-16H40L16 32H0v4h16l24-10h32l24 10h16v-4H96L72 18z"></path>
+                          </pattern>
+                        </defs>
+                        <rect x="0" y="0" fill="url(#pattern3)"></rect>
+                      </svg>
+                    </div>
+
+                    <div class="checkbox highlight">
+                      <input type="radio" name="backgroundImage" value="pattern1" >
+                      <svg class="icon24">
+                        <use xlink:href="/dist/icons/32.sprite.svg#check"></use>
+                      </svg>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="accordion-head">
+                <span class="label-md">Filters</span>
+                <div class="accordion-icon">
+                  <svg class="icon">
+                    <use class="plus" xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                    <use class="minus" xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
+  
+                  <div class="form-group">
+                    <div class="form-group-titles">
+                      <svg class="icon">
+                        <use xlink:href="/dist/icons/32.sprite.svg#filters"></use>
+                      </svg>
+                      <label class="label-sm">Background Effects</label>
+                    </div>
+
+                    <label>Choose an Effect</label>
+                    <div class="select">
+                      <svg class="icon dropdown">
+                        <use xlink:href="/dist/icons/32.sprite.svg#chevron-down"></use>
+                      </svg>
+                      <select>
+                        <option>Mosaic</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <div class="slider-title">
+                      <label class="label-sm">Block Size</label>
+                    </div>
+        
+                    <div class="slider-wrap">
+                      <div class="slider-contols-left">
+                        <button class="btn-mini invert">
+                          <svg class="icon24">
+                            <use xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                          </svg>
+                        </button>
+                      </div>
+        
+                      <div class="slider-contols-center">
+                        <div class="slider">
+                          <div class="track bordered">
+                            <span class="fill" style="width: 50%;">
+                            </span>
+                            <div class="handle" draggable style="left: 50%;"></div>
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="slider-contols-right">
+                        <button class="btn-mini invert">
+                          <svg class="icon24">
+                            <use xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+        
+                  </div>
+        
+                  <div class="form-group">
+        
+                    <div class="slider-title">
+                      <label class="label-sm">Speed</label>
+                    </div>
+        
+                    <div class="slider-wrap">
+                      <div class="slider-contols-left">
+                        <button class="btn-mini invert">
+                          <svg class="icon24">
+                            <use xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                          </svg>
+                        </button>
+                      </div>
+        
+                      <div class="slider-contols-center">
+                        <div class="slider">
+                          <div class="track bordered">
+                            <span class="fill" style="width: 60%;">
+                            </span>
+                            <div class="handle" draggable style="left: 60%;"></div>
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="slider-contols-right">
+                        <button class="btn-mini invert">
+                          <svg class="icon24">
+                            <use xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+        
+                  </div>
+        
+                  <div class="form-group">
+        
+                    <div class="slider-title">
+                      <label class="label-sm">Entropy</label>
+                    </div>
+        
+                    <div class="slider-wrap">
+                      <div class="slider-contols-left">
+                        <button class="btn-mini invert">
+                          <svg class="icon24">
+                            <use xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                          </svg>
+                        </button>
+                      </div>
+        
+                      <div class="slider-contols-center">
+                        <div class="slider">
+                          <div class="track bordered">
+                            <span class="fill" style="width: 80%;">
+                            </span>
+                            <div class="handle" draggable style="left: 80%;"></div>
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="slider-contols-right">
+                        <button class="btn-mini invert">
+                          <svg class="icon24">
+                            <use xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+        
+                  </div>
+        
+                  <div class="form-group">
+        
+                    <div class="slider-title">
+                      <label class="label-sm">Spawn Rate</label>
+                    </div>
+        
+                    <div class="slider-wrap">
+                      <div class="slider-contols-left">
+                        <button class="btn-mini invert">
+                          <svg class="icon24">
+                            <use xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                          </svg>
+                        </button>
+                      </div>
+        
+                      <div class="slider-contols-center">
+                        <div class="slider">
+                          <div class="track bordered">
+                            <span class="fill" style="width: 30%;">
+                            </span>
+                            <div class="handle" draggable style="left:30%;"></div>
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="slider-contols-right">
+                        <button class="btn-mini invert">
+                          <svg class="icon24">
+                            <use xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+  
+          <div class="accordion-head">
+            <span class="label-md">Layout</span>
+            <div class="accordion-icon">
+              <svg class="icon">
+                <use class="plus" xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                <use class="minus" xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum in magna sit amet tincidunt. Vivamus dictum dui vel nunc blandit, vel aliquam nibh commodo. Nullam luctus vestibulum tincidunt. Donec ut libero sed mi ultricies scelerisque. Fusce arcu elit, fermentum eget metus eget, eleifend placerat enim. Suspendisse potenti. Donec sed pretium ante. Duis cursus, massa ac malesuada ullamcorper, erat augue scelerisque mauris, non feugiat ante libero vel lacus. In id urna id lacus viverra ornare ac eu ante. Aliquam suscipit auctor ullamcorper. Phasellus congue aliquet facilisis. Morbi elementum nibh non felis imperdiet, consequat dictum nulla semper. Aenean imperdiet sollicitudin lorem, at pulvinar dolor pellentesque eget.</p>
+  
+              <p>Vivamus lobortis ipsum a ultrices interdum. Aliquam sagittis arcu mauris, eu ornare arcu congue eu. Nulla varius erat convallis, dictum turpis id, convallis ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec augue lectus, convallis nec interdum vitae, dignissim vitae risus. Phasellus volutpat malesuada dui, et varius leo ultricies id. Nam finibus tincidunt neque ut dictum. Donec enim leo, molestie ut tempus eget, porttitor bibendum ex. Duis suscipit cursus nunc eget consequat. Cras ut mauris quis leo ultricies consectetur. Aliquam erat volutpat. Proin cursus, nulla vel molestie viverra, enim mauris lacinia eros, et varius justo urna quis libero. Sed eget mauris mollis, blandit turpis ac, volutpat sem.</p>
+              
+              <p>Curabitur et gravida tellus. Sed aliquam dolor nec enim cursus scelerisque. Curabitur pulvinar pulvinar ante, ac imperdiet risus bibendum id. Sed id porttitor mi. Praesent eleifend augue ac enim condimentum, vitae consequat massa porttitor. Proin rutrum lacus in ante bibendum interdum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque tellus diam, fermentum sit amet facilisis sed, eleifend sed quam. Maecenas accumsan pharetra mauris quis luctus. Maecenas vitae auctor diam. Curabitur dignissim orci ac purus semper commodo.</p>
+              
+              <p>Praesent lacinia dapibus libero, sed aliquam tortor vulputate at. Suspendisse semper varius nisi, id lacinia dolor pellentesque et. Suspendisse ullamcorper libero eget odio tincidunt faucibus. Vestibulum vitae quam commodo, lacinia felis id, egestas urna. Sed eget rutrum lacus. Sed ut mi ac felis ornare vehicula quis a nulla. Pellentesque rhoncus velit sem, nec tempus tellus tincidunt ac. Sed hendrerit tristique massa vehicula consequat. Mauris eget justo non purus tempor dignissim. Integer et auctor leo. Aliquam aliquam tellus in elit feugiat placerat. Fusce ac accumsan odio. Sed vel tortor ut mauris sollicitudin posuere. Nunc cursus nunc vitae nunc faucibus, et tincidunt urna dapibus. Integer gravida eros eget augue tristique sagittis. Nulla ut ipsum id massa bibendum posuere.</p>
+              
+              <p>Cras iaculis ullamcorper feugiat. Phasellus vitae ultrices enim. Pellentesque quis lectus dolor. Integer rhoncus lorem tortor, ac venenatis magna viverra a. Duis fringilla euismod lobortis. Praesent ultrices, velit sit amet pharetra blandit, magna lorem sollicitudin nibh, vitae aliquam libero nunc in felis. Sed convallis eros odio, sed pretium ipsum condimentum non. Nulla facilisi. Vivamus volutpat, tellus sed commodo condimentum, urna risus pulvinar metus, quis vulputate arcu augue vitae nisi. Quisque cursus suscipit urna non rutrum. Pellentesque et scelerisque purus, quis tincidunt erat. Vestibulum sodales nulla eget elementum mollis. Etiam sed tristique justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi ac lacus dignissim, malesuada risus in, auctor magna. Suspendisse auctor dapibus tortor, non feugiat nisi lacinia quis.</p>
+            </div>
+          </div>
+  
+          <div class="accordion-head">
+            <span class="label-md">Styles</span>
+            <div class="accordion-icon">
+              <svg class="icon">
+                <use class="plus" xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                <use class="minus" xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <div class="accordion-head">
+                <span class="label-md">Titles</span>
+                <div class="accordion-icon">
+                  <svg class="icon">
+                    <use class="plus" xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                    <use class="minus" xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
+                  Edit titles
+                </div>
+              </div>
+  
+              <div class="accordion-head">
+                <span class="label-md">Headings</span>
+                <div class="accordion-icon">
+                  <svg class="icon">
+                    <use class="plus" xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                    <use class="minus" xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
+                  Edit headings
+                </div>
+              </div>
+  
+              <div class="accordion-head">
+                <span class="label-md">Text</span>
+                <div class="accordion-icon">
+                  <svg class="icon">
+                    <use class="plus" xlink:href="/dist/icons/32.sprite.svg#plus"></use>
+                    <use class="minus" xlink:href="/dist/icons/32.sprite.svg#minus"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
+                  Edit text
+                </div>
+              </div>
+  
+  
+            </div>
           </div>
         </div>
       </div>
@@ -253,6 +1167,8 @@
   </div>
 
   <script>
+
+    // accordion
     var accordionHeaders = document.getElementsByClassName('accordion-head');
 
     for (var i = 0; i < accordionHeaders.length; i++) {
@@ -260,6 +1176,19 @@
         this.classList.toggle("open");
       });
     }
+
+    // bg images
+    var bgimages = document.backgroundImages.backgroundImage;
+
+    for (var i = 0; i < bgimages.length; i++) {
+      bgimages[i].addEventListener('change', function () {
+
+        var mockup = document.getElementById('bg-image');
+        mockup.setAttribute('src', this.value);
+      });
+    }
+
+
   </script>
 
   <!-- End Document
