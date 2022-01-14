@@ -142,7 +142,7 @@ input {
 }
 
 .form-group-titles {
-  margin-bottom: 4.8rem;
+  margin-bottom: 3.4rem;
 }
 
 .form-inline-group {
@@ -484,6 +484,10 @@ input:checked + .toggle {
     &:checked + .icon {
       fill: $black;
     }
+  }
+
+  label {
+    margin: 0;
   }
 
   .icon {

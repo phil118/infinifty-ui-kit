@@ -24,6 +24,8 @@
 [x] - Accordian
 [x] - Sidebar
 [x] - social icons 
-[] - sidebar - internal of folder
-[] - sidebar - customise/layout
-[] - sidebar - customise/styles
+[x] - sidebar - internal of folder
+[x] - sidebar - customise/layout
+[x] - sidebar - customise/styles
+[] - sidebar - connect wallet
+[] - dark mode?
