@@ -61,7 +61,6 @@
     function showSidebar(btn, id) {
 
       var sidebar = document.getElementById('sidebar');
-
       sidebar.classList.remove('infinifty', 'files', 'customise', 'owner', 'permissions');
 
       if(id === 'permissions' || id === 'owner') {
@@ -86,6 +85,11 @@
 
     }
 
+    function darkMode() {
+      var sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('darkmode');
+    }
+
   </script>
 
 
@@ -101,10 +105,11 @@
       <div class="row" style="margin-bottom: 0;">
         <div class="col" id="controls">
 
-          <button onclick="showSide()">Show/Hide Sidebar</button><br/>
-          <button onclick="showHide('save')">Show/Hide Save confirm Button</button><br/>
-          <button onclick="showHide('disconnect')">Show/Hide Disconnect confirm Button</button><br/>
-          <button onclick="showHide('back')">Show/Hide Back Button</button> <br/><br/>
+          <button onclick="showSide()">Show/Hide Sidebar</button> <br/>
+          <button onclick="showHide('save')">Show/Hide Save confirm Button</button> <br/>
+          <button onclick="showHide('disconnect')">Show/Hide Disconnect confirm Button</button> <br/>
+          <button onclick="showHide('back')">Show/Hide Back Button</button> <br/>
+          <button onclick="darkMode()">Dark mode</button> <br/><br/>
 
           <p>Basic layout for sidebar.</p>
           <p>Note: any sub section that you step into the back button should then show and pull you back to the previous</p>
@@ -746,7 +751,7 @@
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="0" checked="">
+                          <input type="radio" name="color" value="0" checked>
                           <div class="selector-sample" style="background: hsl(0, 100%, 50%);"></div>
                         </label>
                       </div>
@@ -797,7 +802,7 @@
                     <label class="label-sm">Background Opacity</label>
       
                     <div class="slider">
-                      <div class="track bordered" id="alpha" style="background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #000 100%);">
+                      <div class="track bordered" id="alpha" style="background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, #000 100%);">
                         <div class="handle" draggable="" style="left: 200px;"></div>
                       </div>
       
@@ -899,42 +904,42 @@
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="0" >
+                          <input type="radio" name="patterncolor" value="0" >
                           <div class="selector-sample" style="background: hsl(0, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="60">
+                          <input type="radio" name="patterncolor" value="60">
                           <div class="selector-sample" style="background: hsl(60, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="120">
+                          <input type="radio" name="patterncolor" value="120">
                           <div class="selector-sample" style="background: hsl(120, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="180">
+                          <input type="radio" name="patterncolor" value="180">
                           <div class="selector-sample" style="background: hsl(180, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="240">
+                          <input type="radio" name="patterncolor" value="240">
                           <div class="selector-sample" style="background: hsl(240, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="300" checked="">
+                          <input type="radio" name="patterncolor" value="300" checked>
                           <div class="selector-sample" style="background: hsl(300, 100%, 50%);"></div>
                         </label>
                       </div>
@@ -950,7 +955,7 @@
                     <label class="label-sm">Pattern Opacity</label>
       
                     <div class="slider">
-                      <div class="track bordered" id="alpha" style="background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #000 100%);">
+                      <div class="track bordered" id="alpha" style="background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, #000 100%);">
                         <div class="handle" draggable="" style="left: 200px;"></div>
                       </div>
       
@@ -1420,42 +1425,42 @@
   
                   <div class="selector-wrap">
                     <label class="selector">
-                      <input type="radio" name="color" value="0">
+                      <input type="radio" name="textblockcolor" value="0">
                       <div class="selector-sample" style="background: hsl(0, 100%, 50%);"></div>
                     </label>
                   </div>
   
                   <div class="selector-wrap">
                     <label class="selector">
-                      <input type="radio" name="color" value="60">
+                      <input type="radio" name="textblockcolor" value="60">
                       <div class="selector-sample" style="background: hsl(60, 100%, 50%);"></div>
                     </label>
                   </div>
   
                   <div class="selector-wrap">
                     <label class="selector">
-                      <input type="radio" name="color" value="120">
+                      <input type="radio" name="textblockcolor" value="120">
                       <div class="selector-sample" style="background: hsl(120, 100%, 50%);"></div>
                     </label>
                   </div>
   
                   <div class="selector-wrap">
                     <label class="selector">
-                      <input type="radio" name="color" value="180">
+                      <input type="radio" name="textblockcolor" value="180">
                       <div class="selector-sample" style="background: hsl(180, 100%, 50%);"></div>
                     </label>
                   </div>
   
                   <div class="selector-wrap">
                     <label class="selector">
-                      <input type="radio" name="color" value="240">
+                      <input type="radio" name="textblockcolor" value="240" checked>
                       <div class="selector-sample" style="background: hsl(240, 100%, 50%);"></div>
                     </label>
                   </div>
   
                   <div class="selector-wrap">
                     <label class="selector">
-                      <input type="radio" name="color" value="300" checked="">
+                      <input type="radio" name="textblockcolor" value="300" >
                       <div class="selector-sample" style="background: hsl(300, 100%, 50%);"></div>
                     </label>
                   </div>
@@ -1463,7 +1468,7 @@
                 </div>
 
                 <div class="slider" style="margin-top: 4.4rem;">
-                  <div class="track bordered" id="alpha" style="background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #000 100%);">
+                  <div class="track bordered" id="alpha" style="background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, #000 100%);">
                     <div class="handle" draggable="" style="left: 200px;"></div>
                   </div>
                 </div>
@@ -1626,42 +1631,42 @@
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="0">
+                          <input type="radio" name="titlecolor" value="0">
                           <div class="selector-sample" style="background: hsl(0, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="60">
+                          <input type="radio" name="titlecolor" value="60">
                           <div class="selector-sample" style="background: hsl(60, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="120">
+                          <input type="radio" name="titlecolor" value="120" checked>
                           <div class="selector-sample" style="background: hsl(120, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="180">
+                          <input type="radio" name="titlecolor" value="180">
                           <div class="selector-sample" style="background: hsl(180, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="240">
+                          <input type="radio" name="titlecolor" value="240">
                           <div class="selector-sample" style="background: hsl(240, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="300" checked="">
+                          <input type="radio" name="titlecolor" value="300" >
                           <div class="selector-sample" style="background: hsl(300, 100%, 50%);"></div>
                         </label>
                       </div>
@@ -1669,7 +1674,7 @@
                     </div>
     
                     <div class="slider" style="margin-top: 4.4rem;">
-                      <div class="track bordered" id="alpha" style="background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #000 100%);">
+                      <div class="track bordered" id="alpha" style="background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, #000 100%);">
                         <div class="handle" draggable="" style="left: 200px;"></div>
                       </div>
                     </div>
@@ -1821,42 +1826,42 @@
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="0">
+                          <input type="radio" name="headingcolor" value="0">
                           <div class="selector-sample" style="background: hsl(0, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="60">
+                          <input type="radio" name="headingcolor" value="60">
                           <div class="selector-sample" style="background: hsl(60, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="120">
+                          <input type="radio" name="headingcolor" value="120" checked>
                           <div class="selector-sample" style="background: hsl(120, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="180">
+                          <input type="radio" name="headingcolor" value="180">
                           <div class="selector-sample" style="background: hsl(180, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="240">
+                          <input type="radio" name="headingcolor" value="240">
                           <div class="selector-sample" style="background: hsl(240, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="300" checked="">
+                          <input type="radio" name="headingcolor" value="300" >
                           <div class="selector-sample" style="background: hsl(300, 100%, 50%);"></div>
                         </label>
                       </div>
@@ -1864,7 +1869,7 @@
                     </div>
     
                     <div class="slider" style="margin-top: 4.4rem;">
-                      <div class="track bordered" id="alpha" style="background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #000 100%);">
+                      <div class="track bordered" id="alpha" style="background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, #000 100%);">
                         <div class="handle" draggable="" style="left: 200px;"></div>
                       </div>
                     </div>
@@ -2016,42 +2021,42 @@
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="0">
+                          <input type="radio" name="textcolor" value="0">
                           <div class="selector-sample" style="background: hsl(0, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="60">
+                          <input type="radio" name="textcolor" value="60">
                           <div class="selector-sample" style="background: hsl(60, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="120">
+                          <input type="radio" name="textcolor" value="120">
                           <div class="selector-sample" style="background: hsl(120, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="180">
+                          <input type="radio" name="textcolor" value="180">
                           <div class="selector-sample" style="background: hsl(180, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="240">
+                          <input type="radio" name="textcolor" value="240">
                           <div class="selector-sample" style="background: hsl(240, 100%, 50%);"></div>
                         </label>
                       </div>
       
                       <div class="selector-wrap">
                         <label class="selector">
-                          <input type="radio" name="color" value="300" checked="">
+                          <input type="radio" name="textcolor" value="300" checked>
                           <div class="selector-sample" style="background: hsl(300, 100%, 50%);"></div>
                         </label>
                       </div>
@@ -2059,7 +2064,7 @@
                     </div>
     
                     <div class="slider" style="margin-top: 4.4rem;">
-                      <div class="track bordered" id="alpha" style="background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #000 100%);">
+                      <div class="track bordered" id="alpha" style="background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, #000 100%);">
                         <div class="handle" draggable="" style="left: 200px;"></div>
                       </div>
                     </div>

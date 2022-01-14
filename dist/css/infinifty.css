@@ -2654,3 +2654,165 @@ td:last-child {
   .sidebar .file:hover,
   .sidebar .folder:hover {
     background: #F6F6F6; } }
+
+/* Themes */
+.darkmode {
+  color: #fff; }
+  .darkmode .btn-sq.active,
+  .darkmode .sidebar-content {
+    background: #000; }
+  .darkmode .group-btn .discard,
+  .darkmode .btn-sq,
+  .darkmode .badge {
+    background: #333333;
+    color: #fff; }
+    .darkmode .group-btn .discard .icon,
+    .darkmode .group-btn .discard .icon24,
+    .darkmode .btn-sq .icon,
+    .darkmode .btn-sq .icon24,
+    .darkmode .badge .icon,
+    .darkmode .badge .icon24 {
+      fill: #fff; }
+  .darkmode button,
+  .darkmode .btn {
+    border-color: #fff;
+    color: #fff; }
+    .darkmode button .circle,
+    .darkmode .btn .circle {
+      background-color: #fff; }
+      .darkmode button .circle [class^="icon"],
+      .darkmode .btn .circle [class^="icon"] {
+        fill: #000; }
+  .darkmode .icon,
+  .darkmode .icon24 {
+    fill: #fff; }
+  .darkmode .toggle {
+    background: #AFAFAF; }
+    .darkmode .toggle:before {
+      background: #000; }
+  .darkmode input:checked + .toggle {
+    background: #fff; }
+  .darkmode .hint {
+    color: #AFAFAF; }
+  .darkmode .bordered-list li,
+  .darkmode hr {
+    border-color: #545454; }
+  .darkmode input[type='email'],
+  .darkmode input[type='number'],
+  .darkmode input[type='search'],
+  .darkmode input[type='text'],
+  .darkmode input[type='tel'],
+  .darkmode input[type='url'],
+  .darkmode input[type='password'],
+  .darkmode textarea,
+  .darkmode .select {
+    background: #545454;
+    border-color: #545454;
+    color: #fff; }
+    .darkmode input[type='email']:focus,
+    .darkmode input[type='number']:focus,
+    .darkmode input[type='search']:focus,
+    .darkmode input[type='text']:focus,
+    .darkmode input[type='tel']:focus,
+    .darkmode input[type='url']:focus,
+    .darkmode input[type='password']:focus,
+    .darkmode textarea:focus,
+    .darkmode .select:focus {
+      border-color: #fff; }
+  .darkmode select {
+    border-color: #545454; }
+    .darkmode select:focus {
+      border-color: #fff; }
+  .darkmode .input-wrap {
+    border-color: #545454;
+    background-color: #545454; }
+    .darkmode .input-wrap:focus-within {
+      border-color: #fff; }
+  .darkmode .btn-mini,
+  .darkmode .btn-solid {
+    background-color: #fff;
+    color: #000; }
+    .darkmode .btn-mini .icon,
+    .darkmode .btn-mini .icon24,
+    .darkmode .btn-solid .icon,
+    .darkmode .btn-solid .icon24 {
+      fill: #000; }
+  .darkmode .checkbox svg {
+    border-color: #fff;
+    background-color: #000; }
+  .darkmode .checkbox input:checked + svg {
+    background-color: #fff;
+    fill: #000; }
+  .darkmode .folder-list {
+    border-color: #333333; }
+  .darkmode .accordion-head,
+  .darkmode .file,
+  .darkmode .folder {
+    background-color: #000;
+    border-color: #333333; }
+  .darkmode .slider-wrap .btn-mini {
+    background-color: transparent; }
+    .darkmode .slider-wrap .btn-mini .icon24 {
+      fill: #fff; }
+  .darkmode .sidebar-section.bordered {
+    border-color: #000; }
+  .darkmode .slider-title label {
+    background-color: #545454; }
+    .darkmode .slider-title label:after {
+      background-color: #545454; }
+  .darkmode .accordion-content {
+    background-color: #333333; }
+    .darkmode .accordion-content .accordion-head {
+      background-color: #333333;
+      border-color: #545454; }
+    .darkmode .accordion-content .accordion-content {
+      background-color: #545454; }
+      .darkmode .accordion-content .accordion-content .accordion-content-inner {
+        border-color: #545454; }
+      .darkmode .accordion-content .accordion-content .sidebar-section.bordered {
+        border-color: #333333; }
+      .darkmode .accordion-content .accordion-content .select {
+        background: #757575; }
+      .darkmode .accordion-content .accordion-content .slider-title label {
+        background-color: #757575; }
+        .darkmode .accordion-content .accordion-content .slider-title label:after {
+          background-color: #757575; }
+  .darkmode .selectable .checkbox svg {
+    background-color: transparent; }
+  .darkmode .selectable .checkbox.highlight input:checked + svg {
+    background-color: #00BF00;
+    fill: #fff; }
+  .darkmode .selector input:checked + .selector-sample {
+    border-color: #fff; }
+  .darkmode .radio-icon-selector .icon {
+    fill: #AFAFAF; }
+  .darkmode .radio-icon-selector input:checked + .icon {
+    fill: #fff; }
+
+@media only screen and (hover: hover) {
+  .darkmode .btn-sq:hover,
+  .darkmode .btn-sq.active:hover {
+    background-color: #1F1F1F; }
+  .darkmode button:hover,
+  .darkmode .btn:hover {
+    background-color: #fff;
+    color: #000; }
+  .darkmode .btn-mini:hover,
+  .darkmode .btn-solid:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #fff; }
+    .darkmode .btn-mini:hover .icon,
+    .darkmode .btn-mini:hover .icon24,
+    .darkmode .btn-solid:hover .icon,
+    .darkmode .btn-solid:hover .icon24 {
+      fill: #fff; }
+  .darkmode .file:hover,
+  .darkmode .folder:hover {
+    background-color: #141414; }
+  .darkmode .btn-input:hover {
+    background: transparent; }
+  .darkmode .slider-wrap .btn-mini:hover {
+    background-color: #fff; }
+    .darkmode .slider-wrap .btn-mini:hover .icon24 {
+      fill: #000; } }

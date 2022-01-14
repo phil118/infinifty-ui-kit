@@ -1,0 +1,258 @@
+.darkmode {
+  color: $white;
+
+  .btn-sq.active,
+  .sidebar-content {
+    background: $black;
+  }
+
+  .group-btn .discard,
+  .btn-sq,
+  .badge {
+    background: $grey-700;
+    color: $white;
+
+    .icon, 
+    .icon24 {
+      fill: $white;
+    }
+  }
+
+  button,
+  .btn {
+    border-color: $white;
+    color: $white;
+
+    .circle {
+      background-color: $white;
+
+      [class^="icon"] {
+        fill: $black;
+      }
+    }
+  }
+
+  .icon, 
+  .icon24 {
+    fill: $white;
+  }
+
+  .toggle {
+    background: $grey-400;
+
+    &:before {
+      background: $black;
+    }
+  }
+
+  input:checked + .toggle {
+    background: $white;
+  }
+
+  .hint {
+    color: $grey-400;
+  }
+
+  .bordered-list li,
+  hr {
+    border-color: $grey-600;
+  }
+
+  input[type='email'], 
+  input[type='number'], 
+  input[type='search'], 
+  input[type='text'], 
+  input[type='tel'], 
+  input[type='url'], 
+  input[type='password'], 
+  textarea, 
+  .select {
+    background: $grey-600;
+    border-color: $grey-600;
+    color: $white;
+
+    &:focus {
+      border-color: $white;
+    }
+  }
+
+  select {
+    border-color: $grey-600;
+
+    &:focus {
+      border-color: $white;
+    }
+  }
+
+  .input-wrap {
+    border-color: $grey-600;
+    background-color: $grey-600;
+
+    &:focus-within {
+      border-color: $white;
+    }
+  }
+
+  .btn-mini,
+  .btn-solid {
+    background-color: $white;
+    color: $black;
+
+    .icon, 
+    .icon24 {
+      fill: $black;
+    }
+  }
+
+  .checkbox {
+    svg {
+    border-color: $white;
+    background-color: $black;
+    }
+
+    input:checked + svg {
+      background-color: $white;
+      fill: $black;
+    }
+  }
+
+  .folder-list {
+    border-color: $grey-700;
+  }
+
+  .accordion-head,
+  .file,
+  .folder {
+    background-color: $black;
+    border-color: $grey-700;
+  }
+
+  .slider-wrap {
+    .btn-mini {
+      background-color: transparent;
+      .icon24 {
+        fill: $white;
+      }
+    }
+  }
+
+  .sidebar-section.bordered {
+    border-color: $black;
+  }
+
+  .slider-title label {
+    background-color: $grey-600;
+
+    &:after {
+      background-color: $grey-600;
+    }
+  }
+
+  .accordion-content {
+    background-color: $grey-700;
+
+    .accordion-head {
+      background-color: $grey-700;
+      border-color: $grey-600;
+    }
+
+    .accordion-content {
+      background-color: $grey-600;
+
+      .accordion-content-inner {
+        border-color: $grey-600;
+      }
+
+      .sidebar-section.bordered {
+        border-color: $grey-700;
+      }
+
+      .select {
+        background: $grey-500;
+      }
+
+      .slider-title label {
+        background-color: $grey-500;
+    
+        &:after {
+          background-color: $grey-500;
+        }
+      }
+    }
+  }
+
+  .selectable {
+    .checkbox svg {
+      background-color: transparent;
+    }
+
+    .checkbox.highlight input:checked + svg {
+      background-color: $green-500;
+      fill: $white;
+    }
+  }
+
+  .selector input:checked + .selector-sample {
+    border-color: $white;
+  }
+
+  .radio-icon-selector {
+    .icon {
+      fill: $grey-400;
+    }
+
+    input:checked + .icon {
+      fill: $white;
+    }
+  }
+ 
+
+}
+
+
+@media #{$hover-media-query} {
+
+  .darkmode {
+
+    .btn-sq:hover,
+    .btn-sq.active:hover {
+      background-color: $grey-800;
+    }
+
+    button:hover,
+    .btn:hover {
+      background-color: $white;
+      color: $black;
+    }
+
+    .btn-mini:hover,
+    .btn-solid:hover {
+      background-color: $black;
+      color: $white;
+      border-color: $white;
+
+      .icon, 
+      .icon24 {
+        fill: $white;
+      }
+    }
+
+    .file:hover,
+    .folder:hover {
+      background-color: $grey-900;
+    }
+
+    .btn-input:hover {
+      background: transparent;
+    }
+
+    .slider-wrap {
+      .btn-mini:hover {
+        background-color: $white;
+        .icon24 {
+          fill: $black;
+        }
+      }
+    }
+  }
+}
