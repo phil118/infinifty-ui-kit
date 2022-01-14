@@ -1964,7 +1964,8 @@ input:checked + .toggle {
     .radio-icon-selector input:checked + .icon {
       fill: #000; }
   .radio-icon-selector label {
-    margin: 0; }
+    margin: 0;
+    cursor: pointer; }
   .radio-icon-selector .icon {
     fill: #AFAFAF; }
 
@@ -2567,14 +2568,11 @@ td:last-child {
   transform: translateX(42rem); }
   .sidebar.open {
     transform: translateX(0); }
-  .sidebar.infinifty #infinifty {
-    display: block; }
-  .sidebar.files #files {
-    display: block; }
-  .sidebar.customise #customise {
-    display: block; }
-  .sidebar.permissions #permissions {
-    display: block; }
+  .sidebar.entry #entry,
+  .sidebar.infinifty #infinifty,
+  .sidebar.files #files,
+  .sidebar.customise #customise,
+  .sidebar.permissions #permissions,
   .sidebar.owner #owner {
     display: block; }
   .sidebar .folder {
@@ -2650,6 +2648,15 @@ td:last-child {
   .permission .permission-left {
     flex: auto; }
 
+#entry .logo-wrap {
+  max-width: 22rem;
+  margin: 2.4rem auto 3rem;
+  display: block; }
+
+#entry p {
+  margin-bottom: 4.8rem;
+  text-align: center; }
+
 @media only screen and (hover: hover) {
   .sidebar .file:hover,
   .sidebar .folder:hover {
@@ -2687,7 +2694,7 @@ td:last-child {
   .darkmode .icon24 {
     fill: #fff; }
   .darkmode .toggle {
-    background: #AFAFAF; }
+    background: #757575; }
     .darkmode .toggle:before {
       background: #000; }
   .darkmode input:checked + .toggle {
@@ -2785,7 +2792,7 @@ td:last-child {
   .darkmode .selector input:checked + .selector-sample {
     border-color: #fff; }
   .darkmode .radio-icon-selector .icon {
-    fill: #AFAFAF; }
+    fill: #757575; }
   .darkmode .radio-icon-selector input:checked + .icon {
     fill: #fff; }
 

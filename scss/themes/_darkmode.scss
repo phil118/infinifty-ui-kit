@@ -38,7 +38,7 @@
   }
 
   .toggle {
-    background: $grey-400;
+    background: $grey-500;
 
     &:before {
       background: $black;
@@ -198,7 +198,7 @@
 
   .radio-icon-selector {
     .icon {
-      fill: $grey-400;
+      fill: $grey-500;
     }
 
     input:checked + .icon {
